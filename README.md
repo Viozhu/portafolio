@@ -306,9 +306,9 @@ ISC
 
 **Jorge Ignacio Garay**
 - Full Stack Developer
-- Portfolio: [Your Portfolio URL]
-- LinkedIn: [Your LinkedIn URL]
-- GitHub: [Your GitHub URL]
+- Portfolio: [https://jorgeignaciogaray.netlify.app/]
+- LinkedIn: [https://www.linkedin.com/in/jorgeignaciogaray/]
+- GitHub: [https://github.com/Viozhu/]
 
 ## 🙏 Acknowledgments
 
