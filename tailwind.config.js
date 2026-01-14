@@ -10,6 +10,19 @@ module.exports = {
           cyan: '#06B6D4',
           pink: '#F472B6',
         },
+        // Shadcn-compatible color tokens for starfall component
+        background: '#0B0B15',
+        foreground: '#ffffff',
+        muted: {
+          DEFAULT: '#1F2937',
+          foreground: '#9ca3af',
+        },
+        card: {
+          DEFAULT: '#1F2937',
+          foreground: '#ffffff',
+        },
+        border: 'rgba(255, 255, 255, 0.1)',
+        input: 'rgba(31, 41, 55, 0.5)',
       },
       animation: {
         'spin-slow': 'spin 20s linear infinite',
@@ -19,7 +32,7 @@ module.exports = {
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
     },

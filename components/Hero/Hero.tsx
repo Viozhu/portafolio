@@ -1,9 +1,12 @@
 import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
+import { PortfolioPage, PortfolioPageProps } from '../ui/starfall-portfolio-landing';
+import { usePortfolioData } from '../../utils/usePortfolioData';
 
 const Hero = () => {
-    const { t } = useTranslation('common');
+    const { t, i18n } = useTranslation('common');
     const [mounted, setMounted] = useState(false);
+    const { projects, loading } = usePortfolioData();
 
     useEffect(() => {
         setMounted(true);
@@ -11,27 +14,99 @@ const Hero = () => {
 
     if (!mounted) return null;
 
-    return (
-        <div className="relative h-screen flex items-center justify-center overflow-hidden">
-            {/* Content */}
-            <div className="z-10 text-center px-4">
-                <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in-up bg-clip-text text-transparent bg-gradient-to-r from-space-cyan to-space-accent">
-                    {t('greeting')}
-                </h1>
-                <h2 className="text-2xl md:text-4xl text-gray-300 font-light animate-fade-in-up delay-200">
-                    {t('role')}
-                </h2>
-            </div>
+    // Get current language for project descriptions
+    const currentLanguage = i18n.language;
 
-            {/* Orbital Nexus Animation (CSS Planet) */}
-            <div className="absolute right-0 md:-right-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] opacity-20 md:opacity-40 pointer-events-none">
-                <div className="w-full h-full rounded-full border border-space-cyan/30 animate-spin-slow relative">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-space-cyan rounded-full shadow-[0_0_20px_rgba(6,182,212,0.8)]"></div>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-space-pink rounded-full"></div>
-                </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full border border-space-accent/30 animate-spin-slow animation-delay-2000"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] h-[100px] bg-gradient-to-br from-space-accent to-space-pink rounded-full blur-3xl opacity-50 animate-pulse"></div>
-            </div>
+    // Map projects to starfall format
+    const mappedProjects = projects.slice(0, 3).map(project => ({
+        title: project.title,
+        description: currentLanguage === 'es' 
+            ? project.descriptionEs || project.descriptionEn || '' 
+            : currentLanguage === 'en' 
+            ? project.descriptionEn || project.descriptionEs || ''
+            : project.descriptionKr || project.descriptionEn || '',
+        tags: project.techStack ? project.techStack.split(',').map(t => t.trim()).filter(Boolean).slice(0, 3) : [],
+        imageContent: project.img ? (
+            <img 
+                src={project.img} 
+                alt={project.title}
+                className="w-full h-full object-cover rounded-xl"
+                onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800';
+                }}
+            />
+        ) : (
+            <div className="text-2xl text-white/50">📁</div>
+        )
+    }));
+
+    // Prepare portfolio props
+    const portfolioProps: PortfolioPageProps = {
+        logo: {
+            initials: 'JIG',
+            name: 'Jorge Ignacio Garay',
+        },
+        navLinks: [
+            { label: t('about'), href: '#about' },
+            { label: t('portfolio'), href: '#portafolio' },
+            { label: t('skills'), href: '#skills' },
+        ],
+        resume: {
+            label: 'Resume',
+            onClick: () => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            },
+        },
+        hero: {
+            titleLine1: t('greeting'),
+            titleLine2Gradient: t('role'),
+            subtitle: t('about_text'),
+        },
+        ctaButtons: {
+            primary: {
+                label: 'View My Work',
+                onClick: () => {
+                    const projectsSection = document.getElementById('portafolio');
+                    if (projectsSection) {
+                        projectsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                },
+            },
+            secondary: {
+                label: t('contact'),
+                onClick: () => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                },
+            },
+        },
+        projects: mappedProjects.length > 0 ? mappedProjects : [
+            {
+                title: 'Sample Project',
+                description: 'A sample project to showcase my work',
+                tags: ['React', 'TypeScript'],
+                imageContent: <div className="text-2xl text-white/50">🚀</div>
+            }
+        ],
+        stats: [
+            { value: '4+', label: 'Years Experience' },
+            { value: '20+', label: 'Projects Completed' },
+            { value: '100%', label: 'Client Satisfaction' },
+        ],
+        showAnimatedBackground: true,
+        heroOnly: true, // Only show hero section, not projects/stats
+        showNavigation: false, // Hide navigation since Layout already has Navbar
+    };
+
+    return (
+        <div className="relative min-h-screen">
+            <PortfolioPage {...portfolioProps} />
         </div>
     );
 };
