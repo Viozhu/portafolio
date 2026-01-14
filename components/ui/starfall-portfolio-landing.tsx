@@ -88,7 +88,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
   showNavigation = true,
 }) => {
   return (
-    <div className="bg-background text-foreground geist-font">
+    <div className="bg-background/10 text-foreground geist-font">
       {showAnimatedBackground && <AuroraBackground />}
       <div className="relative">
         {showNavigation && (

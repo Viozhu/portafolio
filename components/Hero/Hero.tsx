@@ -2,6 +2,7 @@ import { useTranslation } from 'next-i18next';
 import { useEffect, useState } from 'react';
 import { PortfolioPage, PortfolioPageProps } from '../ui/starfall-portfolio-landing';
 import { usePortfolioData } from '../../utils/usePortfolioData';
+import Particles from 'react-tsparticles';
 
 const Hero = () => {
     const { t, i18n } = useTranslation('common');
@@ -106,7 +107,63 @@ const Hero = () => {
 
     return (
         <div className="relative min-h-screen">
-            <PortfolioPage {...portfolioProps} />
+            <Particles
+                className="absolute inset-0 w-full h-full z-[1]"
+                params={{
+                    particles: {
+                        number: {
+                            value: 100,
+                            density: {
+                                enable: true,
+                                value_area: 800,
+                            },
+                        },
+                        color: {
+                            value: "#ffffff",
+                        },
+                        shape: {
+                            type: "circle",
+                        },
+                        opacity: {
+                            value: 0.5,
+                            random: true,
+                        },
+                        size: {
+                            value: 2,
+                            random: true,
+                        },
+                        move: {
+                            enable: true,
+                            speed: 0.5,
+                            direction: "none",
+                            random: true,
+                            straight: false,
+                            out_mode: "out",
+                        },
+                    },
+                    interactivity: {
+                        detect_on: "window",
+                        events: {
+                            onhover: {
+                                enable: true,
+                                mode: "bubble",
+                            },
+                        },
+                        modes: {
+                            bubble: {
+                                distance: 200,
+                                size: 4,
+                                duration: 2,
+                                opacity: 0.8,
+                            },
+                        },
+                    },
+                    retina_detect: true,
+                }}
+            />
+            <div className="relative z-10">
+                <PortfolioPage {...portfolioProps} />
+            </div>
         </div>
     );
 };
