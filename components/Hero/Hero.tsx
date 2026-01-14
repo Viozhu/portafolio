@@ -6,7 +6,7 @@ import { usePortfolioData } from '../../utils/usePortfolioData';
 const Hero = () => {
     const { t, i18n } = useTranslation('common');
     const [mounted, setMounted] = useState(false);
-    const { projects, loading } = usePortfolioData();
+    const { projects } = usePortfolioData();
 
     useEffect(() => {
         setMounted(true);

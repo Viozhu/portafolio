@@ -45,7 +45,7 @@ const IndexPage: NextPage = () => {
             ) : (
               projects.map((project, index) => (
                 <div key={index} className="h-96">
-                  <ProjectCard {...project} />
+                  <ProjectCard {...project} techStack={project.techStack ? project.techStack.split(',').map(t => t.trim()).filter(Boolean) : undefined} />
                 </div>
               ))
             )}

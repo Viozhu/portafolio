@@ -5,8 +5,11 @@ export interface Project {
     img: string;
     title: string;
     description?: string;
+    descriptionEs?: string;
+    descriptionEn?: string;
+    descriptionKr?: string;
     link?: string;
-    techStack?: string[];
+    techStack?: string;
 }
 
 export interface Experience {
