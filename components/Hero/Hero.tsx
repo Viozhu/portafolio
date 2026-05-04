@@ -96,7 +96,7 @@ const Hero = () => {
             }
         ],
         stats: [
-            { value: '4+', label: 'Years Experience' },
+            { value: '6+', label: 'Years Experience' },
             { value: '20+', label: 'Projects Completed' },
             { value: '100%', label: 'Client Satisfaction' },
         ],
