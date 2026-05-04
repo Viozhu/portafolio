@@ -10,8 +10,9 @@ export const Contact = () => {
                 <a href='https://github.com/Viozhu'><img className='icono' src="https://github.com/Viozhu/Viozhu.github.io/blob/main/Iconos/github%20(1).png?raw=true" alt="github" width="60" height="60" /></a>
             </div>
             <a
-                href='/Jorge_Garay_CV.docx'
-                download='Jorge_Garay_CV.docx'
+                href='/Jorge_Garay_CV.pdf'
+                target='_blank'
+                rel='noopener noreferrer'
                 className='flex items-center gap-2 px-6 py-3 rounded-xl bg-space-accent hover:bg-space-accent/80 text-white font-semibold transition-colors duration-200'
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -19,7 +20,7 @@ export const Contact = () => {
                     <polyline points="7 10 12 15 17 10"/>
                     <line x1="12" y1="15" x2="12" y2="3"/>
                 </svg>
-                Download CV
+                View CV
             </a>
         </div>
     )
