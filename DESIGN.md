@@ -173,7 +173,7 @@ components:
 
 The whole site is a working wayfinding system. Station-enamel ground, signage-navy panels, and the real Seoul line colours used as a code: green is career and product work, orange is applied AI and "now", violet is the playground. Projects are stations with codes (A01, P04, X07), roles are stops on a single green line, and the contact section is the terminus. Every device is borrowed from the metro itself: circular roundels with a line-coloured ring, transfer double-rings, 10px line strokes, a three-colour stripe under the sign band, yellow exit-number squares, and a side-on train car that marks the selected station.
 
-Density is that of a station platform sign: one huge name, short supporting text, generous section breathing room (128px vertical on desktop), and information grouped by line rather than by card grid. Light enamel carries most of the page; the navy sign colour appears as bands and panels (the sticky sign bar, the arrival screen, the terminus), never as a full dark theme. The only motion is travel: the train glides along the line with a long ease-out, and the line scrolls the selected station into view on phones. Nothing else animates.
+Density is that of a station platform sign: one huge name, short supporting text, generous section breathing room (128px vertical on desktop), and information grouped by line rather than by card grid. Light enamel carries most of the page; the navy sign colour appears as bands and panels (the sticky sign bar, the arrival screen, the terminus), never as a full dark theme. Motion has one grammar: **the line draws, the stations light up.** On load the featured line draws left to right one segment per 190ms, each station lights as the line reaches it, and the train runs in just behind the tip and brakes at the terminus, which then pings "you are here" three times. Changing station glides the train (650ms ease-out) and wipes the arrival screen in like a platform display (460ms clip-path). On scroll, route-map and experience stems draw downward and their stops light in sequence. Nothing else animates; there are no generic fade-ups or hover lifts beyond a station roundel growing slightly.
 
 Type is one family doing all the work. Archivo stretched to 112% width and set heavy reads as station-name signage; the same family at normal width carries body copy. Korean falls back to Gothic A1 Heavy for display and the platform Korean sans for body, with `word-break: keep-all`, so the trilingual sign stacking (Latin name over Hangul name) holds in EN, ES and KO.
 
@@ -182,7 +182,7 @@ Type is one family doing all the work. Archivo stretched to 112% width and set h
 - Roundels, line strokes and transfer rings are the recurring structural marks.
 - Flat enamel and navy surfaces; depth comes from tonal panels, not shadow.
 - One stretched heavy sans for display, same family for body.
-- Motion is linear travel along the line only.
+- Motion only draws lines, lights stations and moves the train; it never decorates.
 
 ## Colors
 
@@ -290,7 +290,7 @@ Pill-shaped signage buttons, confident and heavy.
 - **Sign bar:** sticky navy band, 64px tall, JG roundel mark plus name, nav links as pills (sign-text, hover sign-line fill and white text), and a language pill switcher (EN / ES / 한) on a deep-navy track with the active language in a white pill. A 6px three-colour stripe (green 3 : orange 2 : violet 1) runs under it. Below 768px the nav links hide; mark and language switcher remain.
 
 ### Featured Line (signature)
-A horizontal track of per-station segments, each coloured by the line it runs into, with six stations as 36px roundels (white disc, 5px line-colour ring; filled when selected; the terminus has an inner dot). Labels below give code, station name and period ("Terminus" on the last). It is a radio group: click or arrow keys (Home/End too) select a station, the train car glides to it (650ms, cubic-bezier(0.16, 1, 0.3, 1), none under reduced motion), and the arrival screen swaps.
+A horizontal track of per-station segments, each coloured by the line it runs into, with seven stations as 36px roundels (white disc, 5px line-colour ring; filled when selected; the terminus has an inner dot). Labels below give code, station name and period ("Terminus" on the last). It is a radio group: click or arrow keys (Home/End too) select a station, the train car glides to it (650ms, cubic-bezier(0.16, 1, 0.3, 1), none under reduced motion), and the arrival screen swaps.
 
 ### Roundel
 White disc, line-coloured ring, bold stretched code inside; sizes 36/48/64/96px. The transfer variant adds a second outer ring via the transfer shadow.
@@ -313,6 +313,6 @@ Deep-navy tiles with 12px corners, a yellow numbered square (1–4) like a metro
 - **Don't** turn the site into a dark neon dev theme; navy is for sign bands and panels on an enamel platform.
 - **Don't** use line colours decoratively or blend them into gradients.
 - **Don't** add shadows beyond the arrival screen glow; depth is tonal.
-- **Don't** animate anything except travel along the line, and honour reduced motion.
+- **Don't** animate anything outside the line grammar (drawing, lighting, travel, the screen wipe). Under reduced motion, everything is drawn and lit from the start, and the wipe becomes a short fade.
 - **Don't** use Line 1 blue (#0052a4) or exit yellow (#ffd200) outside the focus ring and exit/headlight roles.
 - **Don't** fabricate screenshots, metrics or logos; use the station plate.

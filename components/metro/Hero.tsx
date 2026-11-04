@@ -4,9 +4,15 @@ import { CONTACT, Project, featuredProjects, lineOf } from "../../data/portfolio
 import { ArrowRight, ArrowUpRight, LineBadge, ProjectMedia, StackList, tr, useLocale } from "./parts";
 
 const featured = featuredProjects();
+/** Opening sequence timing: one segment of line per STEP_MS, the train arrives with the last one. */
+const STEP_MS = 190;
+/** The train leaves once the first segment is half drawn and runs one segment per STEP_MS, just behind the line's tip. */
+const TRAIN_DELAY_MS = 300;
+const TRAIN_RUN_MS = STEP_MS * (featured.length - 1);
+const ARRIVAL_MS = TRAIN_DELAY_MS + TRAIN_RUN_MS;
 
 /** The arrival screen: a signage panel describing the selected station. */
-const StationScreen = ({ project }: { project: Project }) => {
+const StationScreen = ({ project, wipe }: { project: Project; wipe: boolean }) => {
   const { t } = useTranslation("common");
   const locale = useLocale();
   const line = lineOf(project.line);
@@ -17,6 +23,8 @@ const StationScreen = ({ project }: { project: Project }) => {
         <span className="text-sm font-medium text-sign-text">{tr(line.name, locale)}</span>
         <span className="ml-auto text-sm tabular-nums text-sign-text">{project.period}</span>
       </header>
+      {/* the screen content wipes in like a platform display when the station changes */}
+      <div key={project.code} className={`flex flex-1 flex-col ${wipe ? "screen-wipe" : ""}`}>
       <ProjectMedia project={project} compact className={`${project.image ? "aspect-[2/1]" : "aspect-[3/1]"} w-full`} />
       <div className="flex flex-1 flex-col gap-3.5 p-5">
         <div>
@@ -42,6 +50,7 @@ const StationScreen = ({ project }: { project: Project }) => {
           )}
         </div>
       </div>
+      </div>
     </article>
   );
 };
@@ -53,6 +62,32 @@ export const Hero = () => {
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const scroller = useRef<HTMLDivElement>(null);
   const first = useRef(true);
+  // the opening sequence: the line draws, stations light up, the train runs in to the terminus
+  const [trainAt, setTrainAt] = useState(0);
+  const [arriving, setArriving] = useState(true);
+  const [changed, setChanged] = useState(false);
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setTrainAt(featured.length - 1);
+      setArriving(false);
+      return;
+    }
+    const go = window.setTimeout(() => setTrainAt(featured.length - 1), 120);
+    const done = window.setTimeout(() => setArriving(false), 120 + ARRIVAL_MS);
+    return () => {
+      window.clearTimeout(go);
+      window.clearTimeout(done);
+    };
+  }, []);
+  useEffect(() => {
+    if (!arriving) setTrainAt(active);
+  }, [active, arriving]);
+  const pick = (i: number) => {
+    setChanged(true);
+    setArriving(false);
+    setActive(i);
+  };
 
   // keep the selected station in view when the line scrolls (phones)
   useEffect(() => {
@@ -83,7 +118,7 @@ export const Hero = () => {
     else if (e.key === "End") next = n - 1;
     else return;
     e.preventDefault();
-    setActive(next);
+    pick(next);
     refs.current[next]?.focus();
   };
 
@@ -133,7 +168,7 @@ export const Hero = () => {
 
         {/* Arrival screen: below the line on phones so a tap shows its result */}
         <div id="work" className="order-3 scroll-mt-24 lg:order-2 lg:col-span-5">
-          <StationScreen project={featured[active]} />
+          <StationScreen project={featured[active]} wipe={changed} />
         </div>
 
       {/* The line */}
@@ -156,12 +191,20 @@ export const Hero = () => {
               {featured.slice(1).map((p, i) => (
                 <div
                   key={p.code}
-                  className="absolute top-0 h-full"
-                  style={{ left: `${pct(i)}%`, width: `${pct(1)}%`, background: lineOf(p.line).color }}
+                  className="draw-x absolute top-0 h-full"
+                  style={{ left: `${pct(i)}%`, width: `${pct(1)}%`, background: lineOf(p.line).color, animationDelay: `${STEP_MS * i + 120}ms` }}
                 />
               ))}
               {/* the train */}
-              <div className="train pointer-events-none absolute -top-10 h-0 w-0" style={{ left: `${pct(active)}%` }}>
+              <div
+                className="train pointer-events-none absolute -top-10 h-0 w-0"
+                style={{
+                  left: `${pct(trainAt)}%`,
+                  transitionDuration: arriving ? `${TRAIN_RUN_MS}ms` : undefined,
+                  transitionDelay: arriving ? `${TRAIN_DELAY_MS}ms` : undefined,
+                  transitionTimingFunction: arriving ? "cubic-bezier(0.3, 0.1, 0.45, 1)" : undefined,
+                }}
+              >
                 <div className="absolute left-0 flex -translate-x-1/2 flex-col items-center">
                   {/* a Seoul Metro car seen side-on: body, window band, orange door stripe, rounded cab */}
                   <div className="relative flex h-7 w-16 items-center gap-1 rounded-l-md rounded-r-[14px] bg-sign pl-1.5 pr-3">
@@ -189,16 +232,24 @@ export const Hero = () => {
                     role="radio"
                     aria-checked={on}
                     tabIndex={on ? 0 : -1}
-                    onClick={() => setActive(i)}
+                    onClick={() => pick(i)}
                     className="group -mx-16 flex w-32 flex-col items-center gap-3 rounded-lg"
                   >
                     <span
-                      className="flex h-9 w-9 items-center justify-center rounded-full border-[5px] transition-colors"
-                      style={{ borderColor: line.color, background: on ? line.color : "#fff" }}
+                      className="station-on relative flex h-9 w-9 items-center justify-center rounded-full border-[5px] transition-[background-color,transform] duration-200 group-hover:scale-110"
+                      style={{ borderColor: line.color, background: on ? line.color : "#fff", animationDelay: `${STEP_MS * i + 60}ms` }}
                     >
                       {last && !on && <span className="h-2.5 w-2.5 rounded-full" style={{ background: line.color }} />}
+                      {/* "you are here": the terminus pings a few times once the train has arrived */}
+                      {last && (
+                        <span
+                          aria-hidden="true"
+                          className="here-ping pointer-events-none absolute inset-[-5px] rounded-full border-[3px]"
+                          style={{ borderColor: line.color, animationDelay: `${ARRIVAL_MS + 200}ms`, opacity: 0 }}
+                        />
+                      )}
                     </span>
-                    <span className="flex w-full flex-col items-center text-center">
+                    <span className="label-in flex w-full flex-col items-center text-center" style={{ animationDelay: `${STEP_MS * i + 180}ms` }}>
                       <span className="text-xs font-bold tabular-nums text-steel">{p.code}</span>
                       <span className={`wide mt-0.5 text-[0.95rem] font-bold leading-tight ${on ? "text-ink" : "text-steel group-hover:text-ink"}`}>
                         {p.title}

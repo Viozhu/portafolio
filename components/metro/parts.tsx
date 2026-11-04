@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { Locale, Localized, Project, lineOf } from "../../data/portfolio";
 
@@ -8,6 +8,38 @@ export const useLocale = (): Locale => {
 };
 
 export const tr = (value: Localized, locale: Locale) => value[locale] ?? value.en;
+
+/**
+ * Scroll-armed reveal. Returns a ref and a className: nothing is hidden until
+ * JS has mounted ("armed"), so no-JS and SSR always show the full content.
+ */
+export const useReveal = <T extends HTMLElement>(threshold = 0.2) => {
+  const ref = useRef<T>(null);
+  const [armed, setArmed] = useState(false);
+  const [seen, setSeen] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    // already on screen at load: show without arming
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
+      setSeen(true);
+      return;
+    }
+    setArmed(true);
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setSeen(true);
+          io.disconnect();
+        }
+      },
+      { threshold, rootMargin: "0px 0px -10% 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [threshold]);
+  return [ref, `${armed ? "armed" : ""} ${seen ? "in-view" : ""}`] as const;
+};
 
 type RoundelSize = "sm" | "md" | "lg" | "xl";
 const ROUNDEL: Record<RoundelSize, string> = {

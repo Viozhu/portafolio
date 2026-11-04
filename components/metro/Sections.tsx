@@ -1,7 +1,18 @@
 import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { CONTACT, LINES, PROJECTS, ROLES, SKILLS, STUDIES } from "../../data/portfolio";
-import { ArrowRight, ArrowUpRight, CheckIcon, CopyIcon, LineBadge, ProjectMedia, Roundel, StackList, tr, useLocale } from "./parts";
+import { ArrowRight, ArrowUpRight, CheckIcon, CopyIcon, LineBadge, ProjectMedia, Roundel, StackList, tr, useLocale, useReveal } from "./parts";
+
+/** A route list whose stem draws downward and whose stops light up when it scrolls into view. */
+const RouteList = ({ className, children }: { className: string; children: React.ReactNode }) => {
+  const [ref, reveal] = useReveal<HTMLOListElement>(0.12);
+  return (
+    <ol ref={ref} className={`${className} ${reveal}`}>
+      {children}
+    </ol>
+  );
+};
+const stopDelay = (i: number) => ({ transitionDelay: `${Math.min(i, 7) * 120 + 150}ms` });
 
 const SectionHead = ({ id, title, intro }: { id: string; title: string; intro: string }) => (
   <div className="mb-12 max-w-3xl">
@@ -64,12 +75,14 @@ export const RouteMap = () => {
                     ))}
                   </ol>
                 ) : (
-                <ol className="relative">
+                <RouteList className="relative">
                   {/* line stem */}
-                  <span aria-hidden="true" className="absolute bottom-6 left-[1.3rem] top-6 w-2.5 rounded-full sm:left-[1.425rem]" style={{ background: line.color }} />
-                  {stations.map((p) => (
+                  <span aria-hidden="true" className="stem absolute bottom-6 left-[1.3rem] top-6 w-2.5 rounded-full sm:left-[1.425rem]" style={{ background: line.color }} />
+                  {stations.map((p, si) => (
                     <li key={p.code} className="relative grid grid-cols-[3rem_1fr] gap-x-5 border-b border-rule py-8 last:border-b-0 sm:grid-cols-[3.25rem_1fr] md:gap-x-8">
-                      <Roundel code={p.code} color={line.color} size="md" className="relative mt-1" />
+                      <span className="stop relative mt-1 inline-flex" style={stopDelay(si)}>
+                        <Roundel code={p.code} color={line.color} size="md" />
+                      </span>
                       <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_17rem] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_19rem] lg:gap-10">
                         <div>
                           <h4 className="wide text-xl font-bold leading-tight">{p.title}</h4>
@@ -102,7 +115,7 @@ export const RouteMap = () => {
                       </div>
                     </li>
                   ))}
-                </ol>
+                </RouteList>
                 )}
               </div>
             );
@@ -124,9 +137,9 @@ export const Experience = () => {
       <div className="mx-auto max-w-page px-5 py-24 sm:px-8 lg:py-32">
         <SectionHead id="exp-title" title={t("experience_title")} intro={t("experience_intro")} />
 
-        <ol className="relative">
-          <span aria-hidden="true" className="absolute bottom-10 left-[0.95rem] top-3 w-2.5 rounded-full bg-line2 md:left-[12.95rem]" />
-          {ROLES.map((r) => {
+        <RouteList className="relative">
+          <span aria-hidden="true" className="stem absolute bottom-10 left-[0.95rem] top-3 w-2.5 rounded-full bg-line2 md:left-[12.95rem]" />
+          {ROLES.map((r, ri) => {
             const color = r.current ? "#ef7c1c" : "#00a84d";
             return (
               <li key={r.company} className="relative grid grid-cols-[2.5rem_1fr] gap-x-5 pb-14 md:grid-cols-[11rem_2.5rem_1fr] md:gap-x-6">
@@ -143,8 +156,8 @@ export const Experience = () => {
                 </p>
                 <span
                   aria-hidden="true"
-                  className="relative col-start-1 row-start-1 mt-0.5 h-10 w-10 rounded-full border-[6px] bg-paper md:col-start-2"
-                  style={{ borderColor: color, boxShadow: r.current ? "0 0 0 3px #f4f4f1, 0 0 0 6px #ef7c1c" : undefined }}
+                  className="stop relative col-start-1 row-start-1 mt-0.5 h-10 w-10 rounded-full border-[6px] bg-paper md:col-start-2"
+                  style={{ borderColor: color, boxShadow: r.current ? "0 0 0 3px #f4f4f1, 0 0 0 6px #ef7c1c" : undefined, ...stopDelay(ri) }}
                 />
                 <div className="col-start-2 md:col-start-3 md:row-start-1">
                   <h3 className="wide text-2xl font-bold leading-tight">
@@ -170,7 +183,7 @@ export const Experience = () => {
               </li>
             );
           })}
-        </ol>
+        </RouteList>
 
         <div className="mt-6 rounded-2xl border border-rule bg-paper p-6 sm:p-8">
           <h3 className="wide text-lg font-bold">{t("education")}</h3>

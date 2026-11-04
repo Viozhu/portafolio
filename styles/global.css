@@ -96,11 +96,90 @@
   }
 }
 
+/* ── Motion: "the line draws, the stations light up" ─────────────── */
+@keyframes draw-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes station-on {
+  0% { transform: scale(0.4); opacity: 0; }
+  60% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes here-ping {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+@keyframes screen-wipe {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes label-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@layer components {
+  .draw-x {
+    transform-origin: left center;
+    animation: draw-x 300ms cubic-bezier(0.45, 0, 0.25, 1) both;
+  }
+  .station-on {
+    animation: station-on 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .label-in {
+    animation: label-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .here-ping {
+    animation: here-ping 1600ms cubic-bezier(0.16, 1, 0.3, 1) 3;
+  }
+  .screen-wipe {
+    animation: screen-wipe 460ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  /* scroll-armed route stems: only hidden once JS has armed them */
+  .stem {
+    transform-origin: top center;
+    transition: transform 1100ms cubic-bezier(0.45, 0, 0.25, 1);
+  }
+  .armed .stem { transform: scaleY(0); }
+  .armed.in-view .stem { transform: scaleY(1); }
+  .armed .stop {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 300ms ease-out, transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .armed.in-view .stop {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .train {
-    transition: none;
+  .train,
+  .stem,
+  .armed .stop {
+    transition: none !important;
+  }
+  .draw-x,
+  .station-on,
+  .label-in,
+  .here-ping {
+    animation: none !important;
+  }
+  .armed .stem,
+  .armed .stop {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  /* keep the state change legible, without movement */
+  .screen-wipe {
+    animation: label-in 200ms linear both;
+    animation-name: fade-only;
+  }
+  @keyframes fade-only {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
   }
 }
