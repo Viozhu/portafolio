@@ -208,6 +208,7 @@ export const PROJECTS: Project[] = [
     },
     facts: { en: "Edtech · auth · chat · video on demand", es: "Educación · auth · chat · video on demand", ko: "에듀테크 · 인증 · 채팅 · VOD" },
     stack: ["React", "Node.js", "Express", "PostgreSQL"],
+    image: "/work/academy-it.webp",
   },
   {
     code: "P06",
@@ -299,19 +300,6 @@ export const PROJECTS: Project[] = [
   {
     code: "X04",
     line: "play",
-    title: "Academy IT",
-    period: "",
-    summary: {
-      en: "A platform to manage students, classes and courses for schools and tech academies.",
-      es: "Una plataforma para gestionar estudiantes, clases y cursos en instituciones y academias tecnológicas.",
-      ko: "교육 기관과 테크 아카데미를 위한 학생·수업·코스 관리 플랫폼.",
-    },
-    stack: ["React", "Node.js"],
-    image: "/work/academy-it.webp",
-  },
-  {
-    code: "X05",
-    line: "play",
     title: "Movie Night",
     period: "",
     summary: {
@@ -323,7 +311,7 @@ export const PROJECTS: Project[] = [
     image: "/work/movie-night.webp",
   },
   {
-    code: "X06",
+    code: "X05",
     line: "play",
     title: "Quiero Programar",
     period: "",
@@ -336,7 +324,7 @@ export const PROJECTS: Project[] = [
     image: "/work/quiero-programar.webp",
   },
   {
-    code: "X07",
+    code: "X06",
     line: "play",
     title: "Patio",
     period: "",
