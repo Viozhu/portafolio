@@ -82,21 +82,8 @@
     ]
   ],
   "city_label": "The city: every project is a floor",
-  "city_roof": [
-    "APPLIED AI",
-    "PRODUCT",
-    "PLAYGROUND",
-    "EXPERIENCE"
-  ],
-  "station_sign": "막차 LAST TRAIN",
   "floor_directory": "Floor directory",
   "floor_of": "Floor {{floor}}",
   "enter_city": "Enter the city",
-  "directory": "Building directory",
-  "platform_board": [
-    "막차 LAST TRAIN",
-    "→ YOUR TEAM · REMOTE / FREELANCE",
-    "ARRIVING",
-    "BOARDING"
-  ]
+  "directory": "Building directory"
 }
