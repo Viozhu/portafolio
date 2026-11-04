@@ -4,3 +4,10 @@ jspm_packages/
 # next.js build output
 .next
 dist
+
+.impeccable/review/
+.impeccable/mocks/
+.playwright-mcp/
+
+.DS_Store
+*.tsbuildinfo
