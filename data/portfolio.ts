@@ -24,6 +24,8 @@ export interface Project {
   live?: string;
   repo?: string;
   image?: string;
+  /** Company work with no public link (shows "Company work, not public"). */
+  company?: boolean;
   /** Short facts shown on the station plate when there is no screenshot. */
   facts?: Localized;
   /** Shown on the hero line, in this order. */
@@ -97,11 +99,26 @@ export const LINES: Line[] = [
 export const PROJECTS: Project[] = [
   // ── Applied AI ──────────────────────────────────────────────
   {
-    code: "A03",
+    code: "A01",
+    line: "ai",
+    title: "Accounting pipeline",
+    period: "2026 – now",
+    featured: 4,
+    summary: {
+      en: "Built at Utomata for an accounting firm in Mexico, in monthly use. It reads statements from 12 banks, matches each movement to its SAT e-invoice, classifies the account and posts the entries to each client's Odoo. Rules decide first; an LLM steps in only without evidence, and anything uncertain goes to review.",
+      es: "Construido en Utomata para un estudio contable de México, en uso cada mes. Lee estados de cuenta de 12 bancos, cruza cada movimiento con su factura del SAT, clasifica la cuenta y genera las pólizas en el Odoo de cada cliente. Deciden las reglas; un LLM entra solo sin evidencia y lo incierto queda en revisión.",
+      ko: "Utomata에서 멕시코의 한 회계 법인을 위해 만들어 매달 쓰이는 파이프라인. 12개 은행 내역을 읽고 각 거래를 SAT 전자세금계산서와 대사해 계정을 분류한 뒤, 고객사별 Odoo에 분개를 올립니다. 규칙이 먼저 결정하고, 근거가 없을 때만 LLM을 쓰며, 불확실한 건은 검토로 넘깁니다.",
+    },
+    facts: { en: "Sole developer · 2,500+ tests · Claude & Gemini SDKs", es: "Único desarrollador · 2.500+ tests · SDKs de Claude y Gemini", ko: "단독 개발 · 테스트 2,500개 이상 · Claude·Gemini SDK" },
+    company: true,
+    stack: ["Python", "Google Cloud Functions", "Odoo API", "Claude API", "Gemini", "pytest", "GitHub Actions"],
+  },
+  {
+    code: "A04",
     line: "ai",
     title: "LendLoop",
     period: "2026",
-    featured: 6,
+    featured: 7,
     summary: {
       en: "A neighborhood tool-lending board. Neighbors list tools, request date ranges, approve and return loans. n8n sends signed notification emails and daily overdue reminders, and every failed automation surfaces in an admin health panel.",
       es: "Un tablero vecinal para prestar herramientas. Los vecinos publican, piden rangos de fechas, aprueban y devuelven préstamos. n8n envía correos firmados y recordatorios diarios de atrasos, y cada automatización fallida aparece en un panel de salud para el admin.",
@@ -112,11 +129,11 @@ export const PROJECTS: Project[] = [
     image: "/work/lendloop.webp",
   },
   {
-    code: "A02",
+    code: "A03",
     line: "ai",
     title: "MeetingNotes",
     period: "2026",
-    featured: 5,
+    featured: 6,
     summary: {
       en: "A menu-bar meeting recorder for macOS. It captures system audio and microphone, transcribes on-device with whisper.cpp, labels who said what, and writes a Markdown note with summary, decisions and action items using Claude, OpenAI, Groq or a local Ollama model.",
       es: "Una grabadora de reuniones en la barra de menú de macOS. Captura el audio del sistema y el micrófono, transcribe en el equipo con whisper.cpp, identifica quién habló y escribe una nota en Markdown con resumen, decisiones y tareas usando Claude, OpenAI, Groq o un modelo local de Ollama.",
@@ -126,11 +143,11 @@ export const PROJECTS: Project[] = [
     stack: ["Swift", "ScreenCaptureKit", "whisper.cpp", "sherpa-onnx", "LLM APIs"],
   },
   {
-    code: "A01",
+    code: "A02",
     line: "ai",
     title: "OPIc Simulator",
     period: "2026",
-    featured: 4,
+    featured: 5,
     summary: {
       en: "A full simulation of the OPIc speaking exam. Answers are recorded and transcribed locally with Whisper; Claude grades each transcript per dimension, and the report quotes the candidate's own mistakes, corrects them, and shows the arithmetic behind the final band.",
       es: "Una simulación completa del examen oral OPIc. Las respuestas se graban y transcriben localmente con Whisper; Claude califica cada transcripción por dimensión, y el informe cita los errores del candidato, los corrige y muestra el cálculo detrás de la nota final.",
@@ -387,9 +404,9 @@ export const ROLES: Role[] = [
     kind: { en: "Part-time", es: "Medio tiempo", ko: "파트타임" },
     points: [
       {
-        en: "Designed and built the student platform: auth, calendar, real-time chat, push notifications and recorded classes.",
-        es: "Diseñé y construí la plataforma de estudiantes: autenticación, calendario, chat en tiempo real, notificaciones push y clases grabadas.",
-        ko: "학생 플랫폼 설계·구축: 인증, 캘린더, 실시간 채팅, 푸시 알림, 녹화 강의.",
+        en: "Designed and built the student platform for 400+ students: OAuth login, calendar, real-time chat, push notifications and recorded classes.",
+        es: "Diseñé y construí la plataforma para más de 400 estudiantes: login OAuth, calendario, chat en tiempo real, notificaciones push y clases grabadas.",
+        ko: "학생 400명 이상이 쓰는 플랫폼 설계·구축: OAuth 로그인, 캘린더, 실시간 채팅, 푸시 알림, 녹화 강의.",
       },
       {
         en: "Mentored 20+ junior developers in React, Node.js and API practices through weekly sessions and code review.",

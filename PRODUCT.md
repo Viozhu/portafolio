@@ -21,7 +21,7 @@ Personal portfolio of Jorge Ignacio Garay. It exists to turn a visit into a conv
 
 ## Positioning
 
-Full Stack developer (6+ years, React / Next.js / Flutter / Node / TypeScript) whose recent work centers on applied AI: products where LLMs and speech models do real work inside a shipped app (local transcription + summarization, AI-graded speaking exams, automated notification pipelines). Backed by production experience in healthcare, logistics and edtech, plus mentoring 20+ junior developers.
+Full Stack developer (5+ years, React / Next.js / Flutter / Node / TypeScript) whose recent work centers on applied AI: products where LLMs and speech models do real work inside a shipped app (local transcription + summarization, AI-graded speaking exams, automated notification pipelines). Backed by production experience in healthcare, logistics, edtech and finance, plus mentoring 20+ junior developers.
 
 ## Operating Context
 

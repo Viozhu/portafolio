@@ -93,7 +93,7 @@ export const RouteMap = () => {
                             )}
                             {!p.live && !p.repo && (
                               <span className="text-sm font-medium text-steel">
-                                {p.line === "ai" ? t("private_repo") : p.line === "product" ? t("company_work") : ""}
+                                {p.line === "ai" && !p.company ? t("private_repo") : p.line !== "play" ? t("company_work") : ""}
                               </span>
                             )}
                           </div>
