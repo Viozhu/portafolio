@@ -157,16 +157,6 @@
     color: #fff;
     text-shadow: 0 0 1px #fff, 0 0 0.18em var(--tube), 0 0 0.6em var(--tube), 0 0 1.2em color-mix(in srgb, var(--tube) 45%, transparent);
   }
-  .tube-off {
-    color: color-mix(in srgb, var(--tube) 55%, #3a2a55);
-    text-shadow: none;
-    transition: color 160ms ease-out, text-shadow 160ms ease-out;
-  }
-  .group:hover .tube-off,
-  .group:focus-within .tube-off {
-    color: #fff;
-    text-shadow: 0 0 1px #fff, 0 0 0.18em var(--tube), 0 0 0.6em var(--tube);
-  }
   .tube-btn {
     position: relative;
     display: inline-flex;
@@ -192,6 +182,8 @@
     background: color-mix(in srgb, var(--c) 82%, #fff);
   }
   .hud-btn {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
     display: inline-flex;
     min-height: 2rem;
     align-items: center;
@@ -223,21 +215,12 @@
   [data-power].is-on:hover .power-tube {
     text-shadow: 0 0 1px #fff, 0 0 0.2em var(--tube), 0 0 0.8em var(--tube), 0 0 1.4em color-mix(in srgb, var(--tube) 45%, transparent);
   }
-  .board-blink {
-    animation: board-blink 1.6s steps(2, jump-none) infinite;
-  }
   /* the street's own overlays fade out as the camera leaves for the towers */
   .street-only {
     opacity: var(--street, 1);
   }
   [data-street="off"] .street-only {
     visibility: hidden;
-  }
-  .no-scrollbar {
-    scrollbar-width: none;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
   }
 }
 
@@ -254,10 +237,6 @@
   4%, 14%, 26%, 100% { opacity: 1; }
   40% { opacity: 0.55; }
   46% { opacity: 1; }
-}
-@keyframes board-blink {
-  0% { opacity: 1; }
-  100% { opacity: 0.35; }
 }
 @keyframes glitch-slice {
   0% {
@@ -282,15 +261,7 @@
   }
   .glitch.is-hit::before,
   .glitch.is-hit::after,
-  [data-power].is-on .power-tube,
-  .board-blink {
+  [data-power].is-on .power-tube {
     animation: none;
-  }
-}
-
-/* the hero panel sheds detail on short desktop screens so the signs stay clear */
-@media (min-width: 1024px) and (max-height: 840px) {
-  .short-hide {
-    display: none;
   }
 }

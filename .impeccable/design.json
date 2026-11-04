@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-04T02:22:53+00:00",
+  "generatedAt": "2026-11-04T03:34:50+00:00",
   "title": "Design System: Jorge Ignacio Garay",
   "extensions": {
     "colorMeta": {
@@ -76,7 +76,7 @@
       },
       "haze": {
         "role": "neutral",
-        "displayName": "Haze",
+        "displayName": "Haze (Experience Lilac)",
         "tonalRamp": [
           "oklch(15% 0.029 295)",
           "oklch(25% 0.037 295)",
@@ -213,6 +213,20 @@
           "oklch(83% 0.122 50)",
           "oklch(95% 0.093 50)"
         ]
+      },
+      "led-amber": {
+        "role": "tertiary",
+        "displayName": "LED Amber",
+        "tonalRamp": [
+          "oklch(15% 0.06 75)",
+          "oklch(25% 0.08 75)",
+          "oklch(35% 0.1 75)",
+          "oklch(47% 0.13 75)",
+          "oklch(59% 0.15 75)",
+          "oklch(71% 0.16 75)",
+          "oklch(83% 0.13 75)",
+          "oklch(95% 0.06 75)"
+        ]
       }
     },
     "typographyMeta": {
@@ -222,31 +236,35 @@
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section titles, white with chroma."
+        "purpose": "Stop panel titles: lobby tower names as tubes; Stack and Contact white with chroma."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Project and company names lit as tubes in the line colour."
+        "purpose": "Project and company names on floor panels, lit as tubes in the tower colour."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "Elevator readout floor code (L / nF / R / B1 / B2), white with tower-colour glow."
       },
       "sign-hangul": {
         "displayName": "Sign Hangul",
-        "purpose": "Hangul neon lettering on canvas signs and sign plates."
+        "purpose": "Hangul neon lettering on canvas signs, sized to the sign."
       },
       "lead": {
         "displayName": "Lead",
-        "purpose": "Intro paragraph under a section headline, max 56ch."
+        "purpose": "Role line under the hero name, max 30ch."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Default reading text in bone."
+        "purpose": "Default reading text; panel paragraphs at 1.625 in lilac soft."
       },
       "body-sm": {
         "displayName": "Body Small",
-        "purpose": "Sign panel copy, playground summaries, link rows."
+        "purpose": "Project links and floor-button labels."
       },
       "label": {
         "displayName": "HUD Label",
-        "purpose": "Uppercase monospace instrumentation: HUD, codes, periods, stack lists, board, nav (0.75rem)."
+        "purpose": "Uppercase monospace instrumentation: HUD, readout count, floor meta, stack lists, nav (0.75rem)."
       }
     },
     "shadows": [
@@ -291,16 +309,6 @@
         "purpose": "HUD button hover."
       },
       {
-        "name": "panel-edge",
-        "value": "inset 0 1px 0 <line>, 0 -12px 40px -24px <line>",
-        "purpose": "Sign panel lit from its top edge."
-      },
-      {
-        "name": "plate-spill",
-        "value": "inset 0 0 0 1px <line>45, 0 18px 40px -22px <line>",
-        "purpose": "Hangul sign plates with light pooling beneath."
-      },
-      {
         "name": "pip",
         "value": "0 0 6px <colour>",
         "purpose": "6px lit square separators."
@@ -309,6 +317,31 @@
         "name": "focus",
         "value": "outline: 2px solid #05d9e8; outline-offset: 3px",
         "purpose": "Global focus-visible ring."
+      },
+      {
+        "name": "panel-edge",
+        "value": "inset 0 1px 0 <tower>, 0 -14px 44px -26px <tower>",
+        "purpose": "Every stop panel, lit from its top edge in the tower colour."
+      },
+      {
+        "name": "readout-glow",
+        "value": "text-shadow: 0 0 10px <tower>",
+        "purpose": "Elevator readout floor code."
+      },
+      {
+        "name": "now-badge",
+        "value": "0 0 14px -2px #ff2a6d",
+        "purpose": "NOW badge halo."
+      },
+      {
+        "name": "footer-edge",
+        "value": "0 0 18px 2px rgba(249,240,2,0.5)",
+        "purpose": "The acid platform-edge line above the footer."
+      },
+      {
+        "name": "hud-band",
+        "value": "linear-gradient(180deg, #05010f 0%, #05010f 62%, rgba(5,1,15,0) 100%); height 8rem (9rem < sm); opacity 1 - var(--street)",
+        "purpose": "Ink band under the HUD, faded in once the camera leaves the street."
       }
     ],
     "motion": [
@@ -323,19 +356,54 @@
         "purpose": "HUD button colour and ring."
       },
       {
+        "name": "camera-between-stops",
+        "value": "position: smoothstep 3t^2 - 2t^3 of fractional step; zoom: exp(lerp(log z0, log z1, t)); step = page scroll measured from stop centres to stage centre",
+        "purpose": "Scroll camera from street to lobby, floors, roof, station, platform."
+      },
+      {
+        "name": "camera-framing",
+        "value": "desktop subject at 30% x / 50% y; mobile (<768px) at 50% x / 24% y",
+        "purpose": "Leaves room for the stop panel (right on desktop, bottom on phones)."
+      },
+      {
+        "name": "pointer-parallax",
+        "value": "±34px x, ±10px y scaled by (1 - progress); ease 1 - exp(-2.6 dt); idle after 4s: x = sin(0.11t)*0.55, y = sin(0.07t + 1)*0.25",
+        "purpose": "Street-only pointer parallax and idle wander."
+      },
+      {
+        "name": "street-fade",
+        "value": "--street = 1 - clamp(2.2 * progress); hidden below 0.05",
+        "purpose": "Street overlays fade out and the HUD band fades in over the first ~45% of the first transition."
+      },
+      {
+        "name": "elevator",
+        "value": "car floor = clamp(progress - lobbyStep - 1, -1, floors - 1)",
+        "purpose": "Glass car follows the scroll continuously; floors light as it passes."
+      },
+      {
+        "name": "train-arrival",
+        "value": "a = clamp((progress - (platformStep - 1)) / 0.85); x offset (1 - (1 - a)^3) from trainLen + 400u; acid streaks at 0.06 * (1 - ease)",
+        "purpose": "Train brakes into the platform over the station-to-platform scroll; reverses on scroll back."
+      },
+      {
+        "name": "doors",
+        "value": "open = clamp((time - arrived - 0.35s) / 0.7s); screen doors slide 28% of panel width; lamps cyan to acid and board ARRIVING to BOARDING past 0.5",
+        "purpose": "Train and platform screen doors open together on clock time once parked."
+      },
+      {
+        "name": "board-status-blink",
+        "value": "visible while sin(5t) > -0.3 (~1.26s cycle)",
+        "purpose": "LED departure board status cell."
+      },
+      {
         "name": "power-on",
         "value": "900ms linear, once; opacity 0.18 at 0/8/20/34%, 1 at 4/14/26%, 0.55 at 40%, 1 from 46%",
-        "purpose": "Rows and plates lighting the first time they scroll in (rootMargin -12% bottom)."
+        "purpose": "Stop panel titles lighting the first time they scroll in (rootMargin -12% bottom)."
       },
       {
         "name": "glitch-slice",
         "value": "420ms steps(2, end)",
         "purpose": "Hero name magenta/cyan slices on a user lightning strike."
-      },
-      {
-        "name": "board-blink",
-        "value": "1.6s steps(2, jump-none) infinite, 1 to 0.35",
-        "purpose": "Departure board final row."
       },
       {
         "name": "ticker",
@@ -345,31 +413,31 @@
       {
         "name": "neon-failure",
         "value": "every 4-15s: stutter 45% (0.25-0.7s, flicker 1/0.12), dropout 30% (70-210ms at 0.06), brownout 25% (0.4-1.2s at 0.48 ±0.05 at 60Hz)",
-        "purpose": "Canvas sign idle failures; unselected signs rest at 0.6, selected at 1 with a 3.2s scan band."
+        "purpose": "Canvas sign idle failures; rest at 0.6, chosen sign and the sign beside the floor being read at 1; chosen sign has a 3.2s scan band."
       },
       {
         "name": "selection-stutter",
-        "value": "0.5s stutter",
-        "purpose": "Choosing a sign."
+        "value": "0.5s stutter; camera rides to the floor 480ms after choosing",
+        "purpose": "Choosing a hangul sign."
+      },
+      {
+        "name": "open-sign-fit",
+        "value": "top 60px; limit = name top - 14px; glyph = min(clamp(0.026W, 26, 40), (limit - top) / 1.5); dropped below 18px and below 768px",
+        "purpose": "OPEN sign fits itself above the hero name."
       },
       {
         "name": "rain-diagonal",
-        "value": "dx = 0.27 * dy; 3 depth passes at 0.28/0.38/0.5 alpha; density levels 0.32/0.62/1",
-        "purpose": "Hero rain; the rain veil repeats the slant at rgba(185,169,214,0.13)."
-      },
-      {
-        "name": "camera-drift",
-        "value": "ease 1 - exp(-2.6 dt); idle after 4s: x = sin(0.11t) * 0.55, y = sin(0.07t + 1) * 0.25",
-        "purpose": "Pointer parallax and idle wander."
+        "value": "dx = 0.27 * dy; 3 depth passes at 0.28/0.38/0.5 alpha; density levels 0.32/0.62/1; x(0.35 + 0.65 * street) off the street; clipped out of the underground",
+        "purpose": "Rain everywhere it falls."
       },
       {
         "name": "lightning-envelope",
-        "value": "pulses 1.0@0, 0.55@70ms, 0.85@200ms, each exp decay tau 65ms; bolt visible 340ms; ambient 0.35 exp(-t/0.12) + 0.2 echo at 160ms",
+        "value": "pulses 1.0@0, 0.55@70ms, 0.85@200ms, each exp decay tau 65ms; bolt visible 340ms; user cooldown 1.2s; ambient every 14-32s (7-16s Monsoon) at 0.35 exp(-t/0.12) + 0.2 echo at 160ms",
         "purpose": "User and ambient strikes lighting sky, skyline and street."
       },
       {
         "name": "reduced-motion",
-        "value": "signs steady; parallax 35% at ease 1.5/s, no idle drift; rain 30% density, 55% speed; no ambient strikes; strike = single 0.45 flash (tau 350ms), no bolt, no glitch; ripple 1.5px; walkers/steam halved; rain veil not drawn; power-on/glitch/board-blink animation none; ticker 600s; scroll-behavior auto",
+        "value": "camera snaps to nearest stop; parallax 35% at ease 1.5/s, no idle wander; signs, OPEN (0.9), station sign and fluorescents steady; train parked within half a step of the platform, doors open at once, no streaks, board status steady; rain 30% density, 55% speed; no ambient strikes; strike = single 0.45 flash (tau 350ms), no bolt, no glitch; ripple 1.5px; walkers/steam halved; power-on/glitch animation none; ticker 600s; scroll-behavior auto and instant in-page jumps",
         "purpose": "Implemented prefers-reduced-motion fallbacks."
       }
     ],
@@ -380,7 +448,7 @@
       },
       {
         "name": "md",
-        "value": "768px"
+        "value": "768px (scene mobile camera below)"
       },
       {
         "name": "lg",
@@ -389,10 +457,6 @@
       {
         "name": "xl",
         "value": "1280px"
-      },
-      {
-        "name": "lg-short",
-        "value": "(min-width: 1024px) and (max-height: 840px)"
       }
     ]
   },
@@ -430,36 +494,36 @@
       "css": ".ds-nav{display:flex;align-items:center;gap:24px;height:3.5rem;padding:0 16px;background:#05010f;border-bottom:1px solid #2a1a47}.ds-mark{font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;text-transform:uppercase;font-size:1.7rem;line-height:.88;color:#fff;text-decoration:none;text-shadow:-1.5px 0 0 rgba(255,42,109,.8),1.5px 0 0 rgba(5,217,232,.7)}.ds-nav nav{margin-left:auto;display:flex}.ds-nav nav a,.ds-lang a{font-family:ui-monospace,Menlo,monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}.ds-nav nav a{padding:8px 12px;color:#d8ccef;transition:color 150ms}.ds-nav nav a:hover{color:#05d9e8}.ds-lang{display:flex}.ds-lang a{display:flex;height:2.25rem;min-width:2.5rem;align-items:center;justify-content:center;color:#b9a9d6}.ds-lang a:hover{color:#fff}.ds-lang a[aria-current]{color:#ff2a6d;text-shadow:0 0 8px #ff2a6d;box-shadow:inset 0 -2px 0 #ff2a6d}.ds-nav a:focus-visible{outline:2px solid #05d9e8;outline-offset:3px}"
     },
     {
-      "name": "Sign Panel",
+      "name": "Elevator Readout",
+      "kind": "custom",
+      "refersTo": "elevator-readout",
+      "description": "Bracketed HUD chip under the HUD buttons: tower-coloured triangle, floor code, floor count and tower name.",
+      "html": "<div style=\"background:#05010f;padding:16px\"><div class=\"ds-readout\" style=\"--t:#ff2a6d\"><svg viewBox=\"0 0 10 10\" width=\"10\" height=\"10\"><path d=\"M5 1 9 8H1z\" fill=\"#ff2a6d\"/></svg><span class=\"ds-readout-code\">2F</span><span class=\"ds-readout-count\">/ 4F · APPLIED AI</span></div></div>",
+      "css": ".ds-readout{display:inline-flex;align-items:center;gap:12px;padding:8px 12px;background-color:rgba(5,1,15,.7);background-image:linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55));background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right;background-size:10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px;background-repeat:no-repeat;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase}.ds-readout-code{font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;font-size:1.75rem;line-height:1;letter-spacing:-.01em;color:#fff;text-shadow:0 0 10px var(--t)}.ds-readout-count{color:#b9a9d6}"
+    },
+    {
+      "name": "Stop Panel",
       "kind": "card",
-      "refersTo": "sign-panel",
-      "description": "The selected sign read out: bracketed translucent ink, lit from its top edge in the line colour.",
-      "html": "<article class=\"ds-panel ds-brackets\" style=\"--l:#ff2a6d\"><h3 class=\"ds-tube-title\">Accounting Pipeline</h3><p class=\"ds-meta\"><span style=\"color:#ff2a6d\">A01</span><i class=\"ds-pip\"></i><span>Applied AI &amp; automation</span><i class=\"ds-pip\" style=\"--l:#4a3a6a\"></i><span>2026 – now</span></p><p class=\"ds-copy\">Reads statements from 12 banks and matches each movement to its e-invoice.</p><a class=\"ds-link\" href=\"#\">View live</a></article>",
-      "css": ".ds-panel{position:relative;max-width:27rem;padding:24px;background:rgba(5,1,15,.9);box-shadow:inset 0 1px 0 var(--l),0 -12px 40px -24px var(--l)}.ds-brackets{--b:rgba(185,169,214,.55);background-image:linear-gradient(var(--b),var(--b)),linear-gradient(var(--b),var(--b)),linear-gradient(var(--b),var(--b)),linear-gradient(var(--b),var(--b)),linear-gradient(var(--b),var(--b)),linear-gradient(var(--b),var(--b)),linear-gradient(var(--b),var(--b)),linear-gradient(var(--b),var(--b));background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right;background-size:10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px;background-repeat:no-repeat}.ds-tube-title{margin:0;font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;text-transform:uppercase;line-height:.88;font-size:2.5rem;color:#fff;text-shadow:0 0 1px #fff,0 0 .18em var(--l),0 0 .6em var(--l)}.ds-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:10px 0 0;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#b9a9d6}.ds-pip{display:inline-block;width:6px;height:6px;background:var(--l);box-shadow:0 0 6px var(--l)}.ds-copy{margin:12px 0 0;font-family:Archivo,sans-serif;font-size:.9375rem;line-height:1.625;color:#b9a9d6}.ds-link{display:inline-block;margin-top:20px;font-family:Archivo,sans-serif;font-weight:600;color:#fff;text-decoration:underline 2px var(--l);text-underline-offset:.22em}.ds-link:focus-visible{outline:2px solid #05d9e8;outline-offset:3px}"
+      "refersTo": "stop-panel",
+      "description": "The one panel of each ride stop: bracketed 95% ink, lit from its top edge in the tower colour; floor variant shown.",
+      "html": "<article class=\"ds-panel\" style=\"--l:#ff2a6d\"><h3 class=\"ds-tube-title\">OPIc Simulator</h3><p class=\"ds-meta\"><span style=\"color:#ff2a6d\">2F</span><i class=\"ds-pip\"></i><span>A02</span><i class=\"ds-pip\" style=\"--l:#4a3a6a\"></i><span>2026</span></p><p class=\"ds-copy\">A full simulation of the OPIc speaking exam, graded per dimension.</p><ul class=\"ds-stack\"><li>Python</li><li>Whisper</li><li>Claude API</li></ul><a class=\"ds-link\" href=\"#\">Source code</a></article>",
+      "css": ".ds-panel{--tube:var(--l);position:relative;max-width:36rem;padding:28px;background-color:rgba(5,1,15,.95);background-image:linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55));background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right;background-size:10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px;background-repeat:no-repeat;box-shadow:inset 0 1px 0 var(--l),0 -14px 44px -26px var(--l)}.ds-tube-title{margin:0;font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;text-transform:uppercase;line-height:.88;letter-spacing:-.01em;font-size:3.25rem;color:#fff;text-shadow:0 0 1px #fff,0 0 .16em var(--l),0 0 .5em color-mix(in srgb,var(--l) 70%,transparent);animation:ds-power-on 900ms linear 1}.ds-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:10px 0 0;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#b9a9d6}.ds-pip{display:inline-block;width:6px;height:6px;background:var(--l);box-shadow:0 0 6px var(--l)}.ds-copy{margin:12px 0 0;max-width:62ch;font-family:Archivo,sans-serif;font-size:1.0625rem;line-height:1.625;color:#cfc3e6}.ds-stack{display:flex;flex-wrap:wrap;gap:4px 12px;margin:16px 0 0;padding:0;list-style:none;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#b9a9d6}.ds-stack li::before{content:'';display:inline-block;width:8px;height:1px;margin-right:6px;vertical-align:middle;background:var(--l)}.ds-link{display:inline-block;margin-top:20px;font-family:Archivo,sans-serif;font-size:.9375rem;font-weight:600;color:#fff;text-decoration:underline 2px var(--l);text-underline-offset:.22em}.ds-link:focus-visible{outline:2px solid #05d9e8;outline-offset:3px;border-radius:2px}@keyframes ds-power-on{0%,8%,20%,34%{opacity:.18}4%,14%,26%,100%{opacity:1}40%{opacity:.55}46%{opacity:1}}@media (prefers-reduced-motion:reduce){.ds-tube-title{animation:none}}"
     },
     {
-      "name": "Power-on Row",
-      "kind": "custom",
-      "refersTo": "title",
-      "description": "Directory row whose tube title lights with a stutter the first time it scrolls in.",
-      "html": "<div class=\"ds-row\"><div class=\"ds-rail\"><span style=\"color:#05d9e8\">P02</span><span>2022 – 2024</span></div><div><h4 class=\"ds-power\">Numen Platform</h4><ul class=\"ds-stack\"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul></div></div>",
-      "css": ".ds-row{--tube:#05d9e8;display:grid;grid-template-columns:6.5rem 1fr;gap:16px 32px;padding:36px 0;border-bottom:1px solid #2a1a47;background:#05010f}.ds-rail{display:flex;flex-direction:column;gap:6px;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#b9a9d6}.ds-power{margin:0;font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;text-transform:uppercase;line-height:.88;font-size:2.9rem;color:#fff;text-shadow:0 0 1px #fff,0 0 .16em var(--tube),0 0 .5em color-mix(in srgb,var(--tube) 70%,transparent);animation:ds-power-on 900ms linear 1;transition:text-shadow 200ms ease-out}.ds-row:hover .ds-power{text-shadow:0 0 1px #fff,0 0 .2em var(--tube),0 0 .8em var(--tube),0 0 1.4em color-mix(in srgb,var(--tube) 45%,transparent)}.ds-stack{display:flex;flex-wrap:wrap;gap:4px 12px;margin:16px 0 0;padding:0;list-style:none;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#b9a9d6}.ds-stack li::before{content:'';display:inline-block;width:8px;height:1px;margin-right:6px;vertical-align:middle;background:var(--tube)}@keyframes ds-power-on{0%,8%,20%,34%{opacity:.18}4%,14%,26%,100%{opacity:1}40%{opacity:.55}46%{opacity:1}}@media (prefers-reduced-motion:reduce){.ds-power{animation:none}}"
+      "name": "Floor Directory",
+      "kind": "nav",
+      "refersTo": "floor-button",
+      "description": "Lobby elevator buttons: every floor of the tower, top floor first, on a 1px wire grid.",
+      "html": "<nav class=\"ds-dir\" style=\"--l:#05d9e8\"><ol><li><button>4F<span>Numen Academy</span></button></li><li><button>3F<span>Utomata App</span></button></li><li><button>2F<span>OpenHelp</span></button></li><li><button>1F<span>Numen Platform</span></button></li></ol></nav>",
+      "css": ".ds-dir{max-width:30rem;background:#05010f;padding:12px}.ds-dir ol{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:0;padding:0;list-style:none;background:#2a1a47}.ds-dir li{background:#05010f}.ds-dir button{display:flex;width:100%;align-items:center;gap:12px;padding:10px 12px;border:0;border-radius:0;background:#05010f;color:var(--l);font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;text-align:left;cursor:pointer;transition:background-color 150ms}.ds-dir button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:Archivo,sans-serif;font-size:.9375rem;font-weight:500;letter-spacing:0;text-transform:none;color:#f3eefc}.ds-dir button:hover{background:#120725}.ds-dir button:hover span{color:#fff}.ds-dir button:focus-visible{outline:2px solid #05d9e8;outline-offset:3px;border-radius:2px}"
     },
     {
-      "name": "Sign Plate",
+      "name": "Platform Edge Footer",
       "kind": "custom",
-      "refersTo": "sign-hangul",
-      "description": "Hangul neon plate hung on two wire stubs, for projects without a screenshot.",
-      "html": "<div class=\"ds-plate-wrap\"><span class=\"ds-stub\" style=\"left:22%\"></span><span class=\"ds-stub\" style=\"right:22%\"></span><div class=\"ds-plate\"><span lang=\"ko\">누멘</span></div></div>",
-      "css": ".ds-plate-wrap{--tube:#05d9e8;position:relative;width:13rem;padding-top:20px;background:#05010f}.ds-stub{position:absolute;top:0;width:1px;height:20px;background:#2a1a47}.ds-plate{display:flex;aspect-ratio:16/9;align-items:center;justify-content:center;background:#0b0418;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tube) 27%,transparent),0 18px 40px -22px var(--tube)}.ds-plate span{font-family:'Gothic A1 Heavy','Apple SD Gothic Neo',sans-serif;font-weight:800;font-size:2.6rem;letter-spacing:.06em;color:#fff;text-shadow:0 0 1px #fff,0 0 .16em var(--tube),0 0 .5em color-mix(in srgb,var(--tube) 70%,transparent)}"
-    },
-    {
-      "name": "Departure Board",
-      "kind": "custom",
-      "refersTo": "departure-board",
-      "description": "Last-train board in the HUD voice; the final row blinks acid.",
-      "html": "<div class=\"ds-board\"><p class=\"ds-board-head\"><span>Last train</span><span style=\"color:#b9a9d6\">KST</span></p><dl><div><dt>Reply</dt><dd>Within 24 h</dd></div><div><dt>Platform</dt><dd>Remote</dd></div><div><dt>Status</dt><dd class=\"ds-blink\">Boarding</dd></div></dl></div>",
-      "css": ".ds-board{max-width:42rem;padding:16px 20px;background:rgba(5,1,15,.7);background-image:linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55));background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right;background-size:10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px;background-repeat:no-repeat;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase}.ds-board-head{display:flex;justify-content:space-between;margin:0;padding-bottom:12px;border-bottom:1px solid #2a1a47;color:#f9f002}.ds-board dl{margin:4px 0 0}.ds-board dl div{display:flex;justify-content:space-between;gap:24px;padding:10px 0;border-bottom:1px solid rgba(42,26,71,.6)}.ds-board dl div:last-child{border-bottom:0}.ds-board dt{color:#b9a9d6}.ds-board dd{margin:0;color:#fff}.ds-board dd.ds-blink{color:#f9f002;animation:ds-blink 1.6s steps(2,jump-none) infinite}@keyframes ds-blink{0%{opacity:1}100%{opacity:.35}}@media (prefers-reduced-motion:reduce){.ds-board dd.ds-blink{animation:none}}"
+      "refersTo": "neon-acid",
+      "description": "Footer as the platform edge: acid tactile dots, a glowing acid line, then the copyright.",
+      "html": "<footer class=\"ds-foot\"><div class=\"ds-tactile\"></div><div class=\"ds-edge\"></div><p>© 2026 · Designed and built by Jorge Ignacio Garay in Seoul.</p></footer>",
+      "css": ".ds-foot{background:#05010f}.ds-tactile{height:12px;background:radial-gradient(circle,#f9f002 1.6px,transparent 2.2px) 0 0/9px 9px,#3a3405}.ds-edge{height:1px;background:#f9f002;box-shadow:0 0 18px 2px rgba(249,240,2,.5)}.ds-foot p{margin:0;padding:40px 16px;font-family:Archivo,sans-serif;font-size:.875rem;line-height:1.625;color:#b9a9d6}"
     },
     {
       "name": "NOW Badge",
@@ -472,18 +536,19 @@
   ],
   "narrative": {
     "northStar": "The Alley After Last Train",
-    "overview": "**Creative North Star: \"The Alley After Last Train\"**\n\nThe whole site is one wet Seoul side street at 1 a.m. The first viewport is a procedural canvas: violet skyline, near towers hung with vertical hangul neon signs (one per featured project), orange pojangmacha tents with walkers and steam, an OPEN sign with a dead N, a rippled reflection on the asphalt, diagonal rain and lightning on demand. Everything below the street is the same street walked on foot: every project as a lit sign row, experience as a dated shift log, the stack, and a last-train departure board. Copy sits on near-black ink so the neon is the only light; the light source is always the line's own colour.\n\nDensity is generous on the street and tight in the HUD. Display type is condensed uppercase Archivo pushed to 62% width with a magenta/cyan chromatic split; system chrome is ui-monospace in small tracked caps between corner brackets. Corners are square everywhere. Depth comes from glow and from the reflection, never from lifted cards.\n\nMotion is the world's weather, not decoration: neon fails like old glass, rain falls on one diagonal, the camera drifts with the pointer, rows power on once with a stutter. Everything else stays still, and every one of those motions has an implemented reduced-motion fallback.",
+    "overview": "**Creative North Star: \"The Alley After Last Train\"**\n\nThe whole page is one Seoul block at 1 a.m. in the rain, seen through one camera. The first viewport is the street: violet skyline, four towers with neon roof names (APPLIED AI, PRODUCT, PLAYGROUND, EXPERIENCE), vertical hangul signs hanging beside the floors they name, orange pojangmacha tents with walkers and steam, an OPEN sign with a dead N, a rippled reflection on the asphalt, diagonal rain and lightning on demand. Scrolling does not leave that street; it moves the camera into it. Each tower is a line of work and each floor a project, read through its window (screenshot, or the name lettered in neon) while a glass elevator rides the facade. The stack lights up as signs on masts over the roofs, then the camera goes down a lit stairwell to a cut-away subway platform where the last train brakes in, opens its doors, and the contact panel waits.\n\nEvery stop of the ride carries exactly one bracketed panel of near-black ink beside the subject, so the neon stays the only light and the light source is always the line's own colour. Display type is condensed uppercase Archivo at 62% width; on white type it carries a magenta/cyan chromatic split, on line-coloured type it glows as a tube. System chrome is ui-monospace in small tracked caps between corner brackets: the HUD, the elevator readout, codes, floors. Corners on the interface are square. Depth comes from glow, the reflection and the camera's own zoom, never from lifted cards.\n\nMotion is the world's weather and machinery, not decoration: neon fails like old glass, rain falls on one diagonal, the camera eases between stops, the elevator follows the scroll, the train brakes in and its doors open. Panels themselves scroll in plain page flow and only power on. Every one of those motions has an implemented reduced-motion fallback.",
     "keyCharacteristics": [
-      "Ink-black ground (#05010f) with three neon lines: magenta for applied AI, cyan for product work, acid yellow for the playground.",
-      "Condensed uppercase Archivo display with chromatic aberration; Gothic A1 Heavy for hangul sign lettering.",
-      "Monospace HUD voice in tracked caps, framed by 10px corner brackets.",
-      "Square geometry; light, not shadow, carries depth.",
-      "A single rain diagonal (dx = 0.27 · dy) shared by the hero scene and the rain veil below it."
+      "Ink-black ground (#05010f) with four towers: magenta applied AI, cyan product, acid playground, lilac experience; acid also lights the station.",
+      "Scroll is the camera: street → lobby → floors → roof → station → platform, one canvas behind a column of panels.",
+      "Condensed uppercase Archivo with chromatic aberration on white type; Gothic A1 Heavy for hangul sign lettering.",
+      "Monospace HUD voice in tracked caps framed by 10px corner brackets; the elevator readout (L / nF / R / B1 / B2) is the page's position.",
+      "Square interface geometry; light, not shadow, carries depth.",
+      "A single rain diagonal (dx = 0.27 · dy) everywhere it falls."
     ],
     "rules": [
       {
-        "name": "The Line Owns Its Light Rule",
-        "body": "Each body of work has exactly one neon colour (AI magenta, product cyan, playground acid). Every surface that belongs to a project (sign, tube title, code, divider, stack ticks, link underline, panel top edge) takes that line's colour and nothing else.",
+        "name": "The Tower Owns Its Light Rule",
+        "body": "Each tower has exactly one colour (AI magenta, product cyan, playground acid, experience lilac). Every surface that belongs to a tower (roof name, lobby glow, floor window outline, hangul sign, panel top edge, title tube, floor number, stack ticks, link underline, readout glow) takes that colour and nothing else. The one override is hot: the current role is lit magenta.",
         "section": "colors"
       },
       {
@@ -492,8 +557,8 @@
         "section": "colors"
       },
       {
-        "name": "The Tent Stays In The Street Rule",
-        "body": "Tent orange belongs to the canvas world. It never becomes a fourth line or a UI accent.",
+        "name": "The World Lights Stay In The World Rule",
+        "body": "Tent orange and LED amber belong to the canvas. They never become a tower colour or a UI accent.",
         "section": "colors"
       },
       {
@@ -502,13 +567,23 @@
         "section": "typography"
       },
       {
-        "name": "The Chroma Is For Headlines Rule",
-        "body": "The magenta/cyan split (±0.045em, `.chroma`) sits on white display and headline type; `.chroma-sm` (±1.5px) only on the JG mark. Line-coloured titles glow as tubes instead and never get chroma.",
+        "name": "The Chroma Is For White Type Rule",
+        "body": "The magenta/cyan split (±0.045em) sits on white display and headline type; the ±1.5px cut only on the JG mark. Tower-coloured titles glow as tubes instead and never get chroma.",
         "section": "typography"
       },
       {
-        "name": "The Rails Not Cards Rule",
-        "body": "Lists are rows on hairlines with a monospace rail on the left. No card grids.",
+        "name": "The Names Keep Their Case Rule",
+        "body": "Brand words with a lowercase tail after two or more capitals (OPIc) keep their casing inside uppercase styles and in canvas lettering.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Panel Per Stop Rule",
+        "body": "Every stop of the ride carries exactly one panel beside the subject the camera is framing. Lists inside a panel are hairline rows or the wire-gridded floor directory; never card grids.",
+        "section": "layout"
+      },
+      {
+        "name": "The Camera Not The Content Rule",
+        "body": "Movement between stops belongs to the canvas camera. The panels scroll at page speed and never slide, fade or parallax on their own.",
         "section": "layout"
       },
       {
@@ -518,19 +593,21 @@
       }
     ],
     "dos": [
-      "Do give every project surface its line's single neon colour: magenta AI, cyan product, acid playground.",
+      "Do give every surface of a tower its single colour: magenta AI, cyan product, acid playground, lilac experience; light the current role magenta.",
+      "Do put new content on the ride as a stop: a camera key on the canvas plus one panel beside it.",
       "Do set signs, names and titles in condensed uppercase Archivo (62% width, 800, 0.88 line-height), and hangul sign lettering in Gothic A1 Heavy.",
       "Do put all instrumentation in the 0.6875rem monospace label voice with 0.14em tracking and tabular numerals.",
-      "Do draw frames with 1px inset rings, 10px corner brackets and wire hairlines; keep every corner square.",
+      "Do draw interface frames with 1px inset rings, 10px corner brackets and wire hairlines; keep every interface corner square.",
       "Do express depth as emitted glow in the element's own colour, on ink grounds.",
       "Do keep the rain on the 0.27 diagonal everywhere it appears.",
-      "Do ship a reduced-motion branch for every new moving thing, and pause canvases off screen and in hidden tabs."
+      "Do ship a reduced-motion branch for every new moving thing, and pause the canvas off screen and in hidden tabs."
     ],
     "donts": [
-      "Don't add rounded corners, opaque filled cards or card grids, or dark offset drop shadows; panels are translucent ink with drawn frames.",
-      "Don't use tent orange or any fourth accent on UI chrome or text.",
-      "Don't put chroma on line-coloured tube titles or on body text.",
-      "Don't add motion outside the grammar (no scroll-triggered slides, fades or parallax on content); rows only power on.",
+      "Don't add rounded corners, opaque filled cards or card grids, or dark offset drop shadows to the interface; panels are translucent ink with drawn frames.",
+      "Don't use tent orange, LED amber or any fifth accent on UI chrome or text.",
+      "Don't put chroma on tower-coloured tube titles or on body text.",
+      "Don't animate panels on their own (no slides, fades or content parallax); the camera moves, panels only power on.",
+      "Don't let HUD and panels collide: anything that stays on screen during the ride sits in the HUD layer above the band.",
       "Don't set hangul in the condensed Latin cut without its Korean tracking and line-height overrides."
     ]
   }

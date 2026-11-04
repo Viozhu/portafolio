@@ -204,6 +204,7 @@ export class StreetScene {
   private tents: Tent[] = [];
   private walkers: Walker[] = [];
   private stationX = 0;
+  private openLimit = NaN;
   private trainArrived = -1;
   private keys: Cam[] = [];
   private asphalt!: HTMLCanvasElement;
@@ -339,6 +340,24 @@ export class StreetScene {
     // never more than one strike per 1.2s: three flash pulses each, kept under 3 flashes a second
     if (this.time - this.strikeAt < 1.2) return;
     this.fire(x ?? this.W * (0.15 + Math.random() * 0.7), y ?? this.H * 0.35, false);
+  }
+
+  /** Fit the OPEN sign between the HUD and the top of the name block (stage px). */
+  fitOpen(nameTop: number) {
+    this.openLimit = nameTop;
+    this.placeOpen();
+  }
+
+  private placeOpen() {
+    const { W, H, mobile } = this;
+    this.open = null;
+    if (mobile || !W) return;
+    const top = 60;
+    const limit = Number.isFinite(this.openLimit) ? this.openLimit - 14 : Math.max(78, H * 0.1) + 60;
+    const g = Math.min(clamp(W * 0.026, 26, 40), (limit - top) / 1.5);
+    if (g < 18) return;
+    const h = g * 1.5;
+    this.open = { x: W * 0.3, y: Math.max(top, limit - h), w: g * 3.4, h, g };
   }
 
   /** Which tower is under a screen point, or -1. */
@@ -576,11 +595,7 @@ export class StreetScene {
       fx += w + 6;
     }
 
-    this.open = null;
-    if (!mobile) {
-      const g = clamp(W * 0.026, 26, 40);
-      this.open = { x: W * 0.33, y: Math.max(78, H * 0.1), w: g * 3.4, h: g * 1.5, g };
-    }
+    this.placeOpen();
   }
 
   private spill(color: string) {
@@ -1105,6 +1120,7 @@ export class StreetScene {
         ctx.fillRect(wx, wy, ww, wh);
         this.neonText(f.text, wx + ww / 2, wy + wh / 2, wh * 0.42, c, active ? 1 : 0.5, ww * 0.86);
       }
+      if (!this.o.reduced) {
       ctx.save();
       ctx.beginPath();
       ctx.rect(wx, wy, ww, wh);
@@ -1117,6 +1133,7 @@ export class StreetScene {
       ctx.fillStyle = sg;
       ctx.fillRect(wx, wy, ww, wh);
       ctx.restore();
+      }
     }
     ctx.fillStyle = "rgba(12,4,32,0.85)";
     const mw = Math.max(0.6, 1.4 / z);
@@ -1301,7 +1318,7 @@ export class StreetScene {
       ctx.globalAlpha = glow;
       ctx.fillStyle = "#1b0d33";
       ctx.fillRect(x - 0.75, y + size * 0.7, 1.5, this.H * 0.06);
-      const blink = (Math.sin(t * 2 + i) + 1) / 2 > 0.8 ? 1 : 0.3;
+      const blink = this.o.reduced ? 0.8 : (Math.sin(t * 2 + i) + 1) / 2 > 0.8 ? 1 : 0.3;
       ctx.fillStyle = `rgba(255,60,80,${blink})`;
       ctx.fillRect(x - 1.5, y + size * 0.7 + this.H * 0.06, 3, 3);
       ctx.globalAlpha = 1;
@@ -1454,16 +1471,6 @@ export class StreetScene {
     ctx.fillStyle = acid;
     ctx.fillRect(hx0, bandY, hx1 - hx0, 5 * u);
     ctx.restore();
-    // station name panels on the wall
-    for (let x = hx0 + trainLen * 0.12; x < hx1 - 120 * u; x += trainLen * 0.42) {
-      const pw = 150 * u;
-      const ph = 46 * u;
-      ctx.fillStyle = "#0a0417";
-      ctx.fillRect(x, bandY - ph - 14 * u, pw, ph);
-      ctx.fillStyle = "rgba(255,255,255,0.08)";
-      ctx.fillRect(x, bandY - ph - 14 * u, pw, thin);
-      this.neonText(o.station, x + pw / 2, bandY - ph / 2 - 14 * u, 18 * u, "#f3eefc", 0.9, pw - 16 * u);
-    }
     // ceiling and fluorescent strips (one of them failing)
     ctx.fillStyle = "#0a0418";
     ctx.fillRect(hx0, hy0, hx1 - hx0, 22 * u);

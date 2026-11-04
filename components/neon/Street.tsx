@@ -197,7 +197,13 @@ export const Street = () => {
         : Promise.resolve();
       await Promise.race([fonts, new Promise((r) => setTimeout(r, 1500))]).catch(() => undefined);
       if (disposed) return;
+      const fitOpen = () => {
+        const h1 = document.getElementById("hero-name");
+        const st = stage.current;
+        if (h1 && st) s.fitOpen(h1.getBoundingClientRect().top - st.getBoundingClientRect().top);
+      };
       s.layout();
+      fitOpen();
       s.setActive(START);
       measure();
       onScroll();
@@ -208,6 +214,7 @@ export const Street = () => {
         window.clearTimeout(resizeTimer);
         resizeTimer = window.setTimeout(() => {
           s.layout();
+          fitOpen();
           measure();
           onScroll();
         }, 120);
@@ -345,7 +352,7 @@ export const Street = () => {
           <div
             aria-hidden="true"
             className="absolute inset-x-0 top-0 h-36 sm:h-32"
-            style={{ opacity: "calc(1 - var(--street, 1))", background: "linear-gradient(180deg, rgba(5,1,15,0.96) 0%, rgba(5,1,15,0.88) 55%, rgba(5,1,15,0) 100%)" }}
+            style={{ opacity: "calc(1 - var(--street, 1))", background: "linear-gradient(180deg, #05010f 0%, #05010f 62%, rgba(5,1,15,0) 100%)" }}
           />
           {/* HUD: stays for the whole ride */}
           <div className="pointer-events-none absolute inset-x-0 top-0 z-20 flex items-start justify-between gap-3 px-4 pt-3 sm:px-[2.5vw] sm:pt-4">
@@ -586,7 +593,7 @@ export const Street = () => {
               </div>
             );
           }
-          return <div key={s.id} id={s.id} ref={ref} aria-hidden="true" className="h-[50svh]" />;
+          return <div key={s.id} id={s.id} ref={ref} aria-hidden="true" className="h-[75svh]" />;
         })}
       </div>
 
