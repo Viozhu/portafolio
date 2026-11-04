@@ -28,8 +28,10 @@ export interface Project {
   company?: boolean;
   /** Short facts shown on the station plate when there is no screenshot. */
   facts?: Localized;
-  /** Shown on the hero line, in this order. */
+  /** Shown as a neon sign over the street, in this order. */
   featured?: number;
+  /** Hangul lettering on the project's neon sign / plate. */
+  sign?: string;
 }
 
 export interface Role {
@@ -52,7 +54,7 @@ export const LINES: Line[] = [
   {
     id: "ai",
     letter: "A",
-    color: "#ef7c1c",
+    color: "#ff2a6d",
     name: {
       en: "Applied AI & automation",
       es: "IA aplicada y automatización",
@@ -67,7 +69,7 @@ export const LINES: Line[] = [
   {
     id: "product",
     letter: "P",
-    color: "#00a84d",
+    color: "#05d9e8",
     name: {
       en: "Product & client work",
       es: "Producto y clientes",
@@ -82,7 +84,7 @@ export const LINES: Line[] = [
   {
     id: "play",
     letter: "X",
-    color: "#996cac",
+    color: "#f9f002",
     name: {
       en: "Playground",
       es: "Playground",
@@ -104,6 +106,7 @@ export const PROJECTS: Project[] = [
     title: "Accounting pipeline",
     period: "2026 – now",
     featured: 4,
+    sign: "회계",
     summary: {
       en: "Built at Utomata for an accounting firm in Mexico, in monthly use. It reads statements from 12 banks, matches each movement to its SAT e-invoice, classifies the account and posts the entries to each client's Odoo. Rules decide first; an LLM steps in only without evidence, and anything uncertain goes to review.",
       es: "Construido en Utomata para un estudio contable de México, en uso cada mes. Lee estados de cuenta de 12 bancos, cruza cada movimiento con su factura del SAT, clasifica la cuenta y genera las pólizas en el Odoo de cada cliente. Deciden las reglas; un LLM entra solo sin evidencia y lo incierto queda en revisión.",
@@ -119,6 +122,7 @@ export const PROJECTS: Project[] = [
     title: "LendLoop",
     period: "2026",
     featured: 7,
+    sign: "렌드루프",
     summary: {
       en: "A neighborhood tool-lending board. Neighbors list tools, request date ranges, approve and return loans. n8n sends signed notification emails and daily overdue reminders, and every failed automation surfaces in an admin health panel.",
       es: "Un tablero vecinal para prestar herramientas. Los vecinos publican, piden rangos de fechas, aprueban y devuelven préstamos. n8n envía correos firmados y recordatorios diarios de atrasos, y cada automatización fallida aparece en un panel de salud para el admin.",
@@ -134,6 +138,7 @@ export const PROJECTS: Project[] = [
     title: "MeetingNotes",
     period: "2026",
     featured: 6,
+    sign: "회의록",
     summary: {
       en: "A menu-bar meeting recorder for macOS. It captures system audio and microphone, transcribes on-device with whisper.cpp, labels who said what, and writes a Markdown note with summary, decisions and action items using Claude, OpenAI, Groq or a local Ollama model.",
       es: "Una grabadora de reuniones en la barra de menú de macOS. Captura el audio del sistema y el micrófono, transcribe en el equipo con whisper.cpp, identifica quién habló y escribe una nota en Markdown con resumen, decisiones y tareas usando Claude, OpenAI, Groq o un modelo local de Ollama.",
@@ -148,6 +153,7 @@ export const PROJECTS: Project[] = [
     title: "OPIc Simulator",
     period: "2026",
     featured: 5,
+    sign: "오픽",
     summary: {
       en: "A full simulation of the OPIc speaking exam. Answers are recorded and transcribed locally with Whisper; Claude grades each transcript per dimension, and the report quotes the candidate's own mistakes, corrects them, and shows the arithmetic behind the final band.",
       es: "Una simulación completa del examen oral OPIc. Las respuestas se graban y transcriben localmente con Whisper; Claude califica cada transcripción por dimensión, y el informe cita los errores del candidato, los corrige y muestra el cálculo detrás de la nota final.",
@@ -165,6 +171,7 @@ export const PROJECTS: Project[] = [
     title: "Utomata app",
     period: "2023 – now",
     featured: 2,
+    sign: "유토마타",
     summary: {
       en: "A cross-platform Flutter app for iOS and Android, owned end to end: architecture, API integration and state management. Also built and maintains the company website in Next.js and TypeScript.",
       es: "Una app multiplataforma en Flutter para iOS y Android, de punta a punta: arquitectura, integración de APIs y manejo de estado. También construí y mantengo el sitio de la empresa en Next.js y TypeScript.",
@@ -178,6 +185,7 @@ export const PROJECTS: Project[] = [
     line: "product",
     title: "OpenHelp",
     period: "2023 – now",
+    sign: "오픈헬프",
     summary: {
       en: "A Flutter app built from scratch that lets people reach support services on iOS and Android, with REST integration and provider-based state.",
       es: "Una app en Flutter construida desde cero para acceder a servicios de apoyo en iOS y Android, con integración REST y estado basado en Provider.",
@@ -192,6 +200,7 @@ export const PROJECTS: Project[] = [
     title: "Numen platform",
     period: "2022 – 2024",
     featured: 1,
+    sign: "누멘",
     summary: {
       en: "A full student management platform: authentication, interactive calendar, real-time internal chat, push notifications and on-demand recorded classes.",
       es: "Una plataforma completa de gestión de estudiantes: autenticación, calendario interactivo, chat interno en tiempo real, notificaciones push y clases grabadas bajo demanda.",
@@ -206,6 +215,7 @@ export const PROJECTS: Project[] = [
     title: "Forest Crafts",
     period: "2025",
     featured: 3,
+    sign: "공방",
     summary: {
       en: "An e-commerce site for handmade accessories, with a browsable catalog, full English and Korean support, and dark mode.",
       es: "Un e-commerce de accesorios hechos a mano, con catálogo navegable, inglés y coreano completos y modo oscuro.",
@@ -220,6 +230,7 @@ export const PROJECTS: Project[] = [
     line: "product",
     title: "Ivoy delivery tracking",
     period: "2021 – 2023",
+    sign: "아이보이",
     summary: {
       en: "Real-time delivery tracking across 3+ responsive web apps, with Google Maps geolocation, Strapi CMS and Google Cloud, plus API and front-end performance work for delivery operators.",
       es: "Seguimiento de entregas en tiempo real en 3+ apps web responsivas, con geolocalización de Google Maps, Strapi CMS y Google Cloud, además de optimizar APIs y front-end para los operadores.",
@@ -479,11 +490,11 @@ export const STUDIES: Study[] = [
 ];
 
 export const SKILLS: { group: Localized; color: string; items: string[] }[] = [
-  { group: { en: "Front-end", es: "Front-end", ko: "프론트엔드" }, color: "#4a5163", items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind", "Redux"] },
-  { group: { en: "Mobile", es: "Mobile", ko: "모바일" }, color: "#4a5163", items: ["Flutter", "Dart", "Swift"] },
-  { group: { en: "Back-end", es: "Back-end", ko: "백엔드" }, color: "#4a5163", items: ["Node.js", "Express", "NestJS", "GraphQL", "REST", "Prisma", "PostgreSQL", "Convex"] },
-  { group: { en: "AI & automation", es: "IA y automatización", ko: "AI · 자동화" }, color: "#ef7c1c", items: ["Claude API", "OpenAI", "Whisper", "Ollama", "n8n", "Python"] },
-  { group: { en: "Cloud & craft", es: "Cloud y oficio", ko: "클라우드 · 협업" }, color: "#4a5163", items: ["Google Cloud", "Vercel", "Netlify", "Git", "CI/CD", "Figma", "Agile / Scrum"] },
+  { group: { en: "Front-end", es: "Front-end", ko: "프론트엔드" }, color: "#b9a9d6", items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind", "Redux"] },
+  { group: { en: "Mobile", es: "Mobile", ko: "모바일" }, color: "#b9a9d6", items: ["Flutter", "Dart", "Swift"] },
+  { group: { en: "Back-end", es: "Back-end", ko: "백엔드" }, color: "#b9a9d6", items: ["Node.js", "Express", "NestJS", "GraphQL", "REST", "Prisma", "PostgreSQL", "Convex"] },
+  { group: { en: "AI & automation", es: "IA y automatización", ko: "AI · 자동화" }, color: "#ff2a6d", items: ["Claude API", "OpenAI", "Whisper", "Ollama", "n8n", "Python"] },
+  { group: { en: "Cloud & craft", es: "Cloud y oficio", ko: "클라우드 · 협업" }, color: "#b9a9d6", items: ["Google Cloud", "Vercel", "Netlify", "Git", "CI/CD", "Figma", "Agile / Scrum"] },
 ];
 
 export const CONTACT = {

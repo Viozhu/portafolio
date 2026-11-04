@@ -1,7 +1,7 @@
 import * as React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { SignBar } from "../metro/SignBar";
+import { NavBar } from "../neon/NavBar";
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ const Layout = ({ children, title, description }: Props) => {
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1b2333" />
+        <meta name="theme-color" content="#05010f" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="canonical" href={`${SITE}${path}`} />
@@ -34,7 +34,7 @@ const Layout = ({ children, title, description }: Props) => {
         <meta property="og:image" content={`${SITE}/work/jorge.webp`} />
         <meta name="twitter:card" content="summary" />
       </Head>
-      <SignBar />
+      <NavBar />
       <main id="main">{children}</main>
     </>
   );

@@ -22,36 +22,34 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 4.5rem;
     -webkit-text-size-adjust: 100%;
-    scrollbar-color: #9a9e94 #f4f4f1;
+    scrollbar-color: #4a2a7a #05010f;
+    background: #05010f;
+    color-scheme: dark;
   }
   body {
-    @apply bg-enamel text-ink font-sans antialiased;
+    @apply bg-ink text-bone font-sans antialiased;
     font-size: 1.0625rem;
     line-height: 1.6;
-    caret-color: #ef7c1c;
-    font-variant-numeric: tabular-nums;
+    caret-color: #05d9e8;
+    overflow-x: hidden;
   }
   :lang(ko) body,
   body:lang(ko) {
     word-break: keep-all;
   }
   ::selection {
-    background: #ef7c1c;
-    color: #12161f;
+    background: #ff2a6d;
+    color: #05010f;
   }
   :focus-visible {
-    outline: 3px solid #0052a4;
+    outline: 2px solid #05d9e8;
     outline-offset: 3px;
-    border-radius: 4px;
-  }
-  .on-sign :focus-visible,
-  .on-sign:focus-visible {
-    outline-color: #ffb36b;
+    border-radius: 2px;
   }
   a {
-    text-underline-offset: 0.2em;
+    text-underline-offset: 0.22em;
     text-decoration-thickness: 1px;
   }
   h1,
@@ -64,29 +62,176 @@
     height: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #f4f4f1;
+    background: #05010f;
   }
   ::-webkit-scrollbar-thumb {
-    background: #9a9e94;
+    background: #3a2262;
     border-radius: 999px;
-    border: 2px solid #f4f4f1;
+    border: 2px solid #05010f;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ff2a6d;
   }
 }
 
 @layer components {
-  .display {
+  /* condensed uppercase display, the street's lettering */
+  .cond {
     font-family: "Archivo", "Gothic A1 Heavy", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-    font-stretch: 112%;
+    font-stretch: 62%;
     font-weight: 800;
-    letter-spacing: -0.025em;
-    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 0.88;
   }
-  .wide {
-    font-family: "Archivo", "Gothic A1 Heavy", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-    font-stretch: 112%;
+  :lang(ko) .cond {
+    letter-spacing: -0.02em;
+    line-height: 1.02;
   }
-  .train {
-    transition: left 650ms cubic-bezier(0.16, 1, 0.3, 1);
+  /* chromatic aberration: magenta and cyan ghosts either side of the ink */
+  .chroma {
+    text-shadow: -0.045em 0 0 rgba(255, 42, 109, 0.85), 0.045em 0 0 rgba(5, 217, 232, 0.75), 0 0 0.5em rgba(255, 42, 109, 0.25);
+  }
+  .chroma-sm {
+    text-shadow: -1.5px 0 0 rgba(255, 42, 109, 0.8), 1.5px 0 0 rgba(5, 217, 232, 0.7);
+  }
+  .glitch {
+    position: relative;
+  }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    white-space: pre-line;
+  }
+  .glitch::before {
+    color: #ff2a6d;
+    clip-path: inset(18% 0 62% 0);
+    transform: translateX(-0.06em);
+  }
+  .glitch::after {
+    color: #05d9e8;
+    clip-path: inset(64% 0 14% 0);
+    transform: translateX(0.06em);
+  }
+  .glitch.is-hit::before,
+  .glitch.is-hit::after {
+    animation: glitch-slice 420ms steps(2, end) 1;
+  }
+  .hud {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    font-size: 0.6875rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+  }
+  /* corner brackets on HUD frames */
+  .brackets {
+    --b: rgba(185, 169, 214, 0.55);
+    background:
+      linear-gradient(var(--b), var(--b)) top left / 10px 1px,
+      linear-gradient(var(--b), var(--b)) top left / 1px 10px,
+      linear-gradient(var(--b), var(--b)) top right / 10px 1px,
+      linear-gradient(var(--b), var(--b)) top right / 1px 10px,
+      linear-gradient(var(--b), var(--b)) bottom left / 10px 1px,
+      linear-gradient(var(--b), var(--b)) bottom left / 1px 10px,
+      linear-gradient(var(--b), var(--b)) bottom right / 10px 1px,
+      linear-gradient(var(--b), var(--b)) bottom right / 1px 10px;
+    background-repeat: no-repeat;
+  }
+  .scanlines {
+    background: repeating-linear-gradient(to bottom, rgba(5, 1, 15, 0) 0 2px, rgba(5, 1, 15, 0.22) 2px 3px);
+  }
+  .ticker-track {
+    animation: ticker var(--ticker-dur, 90s) linear infinite;
+  }
+  .ticker:hover .ticker-track,
+  .ticker:focus-within .ticker-track {
+    animation-play-state: paused;
+  }
+  /* a neon tube title: lit by its own colour */
+  .tube {
+    color: #fff;
+    text-shadow: 0 0 1px #fff, 0 0 0.18em var(--tube), 0 0 0.6em var(--tube), 0 0 1.2em color-mix(in srgb, var(--tube) 45%, transparent);
+  }
+  .tube-off {
+    color: color-mix(in srgb, var(--tube) 55%, #3a2a55);
+    text-shadow: none;
+    transition: color 160ms ease-out, text-shadow 160ms ease-out;
+  }
+  .group:hover .tube-off,
+  .group:focus-within .tube-off {
+    color: #fff;
+    text-shadow: 0 0 1px #fff, 0 0 0.18em var(--tube), 0 0 0.6em var(--tube);
+  }
+  .tube-btn {
+    position: relative;
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.15rem;
+    font-weight: 650;
+    color: #fff;
+    text-decoration: none;
+    background: rgba(5, 1, 15, 0.62);
+    box-shadow: inset 0 0 0 1px var(--c), 0 0 14px -4px var(--c);
+    transition: box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1), background-color 200ms;
+  }
+  .tube-btn:hover {
+    box-shadow: inset 0 0 0 1px var(--c), inset 0 0 18px -8px var(--c), 0 0 26px -2px var(--c);
+  }
+  .tube-btn.solid {
+    background: var(--c);
+    color: #05010f;
+  }
+  .tube-btn.solid:hover {
+    background: color-mix(in srgb, var(--c) 82%, #fff);
+  }
+  .hud-btn {
+    display: inline-flex;
+    min-height: 2rem;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0 0.6rem;
+    color: #d8ccef;
+    background: rgba(5, 1, 15, 0.55);
+    box-shadow: inset 0 0 0 1px rgba(185, 169, 214, 0.28);
+    transition: color 160ms, box-shadow 160ms;
+  }
+  .hud-btn:hover {
+    color: #fff;
+    box-shadow: inset 0 0 0 1px rgba(5, 217, 232, 0.8), 0 0 12px -4px #05d9e8;
+  }
+  .hud-btn[aria-pressed="true"] {
+    color: #05d9e8;
+    box-shadow: inset 0 0 0 1px rgba(5, 217, 232, 0.7);
+  }
+  /* rows and plates below the hero: dim glass until they scroll in, then power on */
+  .power-tube {
+    color: color-mix(in srgb, var(--tube) 50%, #3a2a55);
+    transition: color 200ms ease-out, text-shadow 200ms ease-out;
+  }
+  [data-power].is-on .power-tube {
+    color: #fff;
+    text-shadow: 0 0 1px #fff, 0 0 0.16em var(--tube), 0 0 0.5em color-mix(in srgb, var(--tube) 70%, transparent);
+    animation: power-on 900ms linear 1;
+  }
+  [data-power].is-on:hover .power-tube {
+    text-shadow: 0 0 1px #fff, 0 0 0.2em var(--tube), 0 0 0.8em var(--tube), 0 0 1.4em color-mix(in srgb, var(--tube) 45%, transparent);
+  }
+  .board-blink {
+    animation: board-blink 1.6s steps(2, jump-none) infinite;
+  }
+  /* the street's own overlays fade out as the camera leaves for the towers */
+  .street-only {
+    opacity: var(--street, 1);
+  }
+  [data-street="off"] .street-only {
+    visibility: hidden;
   }
   .no-scrollbar {
     scrollbar-width: none;
@@ -96,11 +241,56 @@
   }
 }
 
+@keyframes ticker {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+@keyframes power-on {
+  0%, 8%, 20%, 34% { opacity: 0.18; }
+  4%, 14%, 26%, 100% { opacity: 1; }
+  40% { opacity: 0.55; }
+  46% { opacity: 1; }
+}
+@keyframes board-blink {
+  0% { opacity: 1; }
+  100% { opacity: 0.35; }
+}
+@keyframes glitch-slice {
+  0% {
+    opacity: 1;
+    clip-path: inset(12% 0 70% 0);
+  }
+  50% {
+    opacity: 1;
+    clip-path: inset(58% 0 22% 0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  .train {
-    transition: none;
+  .ticker-track {
+    animation-duration: 600s;
+  }
+  .glitch.is-hit::before,
+  .glitch.is-hit::after,
+  [data-power].is-on .power-tube,
+  .board-blink {
+    animation: none;
+  }
+}
+
+/* the hero panel sheds detail on short desktop screens so the signs stay clear */
+@media (min-width: 1024px) and (max-height: 840px) {
+  .short-hide {
+    display: none;
   }
 }

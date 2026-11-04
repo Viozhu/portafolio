@@ -3,7 +3,6 @@
   "meta_description": "Full Stack developer con más de 5 años construyendo productos web y mobile en React, Next.js, Flutter y Node, ahora trabajando con IA aplicada. Vivo en Seúl y trabajo remoto para todo el mundo.",
   "skip": "Ir al contenido",
   "nav_work": "Proyectos",
-  "nav_route": "Mapa",
   "nav_experience": "Experiencia",
   "nav_contact": "Contacto",
   "language": "Idioma",
@@ -12,24 +11,14 @@
   "intro": "Más de 5 años lanzando productos web y mobile en React, Next.js, Flutter y Node para salud, logística, educación y finanzas. Mentor de más de 20 developers. Vivo en Seúl y trabajo remoto con equipos de cualquier lugar.",
   "cta_write": "Escríbeme",
   "cta_cv": "Ver CV",
-  "line_label": "Proyectos destacados, del más antiguo al más nuevo",
-  "line_hint": "Elige una estación",
   "now": "Ahora",
-  "terminus": "Último",
   "view_live": "Ver sitio",
   "view_repo": "Código fuente",
   "private_repo": "Repositorio privado",
   "company_work": "Trabajo para empresa, no público",
-  "route_title": "Mapa de líneas",
-  "route_intro": "Todos los proyectos, agrupados por línea. Cada estación es algo que construí.",
-  "stations": "estaciones",
   "experience_title": "Experiencia",
-  "experience_intro": "Las paradas del recorrido hasta hoy. Los roles actuales van en naranja.",
   "present": "Actualidad",
   "education": "Formación",
-  "transfers_title": "Combinaciones",
-  "transfers_intro": "El stack con el que cambio de línea.",
-  "contact_title": "Fin del recorrido. Hablemos.",
   "contact_intro": "Disponible para roles remotos de tiempo completo y proyectos freelance: apps web, apps en Flutter y funciones con IA dentro de productos reales.",
   "contact_email": "Email",
   "contact_whatsapp": "WhatsApp",
@@ -38,5 +27,76 @@
   "contact_cv": "CV (PDF)",
   "copy": "Copiar",
   "copied": "Copiado",
-  "footer": "Diseñado y construido por Jorge Ignacio Garay en Seúl."
+  "nav_stack": "Stack",
+  "scene_label": "Un dibujo en vivo de un callejón de Seúl de noche, bajo la lluvia. Cada letrero de neón es uno de mis proyectos destacados.",
+  "signs_label": "Proyectos destacados, un letrero de neón cada uno",
+  "signs_hint": "Toca un edificio o un letrero para entrar. Toca el cielo para un rayo.",
+  "hud_location": "Seúl",
+  "hud_status": "Disponible",
+  "hud_signal": "Señal",
+  "rain": "Lluvia",
+  "rain_levels": [
+    "Llovizna",
+    "Aguacero",
+    "Monzón"
+  ],
+  "sound": "Sonido",
+  "sound_on": "Sonido activado",
+  "sound_off": "Sonido apagado",
+  "strike": "Rayo",
+  "strike_label": "Hacer caer un rayo",
+  "ticker_label": "Cable de noticias",
+  "ticker": [
+    "El pipeline contable cruza estados de cuenta de 12 bancos con facturas del SAT, cada mes, para un estudio de México",
+    "OPIc Simulator: Whisper transcribe las respuestas, Claude las califica y el informe muestra el cálculo",
+    "MeetingNotes transcribe en la Mac con whisper.cpp e identifica quién dijo qué",
+    "LendLoop: n8n envía los recordatorios de atraso y el panel de admin muestra cada ejecución fallida",
+    "Numen Academy: una plataforma para más de 400 estudiantes y más de 20 developers junior mentoreados",
+    "El letrero de la esquina sigue diciendo OPE_. Jorge, en cambio, está OPEN: roles remotos y freelance",
+    "Esta noche en el callejón: lluvia constante, rayos a pedido"
+  ],
+  "work_title": "La ciudad de noche",
+  "work_intro": "Cada edificio es una línea de trabajo y cada piso es algo que construí. Baja para subir en el ascensor, o elige un edificio.",
+  "experience_intro": "La torre que construyo desde 2021: el primer rol en la planta baja y el trabajo actual encendido en magenta arriba.",
+  "stack_title": "Cableado",
+  "stack_intro": "Con qué funcionan los letreros.",
+  "contact_title": "El último tren está por salir. Hablemos.",
+  "footer": "Diseñado y construido por Jorge Ignacio Garay en Seúl. La calle, la lluvia y los letreros se dibujan en vivo en canvas.",
+  "board_title": "Último tren",
+  "board_rows": [
+    [
+      "Línea",
+      "Remoto · Freelance"
+    ],
+    [
+      "Destino",
+      "Tu equipo"
+    ],
+    [
+      "Sale",
+      "Cuando me escribas"
+    ],
+    [
+      "Estado",
+      "Embarcando"
+    ]
+  ],
+  "city_label": "La ciudad: cada proyecto es un piso",
+  "city_roof": [
+    "IA APLICADA",
+    "PRODUCTO",
+    "PLAYGROUND",
+    "EXPERIENCIA"
+  ],
+  "station_sign": "막차 ÚLTIMO TREN",
+  "floor_directory": "Directorio de pisos",
+  "floor_of": "Piso {{floor}}",
+  "enter_city": "Entrar a la ciudad",
+  "directory": "Directorio de edificios",
+  "platform_board": [
+    "막차 ÚLTIMO TREN",
+    "→ TU EQUIPO · REMOTO / FREELANCE",
+    "LLEGANDO",
+    "EMBARCANDO"
+  ]
 }
