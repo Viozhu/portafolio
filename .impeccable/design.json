@@ -1,300 +1,444 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-04T00:46:31.600631+00:00",
+  "generatedAt": "2026-11-04T03:34:50+00:00",
   "title": "Design System: Jorge Ignacio Garay",
   "extensions": {
     "colorMeta": {
-      "enamel": {
-        "role": "neutral",
-        "displayName": "Station Enamel",
-        "canonical": "oklch(96.6% 0.004 106.5)",
-        "tonalRamp": [
-          "#0b0b0b",
-          "#252525",
-          "#424241",
-          "#616160",
-          "#828281",
-          "#a5a5a3",
-          "#c9c9c7",
-          "#efefec"
-        ]
-      },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Platform White",
-        "canonical": "oklch(100.0% 0.000 89.9)",
-        "tonalRamp": [
-          "#0b0b0b",
-          "#252525",
-          "#424242",
-          "#616161",
-          "#828282",
-          "#a5a5a5",
-          "#c9c9c9",
-          "#eeeeee"
-        ]
-      },
       "ink": {
         "role": "neutral",
-        "displayName": "Rail Ink",
-        "canonical": "oklch(20.0% 0.019 266.0)",
+        "displayName": "Ink",
         "tonalRamp": [
-          "#080b13",
-          "#21252e",
-          "#3e424a",
-          "#5e6169",
-          "#7f8289",
-          "#a2a5aa",
-          "#c7c9cd",
-          "#edeef1"
+          "oklch(15% 0.02 290)",
+          "oklch(25% 0.025 290)",
+          "oklch(35% 0.03 290)",
+          "oklch(47% 0.036 290)",
+          "oklch(59% 0.038 290)",
+          "oklch(71% 0.032 290)",
+          "oklch(83% 0.026 290)",
+          "oklch(95% 0.02 290)"
         ]
       },
-      "steel": {
+      "ink-2": {
         "role": "neutral",
-        "displayName": "Steel",
-        "canonical": "oklch(43.6% 0.031 268.4)",
+        "displayName": "Ink 2",
         "tonalRamp": [
-          "#080b14",
-          "#202532",
-          "#3b4252",
-          "#5a6172",
-          "#7c8292",
-          "#9fa5b3",
-          "#c4c9d5",
-          "#eaeef8"
+          "oklch(15% 0.025 295)",
+          "oklch(25% 0.031 295)",
+          "oklch(35% 0.037 295)",
+          "oklch(47% 0.045 295)",
+          "oklch(59% 0.047 295)",
+          "oklch(71% 0.04 295)",
+          "oklch(83% 0.032 295)",
+          "oklch(95% 0.025 295)"
         ]
       },
-      "rule": {
+      "ink-3": {
         "role": "neutral",
-        "displayName": "Tile Rule",
-        "canonical": "oklch(87.4% 0.009 106.6)",
+        "displayName": "Ink 3",
         "tonalRamp": [
-          "#0b0b0a",
-          "#252523",
-          "#424240",
-          "#61615e",
-          "#83837e",
-          "#a5a5a0",
-          "#cacac3",
-          "#efefe8"
+          "oklch(15% 0.029 295)",
+          "oklch(25% 0.037 295)",
+          "oklch(35% 0.045 295)",
+          "oklch(47% 0.054 295)",
+          "oklch(59% 0.057 295)",
+          "oklch(71% 0.048 295)",
+          "oklch(83% 0.039 295)",
+          "oklch(95% 0.029 295)"
         ]
       },
-      "sign": {
+      "dusk": {
         "role": "neutral",
-        "displayName": "Signage Navy",
-        "canonical": "oklch(25.6% 0.033 263.7)",
+        "displayName": "Dusk Violet",
         "tonalRamp": [
-          "#060b17",
-          "#1d2535",
-          "#3a4251",
-          "#5a616f",
-          "#7c838f",
-          "#a0a5af",
-          "#c5c9d1",
-          "#eceef4"
+          "oklch(15% 0.059 300)",
+          "oklch(25% 0.074 300)",
+          "oklch(35% 0.089 300)",
+          "oklch(47% 0.108 300)",
+          "oklch(59% 0.114 300)",
+          "oklch(71% 0.096 300)",
+          "oklch(83% 0.077 300)",
+          "oklch(95% 0.059 300)"
         ]
       },
-      "sign-deep": {
+      "wire": {
         "role": "neutral",
-        "displayName": "Signage Navy Deep",
-        "canonical": "oklch(21.0% 0.029 266.1)",
+        "displayName": "Wire",
         "tonalRamp": [
-          "#060b17",
-          "#1f2533",
-          "#3c424f",
-          "#5c616d",
-          "#7e828d",
-          "#a1a5ad",
-          "#c6c9cf",
-          "#edeef2"
+          "oklch(15% 0.034 295)",
+          "oklch(25% 0.043 295)",
+          "oklch(35% 0.052 295)",
+          "oklch(47% 0.063 295)",
+          "oklch(59% 0.066 295)",
+          "oklch(71% 0.056 295)",
+          "oklch(83% 0.045 295)",
+          "oklch(95% 0.034 295)"
         ]
       },
-      "sign-line": {
+      "haze": {
         "role": "neutral",
-        "displayName": "Signage Line",
-        "canonical": "oklch(32.9% 0.036 264.8)",
+        "displayName": "Haze (Experience Lilac)",
         "tonalRamp": [
-          "#060b17",
-          "#1d2536",
-          "#394255",
-          "#596173",
-          "#7b8292",
-          "#9fa5b2",
-          "#c4c9d4",
-          "#ebeff6"
+          "oklch(15% 0.029 295)",
+          "oklch(25% 0.037 295)",
+          "oklch(35% 0.045 295)",
+          "oklch(47% 0.054 295)",
+          "oklch(59% 0.057 295)",
+          "oklch(71% 0.048 295)",
+          "oklch(83% 0.039 295)",
+          "oklch(95% 0.029 295)"
         ]
       },
-      "sign-text": {
+      "haze-dim": {
         "role": "neutral",
-        "displayName": "Signage Text",
-        "canonical": "oklch(84.7% 0.018 264.5)",
+        "displayName": "Haze Dim",
         "tonalRamp": [
-          "#0a0b0d",
-          "#232528",
-          "#404247",
-          "#5e6168",
-          "#7e828b",
-          "#a0a5af",
-          "#c3c9d5",
-          "#e9effa"
+          "oklch(15% 0.029 295)",
+          "oklch(25% 0.037 295)",
+          "oklch(35% 0.045 295)",
+          "oklch(47% 0.054 295)",
+          "oklch(59% 0.057 295)",
+          "oklch(71% 0.048 295)",
+          "oklch(83% 0.039 295)",
+          "oklch(95% 0.029 295)"
         ]
       },
-      "line2": {
+      "lilac": {
+        "role": "neutral",
+        "displayName": "Lilac",
+        "tonalRamp": [
+          "oklch(15% 0.025 300)",
+          "oklch(25% 0.031 300)",
+          "oklch(35% 0.037 300)",
+          "oklch(47% 0.045 300)",
+          "oklch(59% 0.047 300)",
+          "oklch(71% 0.04 300)",
+          "oklch(83% 0.032 300)",
+          "oklch(95% 0.025 300)"
+        ]
+      },
+      "lilac-soft": {
+        "role": "neutral",
+        "displayName": "Lilac Soft",
+        "tonalRamp": [
+          "oklch(15% 0.025 300)",
+          "oklch(25% 0.031 300)",
+          "oklch(35% 0.037 300)",
+          "oklch(47% 0.045 300)",
+          "oklch(59% 0.047 300)",
+          "oklch(71% 0.04 300)",
+          "oklch(83% 0.032 300)",
+          "oklch(95% 0.025 300)"
+        ]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "tonalRamp": [
+          "oklch(15% 0.01 300)",
+          "oklch(25% 0.012 300)",
+          "oklch(35% 0.015 300)",
+          "oklch(47% 0.018 300)",
+          "oklch(59% 0.019 300)",
+          "oklch(71% 0.016 300)",
+          "oklch(83% 0.013 300)",
+          "oklch(95% 0.01 300)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "tonalRamp": [
+          "oklch(15% 0.0 0)",
+          "oklch(25% 0.0 0)",
+          "oklch(35% 0.0 0)",
+          "oklch(47% 0.0 0)",
+          "oklch(59% 0.0 0)",
+          "oklch(71% 0.0 0)",
+          "oklch(83% 0.0 0)",
+          "oklch(95% 0.0 0)"
+        ]
+      },
+      "neon-pink": {
+        "role": "primary",
+        "displayName": "Applied-AI Magenta",
+        "tonalRamp": [
+          "oklch(15% 0.118 5)",
+          "oklch(25% 0.148 5)",
+          "oklch(35% 0.179 5)",
+          "oklch(47% 0.216 5)",
+          "oklch(59% 0.228 5)",
+          "oklch(71% 0.191 5)",
+          "oklch(83% 0.154 5)",
+          "oklch(95% 0.118 5)"
+        ]
+      },
+      "neon-cyan": {
+        "role": "primary",
+        "displayName": "Product Cyan",
+        "tonalRamp": [
+          "oklch(15% 0.069 205)",
+          "oklch(25% 0.087 205)",
+          "oklch(35% 0.104 205)",
+          "oklch(47% 0.126 205)",
+          "oklch(59% 0.133 205)",
+          "oklch(71% 0.111 205)",
+          "oklch(83% 0.09 205)",
+          "oklch(95% 0.069 205)"
+        ]
+      },
+      "neon-acid": {
         "role": "secondary",
-        "displayName": "Line 2 Green",
-        "canonical": "oklch(63.9% 0.176 150.0)",
+        "displayName": "Playground Acid",
         "tonalRamp": [
-          "#001002",
-          "#002e10",
-          "#015022",
-          "#007534",
-          "#069c48",
-          "#4ac06d",
-          "#82e299",
-          "#c8ffd2"
+          "oklch(15% 0.103 108)",
+          "oklch(25% 0.13 108)",
+          "oklch(35% 0.157 108)",
+          "oklch(47% 0.189 108)",
+          "oklch(59% 0.199 108)",
+          "oklch(71% 0.167 108)",
+          "oklch(83% 0.135 108)",
+          "oklch(95% 0.103 108)"
         ]
       },
-      "line3": {
-        "role": "primary",
-        "displayName": "Line 3 Orange",
-        "canonical": "oklch(70.4% 0.170 53.0)",
-        "tonalRamp": [
-          "#190500",
-          "#3e1a00",
-          "#683000",
-          "#964901",
-          "#c66307",
-          "#f4822a",
-          "#ffb689",
-          "#ffeadd"
-        ]
-      },
-      "line3-ink": {
-        "role": "primary",
-        "displayName": "Line 3 Ink",
-        "canonical": "oklch(53.2% 0.139 50.8)",
-        "tonalRamp": [
-          "#1a0500",
-          "#3f1800",
-          "#6a2f00",
-          "#984600",
-          "#bd6932",
-          "#dc9063",
-          "#fbb892",
-          "#feeadf"
-        ]
-      },
-      "line5": {
+      "neon-tent": {
         "role": "tertiary",
-        "displayName": "Line 5 Violet",
-        "canonical": "oklch(60.1% 0.107 315.5)",
+        "displayName": "Tent Orange",
         "tonalRamp": [
-          "#13041a",
-          "#31193b",
-          "#52335f",
-          "#765085",
-          "#9b6eae",
-          "#bc93cd",
-          "#ddbaed",
-          "#f7e8fe"
+          "oklch(15% 0.093 50)",
+          "oklch(25% 0.117 50)",
+          "oklch(35% 0.142 50)",
+          "oklch(47% 0.171 50)",
+          "oklch(59% 0.18 50)",
+          "oklch(71% 0.151 50)",
+          "oklch(83% 0.122 50)",
+          "oklch(95% 0.093 50)"
         ]
       },
-      "line1": {
-        "role": "accent",
-        "displayName": "Line 1 Blue (focus)",
-        "canonical": "oklch(44.7% 0.149 255.4)",
+      "led-amber": {
+        "role": "tertiary",
+        "displayName": "LED Amber",
         "tonalRamp": [
-          "#000a24",
-          "#002450",
-          "#004083",
-          "#1e60af",
-          "#4d84ca",
-          "#78a8e5",
-          "#a6ccfe",
-          "#e5f0fe"
-        ]
-      },
-      "exit-yellow": {
-        "role": "accent",
-        "displayName": "Exit Yellow",
-        "canonical": "oklch(87.7% 0.180 93.1)",
-        "tonalRamp": [
-          "#100a00",
-          "#2e2400",
-          "#504001",
-          "#755f03",
-          "#9c7f00",
-          "#c5a205",
-          "#efc50d",
-          "#ffeeb8"
+          "oklch(15% 0.06 75)",
+          "oklch(25% 0.08 75)",
+          "oklch(35% 0.1 75)",
+          "oklch(47% 0.13 75)",
+          "oklch(59% 0.15 75)",
+          "oklch(71% 0.16 75)",
+          "oklch(83% 0.13 75)",
+          "oklch(95% 0.06 75)"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Name sign in the hero and the terminus headline."
+        "purpose": "Hero name only; white, chroma split, lightning glitch."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section titles."
-      },
-      "subhead": {
-        "displayName": "Subhead",
-        "purpose": "Role line under the name."
+        "purpose": "Stop panel titles: lobby tower names as tubes; Stack and Contact white with chroma."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Line, company and project names."
+        "purpose": "Project and company names on floor panels, lit as tubes in the tower colour."
       },
-      "station-name": {
-        "displayName": "Station name",
-        "purpose": "Labels under roundels on the featured line."
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "Elevator readout floor code (L / nF / R / B1 / B2), white with tower-colour glow."
+      },
+      "sign-hangul": {
+        "displayName": "Sign Hangul",
+        "purpose": "Hangul neon lettering on canvas signs, sized to the sign."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Role line under the hero name, max 30ch."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Running text, 58-68ch."
+        "purpose": "Default reading text; panel paragraphs at 1.625 in lilac soft."
       },
-      "body-small": {
-        "displayName": "Body small",
-        "purpose": "Panel summaries, nav links, link rows."
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Project links and floor-button labels."
       },
       "label": {
-        "displayName": "Label",
-        "purpose": "Stack chips."
-      },
-      "code": {
-        "displayName": "Code",
-        "purpose": "Station codes and periods, tabular."
+        "displayName": "HUD Label",
+        "purpose": "Uppercase monospace instrumentation: HUD, readout count, floor meta, stack lists, nav (0.75rem)."
       }
     },
     "shadows": [
       {
-        "name": "arrival-screen",
-        "value": "0 24px 48px -24px rgba(18,22,31,0.55)",
-        "purpose": "The hero arrival screen only."
+        "name": "tube-text",
+        "value": "0 0 1px #fff, 0 0 0.18em var(--tube), 0 0 0.6em var(--tube), 0 0 1.2em color-mix(in srgb, var(--tube) 45%, transparent)",
+        "purpose": "Lit tube titles and the contact email."
       },
       {
-        "name": "transfer-ring",
-        "value": "0 0 0 3px <ground>, 0 0 0 6px <line colour>",
-        "purpose": "Double ring for transfer/terminus stations and the current role."
+        "name": "power-tube-on",
+        "value": "0 0 1px #fff, 0 0 0.16em var(--tube), 0 0 0.5em color-mix(in srgb, var(--tube) 70%, transparent)",
+        "purpose": "Power-on rows once lit."
+      },
+      {
+        "name": "chroma",
+        "value": "-0.045em 0 0 rgba(255,42,109,0.85), 0.045em 0 0 rgba(5,217,232,0.75), 0 0 0.5em rgba(255,42,109,0.25)",
+        "purpose": "Chromatic aberration on white display and headline type."
+      },
+      {
+        "name": "chroma-sm",
+        "value": "-1.5px 0 0 rgba(255,42,109,0.8), 1.5px 0 0 rgba(5,217,232,0.7)",
+        "purpose": "JG mark only."
+      },
+      {
+        "name": "tube-frame",
+        "value": "inset 0 0 0 1px var(--c), 0 0 14px -4px var(--c)",
+        "purpose": "Tube button at rest."
+      },
+      {
+        "name": "tube-frame-hover",
+        "value": "inset 0 0 0 1px var(--c), inset 0 0 18px -8px var(--c), 0 0 26px -2px var(--c)",
+        "purpose": "Tube button hover."
+      },
+      {
+        "name": "hud-ring",
+        "value": "inset 0 0 0 1px rgba(185,169,214,0.28)",
+        "purpose": "HUD button at rest."
+      },
+      {
+        "name": "hud-ring-hover",
+        "value": "inset 0 0 0 1px rgba(5,217,232,0.8), 0 0 12px -4px #05d9e8",
+        "purpose": "HUD button hover."
+      },
+      {
+        "name": "pip",
+        "value": "0 0 6px <colour>",
+        "purpose": "6px lit square separators."
+      },
+      {
+        "name": "focus",
+        "value": "outline: 2px solid #05d9e8; outline-offset: 3px",
+        "purpose": "Global focus-visible ring."
+      },
+      {
+        "name": "panel-edge",
+        "value": "inset 0 1px 0 <tower>, 0 -14px 44px -26px <tower>",
+        "purpose": "Every stop panel, lit from its top edge in the tower colour."
+      },
+      {
+        "name": "readout-glow",
+        "value": "text-shadow: 0 0 10px <tower>",
+        "purpose": "Elevator readout floor code."
+      },
+      {
+        "name": "now-badge",
+        "value": "0 0 14px -2px #ff2a6d",
+        "purpose": "NOW badge halo."
+      },
+      {
+        "name": "footer-edge",
+        "value": "0 0 18px 2px rgba(249,240,2,0.5)",
+        "purpose": "The acid platform-edge line above the footer."
+      },
+      {
+        "name": "hud-band",
+        "value": "linear-gradient(180deg, #05010f 0%, #05010f 62%, rgba(5,1,15,0) 100%); height 8rem (9rem < sm); opacity 1 - var(--street)",
+        "purpose": "Ink band under the HUD, faded in once the camera leaves the street."
       }
     ],
     "motion": [
       {
-        "name": "train-travel",
-        "value": "left 650ms cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Train marker gliding to the selected station; disabled under prefers-reduced-motion."
+        "name": "ease-tube",
+        "value": "200ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Tube button glow transitions."
       },
       {
-        "name": "state-color",
-        "value": "150ms ease (Tailwind transition-colors)",
-        "purpose": "Hover colour changes on buttons, nav, exits, roundels."
+        "name": "hud-transition",
+        "value": "160ms",
+        "purpose": "HUD button colour and ring."
       },
       {
-        "name": "line-scroll",
-        "value": "scrollTo behavior smooth",
-        "purpose": "Centers the selected station on phones; auto under reduced motion."
+        "name": "camera-between-stops",
+        "value": "position: smoothstep 3t^2 - 2t^3 of fractional step; zoom: exp(lerp(log z0, log z1, t)); step = page scroll measured from stop centres to stage centre",
+        "purpose": "Scroll camera from street to lobby, floors, roof, station, platform."
+      },
+      {
+        "name": "camera-framing",
+        "value": "desktop subject at 30% x / 50% y; mobile (<768px) at 50% x / 24% y",
+        "purpose": "Leaves room for the stop panel (right on desktop, bottom on phones)."
+      },
+      {
+        "name": "pointer-parallax",
+        "value": "±34px x, ±10px y scaled by (1 - progress); ease 1 - exp(-2.6 dt); idle after 4s: x = sin(0.11t)*0.55, y = sin(0.07t + 1)*0.25",
+        "purpose": "Street-only pointer parallax and idle wander."
+      },
+      {
+        "name": "street-fade",
+        "value": "--street = 1 - clamp(2.2 * progress); hidden below 0.05",
+        "purpose": "Street overlays fade out and the HUD band fades in over the first ~45% of the first transition."
+      },
+      {
+        "name": "elevator",
+        "value": "car floor = clamp(progress - lobbyStep - 1, -1, floors - 1)",
+        "purpose": "Glass car follows the scroll continuously; floors light as it passes."
+      },
+      {
+        "name": "train-arrival",
+        "value": "a = clamp((progress - (platformStep - 1)) / 0.85); x offset (1 - (1 - a)^3) from trainLen + 400u; acid streaks at 0.06 * (1 - ease)",
+        "purpose": "Train brakes into the platform over the station-to-platform scroll; reverses on scroll back."
+      },
+      {
+        "name": "doors",
+        "value": "open = clamp((time - arrived - 0.35s) / 0.7s); screen doors slide 28% of panel width; lamps cyan to acid and board ARRIVING to BOARDING past 0.5",
+        "purpose": "Train and platform screen doors open together on clock time once parked."
+      },
+      {
+        "name": "board-status-blink",
+        "value": "visible while sin(5t) > -0.3 (~1.26s cycle)",
+        "purpose": "LED departure board status cell."
+      },
+      {
+        "name": "power-on",
+        "value": "900ms linear, once; opacity 0.18 at 0/8/20/34%, 1 at 4/14/26%, 0.55 at 40%, 1 from 46%",
+        "purpose": "Stop panel titles lighting the first time they scroll in (rootMargin -12% bottom)."
+      },
+      {
+        "name": "glitch-slice",
+        "value": "420ms steps(2, end)",
+        "purpose": "Hero name magenta/cyan slices on a user lightning strike."
+      },
+      {
+        "name": "ticker",
+        "value": "linear infinite, 14s per item",
+        "purpose": "Newswire marquee; pauses on hover/focus."
+      },
+      {
+        "name": "neon-failure",
+        "value": "every 4-15s: stutter 45% (0.25-0.7s, flicker 1/0.12), dropout 30% (70-210ms at 0.06), brownout 25% (0.4-1.2s at 0.48 ±0.05 at 60Hz)",
+        "purpose": "Canvas sign idle failures; rest at 0.6, chosen sign and the sign beside the floor being read at 1; chosen sign has a 3.2s scan band."
+      },
+      {
+        "name": "selection-stutter",
+        "value": "0.5s stutter; camera rides to the floor 480ms after choosing",
+        "purpose": "Choosing a hangul sign."
+      },
+      {
+        "name": "open-sign-fit",
+        "value": "top 60px; limit = name top - 14px; glyph = min(clamp(0.026W, 26, 40), (limit - top) / 1.5); dropped below 18px and below 768px",
+        "purpose": "OPEN sign fits itself above the hero name."
+      },
+      {
+        "name": "rain-diagonal",
+        "value": "dx = 0.27 * dy; 3 depth passes at 0.28/0.38/0.5 alpha; density levels 0.32/0.62/1; x(0.35 + 0.65 * street) off the street; clipped out of the underground",
+        "purpose": "Rain everywhere it falls."
+      },
+      {
+        "name": "lightning-envelope",
+        "value": "pulses 1.0@0, 0.55@70ms, 0.85@200ms, each exp decay tau 65ms; bolt visible 340ms; user cooldown 1.2s; ambient every 14-32s (7-16s Monsoon) at 0.35 exp(-t/0.12) + 0.2 echo at 160ms",
+        "purpose": "User and ambient strikes lighting sky, skyline and street."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "camera snaps to nearest stop; parallax 35% at ease 1.5/s, no idle wander; signs, OPEN (0.9), station sign and fluorescents steady; train parked within half a step of the platform, doors open at once, no streaks, board status steady; rain 30% density, 55% speed; no ambient strikes; strike = single 0.45 flash (tau 350ms), no bolt, no glitch; ripple 1.5px; walkers/steam halved; power-on/glitch animation none; ticker 600s; scroll-behavior auto and instant in-page jumps",
+        "purpose": "Implemented prefers-reduced-motion fallbacks."
       }
     ],
     "breakpoints": [
@@ -304,147 +448,167 @@
       },
       {
         "name": "md",
-        "value": "768px"
+        "value": "768px (scene mobile camera below)"
       },
       {
         "name": "lg",
         "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
       }
-    ],
-    "focus": {
-      "onLight": "3px solid #0052a4, offset 3px",
-      "onSign": "3px solid #ffb36b, offset 3px"
-    }
+    ]
   },
   "components": [
     {
-      "name": "Primary Button",
+      "name": "Solid Tube Button",
       "kind": "button",
-      "refersTo": "button-primary",
-      "description": "Main contact action: navy pill with an orange station dot and a nudging arrow.",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\"><span class=\"ds-btn-dot\"></span>Write to me<svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-btn-arrow\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a>",
-      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;border-radius:9999px;background:#1b2333;color:#fff;padding:12px 20px 12px 12px;font-family:\"Archivo\",sans-serif;font-weight:600;font-size:1.0625rem;text-decoration:none;transition:background-color 150ms}.ds-btn-primary:hover{background:#12161f}.ds-btn-primary:focus-visible{outline:3px solid #0052a4;outline-offset:3px}.ds-btn-dot{width:20px;height:20px;border-radius:9999px;border:5px solid #ef7c1c;background:#fff;box-sizing:border-box}.ds-btn-arrow{transition:transform 150ms}.ds-btn-primary:hover .ds-btn-arrow{transform:translateX(2px)}"
+      "refersTo": "tube-button-solid",
+      "description": "The single primary action, filled with its tube colour.",
+      "html": "<a class=\"ds-tube ds-tube-solid\" href=\"#\" style=\"--c:#ff2a6d\">Write to me <svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a>",
+      "css": ".ds-tube{display:inline-flex;min-height:2.75rem;align-items:center;gap:.6rem;padding:.6rem 1.15rem;font-family:Archivo,sans-serif;font-weight:650;color:#fff;text-decoration:none;background:rgba(5,1,15,.62);box-shadow:inset 0 0 0 1px var(--c),0 0 14px -4px var(--c);transition:box-shadow 200ms cubic-bezier(.16,1,.3,1),background-color 200ms}.ds-tube-solid{background:var(--c);color:#05010f}.ds-tube-solid:hover{background:color-mix(in srgb,var(--c) 82%,#fff);box-shadow:inset 0 0 0 1px var(--c),inset 0 0 18px -8px var(--c),0 0 26px -2px var(--c)}.ds-tube:focus-visible{outline:2px solid #05d9e8;outline-offset:3px}"
     },
     {
-      "name": "Outline Button",
+      "name": "Outline Tube Button",
       "kind": "button",
-      "refersTo": "button-outline",
-      "description": "Secondary action (Open CV): 2px ink pill that fills ink on hover.",
-      "html": "<a class=\"ds-btn-outline\" href=\"#\">Open CV<svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 11 11 5M6 5h5v5\"/></svg></a>",
-      "css": ".ds-btn-outline{display:inline-flex;align-items:center;gap:8px;border-radius:9999px;border:2px solid #12161f;color:#12161f;padding:10px 20px;font-family:\"Archivo\",sans-serif;font-weight:600;font-size:1.0625rem;text-decoration:none;transition:background-color 150ms,color 150ms}.ds-btn-outline:hover{background:#12161f;color:#fff}.ds-btn-outline:focus-visible{outline:3px solid #0052a4;outline-offset:3px}"
+      "refersTo": "tube-button-outline",
+      "description": "Secondary actions and contact exits, a lit frame in the action's colour.",
+      "html": "<a class=\"ds-tube-o\" href=\"#\" style=\"--c:#05d9e8\">Open CV <svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"square\"><path d=\"M5 11 11 5M6 5h5v5\"/></svg></a>",
+      "css": ".ds-tube-o{display:inline-flex;min-height:2.75rem;align-items:center;gap:.6rem;padding:.6rem 1.15rem;font-family:Archivo,sans-serif;font-weight:650;color:#fff;text-decoration:none;background:rgba(5,1,15,.62);box-shadow:inset 0 0 0 1px var(--c),0 0 14px -4px var(--c);transition:box-shadow 200ms cubic-bezier(.16,1,.3,1)}.ds-tube-o:hover{box-shadow:inset 0 0 0 1px var(--c),inset 0 0 18px -8px var(--c),0 0 26px -2px var(--c)}.ds-tube-o:focus-visible{outline:2px solid #05d9e8;outline-offset:3px}"
     },
     {
-      "name": "Sign Bar",
+      "name": "HUD Button",
+      "kind": "button",
+      "refersTo": "hud-button",
+      "description": "Instrumentation toggle (rain, sound, strike, copy); pressed state holds cyan.",
+      "html": "<div style=\"display:flex;gap:6px;background:#05010f;padding:12px\"><button class=\"ds-hud-btn\">Rain <span style=\"color:#fff\">Downpour</span></button><button class=\"ds-hud-btn\" aria-pressed=\"true\">Sound <span>ON</span></button><button class=\"ds-hud-btn\"><span style=\"color:#f9f002\">Strike</span></button></div>",
+      "css": ".ds-hud-btn{display:inline-flex;min-height:2rem;align-items:center;gap:.45rem;padding:0 .6rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#d8ccef;background:rgba(5,1,15,.55);border:0;border-radius:0;box-shadow:inset 0 0 0 1px rgba(185,169,214,.28);transition:color 160ms,box-shadow 160ms;cursor:pointer}.ds-hud-btn:hover{color:#fff;box-shadow:inset 0 0 0 1px rgba(5,217,232,.8),0 0 12px -4px #05d9e8}.ds-hud-btn[aria-pressed=true]{color:#05d9e8;box-shadow:inset 0 0 0 1px rgba(5,217,232,.7)}.ds-hud-btn:focus-visible{outline:2px solid #05d9e8;outline-offset:3px}"
+    },
+    {
+      "name": "Navigation",
       "kind": "nav",
       "refersTo": "nav-link",
-      "description": "Sticky navy sign band with JG mark, pill nav links, language switcher and the three-colour line stripe.",
-      "html": "<header class=\"ds-signbar\"><div class=\"ds-signbar-row\"><a class=\"ds-signbar-mark\" href=\"#\"><span class=\"ds-signbar-jg\">JG</span>Jorge Ignacio Garay</a><nav class=\"ds-signbar-nav\"><a href=\"#\">Work</a><a href=\"#\">Route map</a><a href=\"#\">Experience</a><a href=\"#\">Contact</a></nav><div class=\"ds-lang\"><a class=\"ds-lang-on\" href=\"#\">EN</a><a href=\"#\">ES</a><a href=\"#\" lang=\"ko\">한</a></div></div><div class=\"ds-stripe\"><i style=\"flex:3;background:#00a84d\"></i><i style=\"flex:2;background:#ef7c1c\"></i><i style=\"flex:1;background:#996cac\"></i></div></header>",
-      "css": ".ds-signbar{background:#1b2333;color:#fff;font-family:\"Archivo\",sans-serif}.ds-signbar-row{display:flex;align-items:center;gap:24px;height:64px;padding:0 32px}.ds-signbar-mark{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;font-stretch:112%}.ds-signbar-jg{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9999px;border:3px solid #00a84d;background:#fff;color:#12161f;font-size:.75rem;font-weight:800;box-sizing:border-box}.ds-signbar-nav{margin-left:auto;display:flex;gap:4px}.ds-signbar-nav a{border-radius:9999px;padding:8px 12px;font-size:.9375rem;font-weight:500;color:#c7cdd9;text-decoration:none;transition:background-color 150ms,color 150ms}.ds-signbar-nav a:hover{background:#2c3548;color:#fff}.ds-signbar a:focus-visible{outline:3px solid #ffb36b;outline-offset:3px}.ds-lang{display:flex;border-radius:9999px;background:#121826;padding:4px}.ds-lang a{min-width:40px;text-align:center;border-radius:9999px;padding:4px 10px;font-size:.875rem;font-weight:600;color:#c7cdd9;text-decoration:none}.ds-lang a:hover{color:#fff}.ds-lang a.ds-lang-on{background:#fff;color:#12161f}.ds-stripe{display:flex;height:6px}"
+      "description": "Sticky ink bar: JG chroma mark, HUD links, three-cell language switch.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-mark\" href=\"#\">JG</a><nav><a href=\"#\">Work</a><a href=\"#\">Experience</a><a href=\"#\">Stack</a><a href=\"#\">Contact</a></nav><div class=\"ds-lang\"><a aria-current=\"true\" href=\"#\">EN</a><a href=\"#\">ES</a><a href=\"#\">한</a></div></header>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:24px;height:3.5rem;padding:0 16px;background:#05010f;border-bottom:1px solid #2a1a47}.ds-mark{font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;text-transform:uppercase;font-size:1.7rem;line-height:.88;color:#fff;text-decoration:none;text-shadow:-1.5px 0 0 rgba(255,42,109,.8),1.5px 0 0 rgba(5,217,232,.7)}.ds-nav nav{margin-left:auto;display:flex}.ds-nav nav a,.ds-lang a{font-family:ui-monospace,Menlo,monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}.ds-nav nav a{padding:8px 12px;color:#d8ccef;transition:color 150ms}.ds-nav nav a:hover{color:#05d9e8}.ds-lang{display:flex}.ds-lang a{display:flex;height:2.25rem;min-width:2.5rem;align-items:center;justify-content:center;color:#b9a9d6}.ds-lang a:hover{color:#fff}.ds-lang a[aria-current]{color:#ff2a6d;text-shadow:0 0 8px #ff2a6d;box-shadow:inset 0 -2px 0 #ff2a6d}.ds-nav a:focus-visible{outline:2px solid #05d9e8;outline-offset:3px}"
     },
     {
-      "name": "Stack Chip",
-      "kind": "chip",
-      "refersTo": "stack-chip",
-      "description": "Technology chip; rule-bordered pill on light grounds, sign-line on navy.",
-      "html": "<ul class=\"ds-chips\"><li class=\"ds-chip\">Next.js</li><li class=\"ds-chip\">TypeScript</li><li class=\"ds-chip ds-chip-dark\">Whisper</li></ul>",
-      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0;font-family:\"Archivo\",sans-serif}.ds-chip{border:1px solid #d6d6cf;color:#4a5163;border-radius:9999px;padding:2px 10px;font-size:.8125rem;font-weight:500}.ds-chip-dark{background:#1b2333;border-color:#2c3548;color:#c7cdd9}"
-    },
-    {
-      "name": "Roundel",
+      "name": "Elevator Readout",
       "kind": "custom",
-      "refersTo": "roundel-md",
-      "description": "Station number mark: white disc, line-coloured ring, code inside; transfer variant adds an outer ring.",
-      "html": "<div class=\"ds-roundels\"><span class=\"ds-roundel\" style=\"border-color:#00a84d\">P04</span><span class=\"ds-roundel\" style=\"border-color:#ef7c1c\">A03</span><span class=\"ds-roundel ds-roundel-transfer\">JG</span></div>",
-      "css": ".ds-roundels{display:flex;gap:24px;align-items:center;padding:12px;background:#f4f4f1}.ds-roundel{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:9999px;border:4px solid;background:#fff;color:#12161f;font-family:\"Archivo\",sans-serif;font-stretch:112%;font-weight:700;font-size:.875rem;line-height:1;box-sizing:border-box}.ds-roundel-transfer{width:64px;height:64px;border:5px solid #ef7c1c;box-shadow:0 0 0 3px #fff,0 0 0 6px #ef7c1c;font-size:1rem}"
+      "refersTo": "elevator-readout",
+      "description": "Bracketed HUD chip under the HUD buttons: tower-coloured triangle, floor code, floor count and tower name.",
+      "html": "<div style=\"background:#05010f;padding:16px\"><div class=\"ds-readout\" style=\"--t:#ff2a6d\"><svg viewBox=\"0 0 10 10\" width=\"10\" height=\"10\"><path d=\"M5 1 9 8H1z\" fill=\"#ff2a6d\"/></svg><span class=\"ds-readout-code\">2F</span><span class=\"ds-readout-count\">/ 4F · APPLIED AI</span></div></div>",
+      "css": ".ds-readout{display:inline-flex;align-items:center;gap:12px;padding:8px 12px;background-color:rgba(5,1,15,.7);background-image:linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55));background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right;background-size:10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px;background-repeat:no-repeat;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase}.ds-readout-code{font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;font-size:1.75rem;line-height:1;letter-spacing:-.01em;color:#fff;text-shadow:0 0 10px var(--t)}.ds-readout-count{color:#b9a9d6}"
     },
     {
-      "name": "Featured Line",
-      "kind": "custom",
-      "refersTo": "",
-      "description": "Signature hero line: 10px track segments coloured by the line they enter, roundel stations, the selected one filled, the train above it.",
-      "html": "<div class=\"ds-line\"><div class=\"ds-track\"><i style=\"background:#00a84d\"></i><i style=\"background:#ef7c1c\"></i></div><div class=\"ds-train\"><b></b><b></b><s></s><b></b></div><div class=\"ds-stations\"><button class=\"ds-st\" style=\"--c:#00a84d\"><span class=\"ds-dot\"></span><small>P04</small>Utomata app</button><button class=\"ds-st\" style=\"--c:#ef7c1c\"><span class=\"ds-dot\"></span><small>A02</small>MeetingNotes</button><button class=\"ds-st ds-st-on\" style=\"--c:#ef7c1c\" aria-checked=\"true\"><span class=\"ds-dot\"></span><small>A03</small>LendLoop</button></div></div>",
-      "css": ".ds-line{position:relative;padding:40px 64px 8px;background:#f4f4f1;font-family:\"Archivo\",sans-serif}.ds-track{position:absolute;left:64px;right:64px;top:53px;height:10px;display:flex}.ds-track i{flex:1}.ds-stations{position:relative;display:flex;justify-content:space-between}.ds-st{margin:0 -64px;width:128px;display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:0;cursor:pointer;font-stretch:112%;font-weight:700;font-size:.95rem;color:#4a5163;border-radius:8px}.ds-st:hover{color:#12161f}.ds-st:focus-visible{outline:3px solid #0052a4;outline-offset:3px}.ds-st small{font-stretch:100%;font-size:.75rem;color:#4a5163;margin-top:8px}.ds-dot{width:36px;height:36px;border-radius:9999px;border:5px solid var(--c);background:#fff;box-sizing:border-box;transition:background-color 150ms}.ds-st-on{color:#12161f}.ds-st-on .ds-dot{background:var(--c)}.ds-train{position:absolute;right:32px;top:4px;display:flex;align-items:center;gap:4px;height:28px;width:64px;padding:0 12px 0 6px;box-sizing:border-box;background:#1b2333;border-radius:6px 14px 14px 6px;transition:left 650ms cubic-bezier(0.16,1,0.3,1)}.ds-train b{width:10px;height:12px;border-radius:2px;background:#c7cdd9}.ds-train s{width:6px;height:16px;background:#ef7c1c}"
-    },
-    {
-      "name": "Arrival Screen",
+      "name": "Stop Panel",
       "kind": "card",
-      "refersTo": "station-screen",
-      "description": "Navy panel for the selected station; the only element with a shadow.",
-      "html": "<article class=\"ds-screen\"><header><span class=\"ds-badge\">A</span>Applied AI &amp; automation<span class=\"ds-period\">2026</span></header><div class=\"ds-screen-body\"><p class=\"ds-code\">A03</p><h3>LendLoop</h3><p class=\"ds-sum\">A neighborhood tool-lending board with n8n notification pipelines.</p><a href=\"#\">Source code</a></div></article>",
-      "css": ".ds-screen{max-width:420px;border-radius:16px;overflow:hidden;background:#1b2333;color:#fff;font-family:\"Archivo\",sans-serif;box-shadow:0 24px 48px -24px rgba(18,22,31,.55)}.ds-screen header{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid #2c3548;font-size:.875rem;font-weight:500;color:#c7cdd9}.ds-badge{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:9999px;background:#ef7c1c;color:#12161f;font-size:.75rem;font-weight:800}.ds-period{margin-left:auto}.ds-screen-body{padding:20px}.ds-code{margin:0;font-size:.875rem;font-weight:600;color:#c7cdd9}.ds-screen h3{margin:0;font-size:1.5rem;font-weight:700;font-stretch:112%;line-height:1.25}.ds-sum{font-size:.9375rem;line-height:1.625;color:#c7cdd9}.ds-screen a{color:#fff;font-weight:600;font-size:.9375rem;text-decoration:underline;text-decoration-color:#ef7c1c;text-decoration-thickness:2px;text-underline-offset:.2em}.ds-screen a:hover{text-decoration-color:#fff}.ds-screen a:focus-visible{outline:3px solid #ffb36b;outline-offset:3px}"
+      "refersTo": "stop-panel",
+      "description": "The one panel of each ride stop: bracketed 95% ink, lit from its top edge in the tower colour; floor variant shown.",
+      "html": "<article class=\"ds-panel\" style=\"--l:#ff2a6d\"><h3 class=\"ds-tube-title\">OPIc Simulator</h3><p class=\"ds-meta\"><span style=\"color:#ff2a6d\">2F</span><i class=\"ds-pip\"></i><span>A02</span><i class=\"ds-pip\" style=\"--l:#4a3a6a\"></i><span>2026</span></p><p class=\"ds-copy\">A full simulation of the OPIc speaking exam, graded per dimension.</p><ul class=\"ds-stack\"><li>Python</li><li>Whisper</li><li>Claude API</li></ul><a class=\"ds-link\" href=\"#\">Source code</a></article>",
+      "css": ".ds-panel{--tube:var(--l);position:relative;max-width:36rem;padding:28px;background-color:rgba(5,1,15,.95);background-image:linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55)),linear-gradient(rgba(185,169,214,.55),rgba(185,169,214,.55));background-position:top left,top left,top right,top right,bottom left,bottom left,bottom right,bottom right;background-size:10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px,10px 1px,1px 10px;background-repeat:no-repeat;box-shadow:inset 0 1px 0 var(--l),0 -14px 44px -26px var(--l)}.ds-tube-title{margin:0;font-family:Archivo,sans-serif;font-stretch:62%;font-weight:800;text-transform:uppercase;line-height:.88;letter-spacing:-.01em;font-size:3.25rem;color:#fff;text-shadow:0 0 1px #fff,0 0 .16em var(--l),0 0 .5em color-mix(in srgb,var(--l) 70%,transparent);animation:ds-power-on 900ms linear 1}.ds-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:10px 0 0;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#b9a9d6}.ds-pip{display:inline-block;width:6px;height:6px;background:var(--l);box-shadow:0 0 6px var(--l)}.ds-copy{margin:12px 0 0;max-width:62ch;font-family:Archivo,sans-serif;font-size:1.0625rem;line-height:1.625;color:#cfc3e6}.ds-stack{display:flex;flex-wrap:wrap;gap:4px 12px;margin:16px 0 0;padding:0;list-style:none;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:#b9a9d6}.ds-stack li::before{content:'';display:inline-block;width:8px;height:1px;margin-right:6px;vertical-align:middle;background:var(--l)}.ds-link{display:inline-block;margin-top:20px;font-family:Archivo,sans-serif;font-size:.9375rem;font-weight:600;color:#fff;text-decoration:underline 2px var(--l);text-underline-offset:.22em}.ds-link:focus-visible{outline:2px solid #05d9e8;outline-offset:3px;border-radius:2px}@keyframes ds-power-on{0%,8%,20%,34%{opacity:.18}4%,14%,26%,100%{opacity:1}40%{opacity:.55}46%{opacity:1}}@media (prefers-reduced-motion:reduce){.ds-tube-title{animation:none}}"
     },
     {
-      "name": "Exit Link",
+      "name": "Floor Directory",
+      "kind": "nav",
+      "refersTo": "floor-button",
+      "description": "Lobby elevator buttons: every floor of the tower, top floor first, on a 1px wire grid.",
+      "html": "<nav class=\"ds-dir\" style=\"--l:#05d9e8\"><ol><li><button>4F<span>Numen Academy</span></button></li><li><button>3F<span>Utomata App</span></button></li><li><button>2F<span>OpenHelp</span></button></li><li><button>1F<span>Numen Platform</span></button></li></ol></nav>",
+      "css": ".ds-dir{max-width:30rem;background:#05010f;padding:12px}.ds-dir ol{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:0;padding:0;list-style:none;background:#2a1a47}.ds-dir li{background:#05010f}.ds-dir button{display:flex;width:100%;align-items:center;gap:12px;padding:10px 12px;border:0;border-radius:0;background:#05010f;color:var(--l);font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;text-align:left;cursor:pointer;transition:background-color 150ms}.ds-dir button span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:Archivo,sans-serif;font-size:.9375rem;font-weight:500;letter-spacing:0;text-transform:none;color:#f3eefc}.ds-dir button:hover{background:#120725}.ds-dir button:hover span{color:#fff}.ds-dir button:focus-visible{outline:2px solid #05d9e8;outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Platform Edge Footer",
       "kind": "custom",
-      "refersTo": "exit-link",
-      "description": "Terminus contact tile with a yellow metro exit number.",
-      "html": "<div class=\"ds-exits\"><a class=\"ds-exit\" href=\"#\"><span class=\"ds-exit-n\">1</span>WhatsApp<svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-exit-arrow\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a></div>",
-      "css": ".ds-exits{background:#1b2333;padding:16px}.ds-exit{display:flex;align-items:center;gap:12px;border-radius:12px;background:#121826;padding:16px;color:#fff;font-family:\"Archivo\",sans-serif;font-weight:600;text-decoration:none;transition:background-color 150ms}.ds-exit:hover{background:#2c3548}.ds-exit:focus-visible{outline:3px solid #ffb36b;outline-offset:3px}.ds-exit-n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:#ffd200;color:#12161f;font-size:.875rem;font-weight:800}.ds-exit-arrow{margin-left:auto;color:#c7cdd9;transition:transform 150ms}.ds-exit:hover .ds-exit-arrow{transform:translateX(2px);color:#fff}"
+      "refersTo": "neon-acid",
+      "description": "Footer as the platform edge: acid tactile dots, a glowing acid line, then the copyright.",
+      "html": "<footer class=\"ds-foot\"><div class=\"ds-tactile\"></div><div class=\"ds-edge\"></div><p>© 2026 · Designed and built by Jorge Ignacio Garay in Seoul.</p></footer>",
+      "css": ".ds-foot{background:#05010f}.ds-tactile{height:12px;background:radial-gradient(circle,#f9f002 1.6px,transparent 2.2px) 0 0/9px 9px,#3a3405}.ds-edge{height:1px;background:#f9f002;box-shadow:0 0 18px 2px rgba(249,240,2,.5)}.ds-foot p{margin:0;padding:40px 16px;font-family:Archivo,sans-serif;font-size:.875rem;line-height:1.625;color:#b9a9d6}"
+    },
+    {
+      "name": "NOW Badge",
+      "kind": "chip",
+      "refersTo": "now-badge",
+      "description": "Solid magenta marker for the current role.",
+      "html": "<span class=\"ds-now\">Now</span>",
+      "css": ".ds-now{display:inline-flex;align-items:center;padding:4px 8px;background:#ff2a6d;color:#05010f;font-family:ui-monospace,Menlo,monospace;font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 0 14px -2px #ff2a6d}"
     }
   ],
   "narrative": {
-    "northStar": "The Seoul Metro Line",
-    "overview": "The whole site is a working wayfinding system. Station-enamel ground, signage-navy panels, and the real Seoul line colours used as a code: green is career and product work, orange is applied AI and \"now\", violet is the playground. Projects are stations with codes (A01, P04, X07), roles are stops on a single green line, and the contact section is the terminus. Every device is borrowed from the metro itself: circular roundels with a line-coloured ring, transfer double-rings, 10px line strokes, a three-colour stripe under the sign band, yellow exit-number squares, and a side-on train car that marks the selected station.\n\nDensity is that of a station platform sign: one huge name, short supporting text, generous section breathing room (128px vertical on desktop), and information grouped by line rather than by card grid. Light enamel carries most of the page; the navy sign colour appears as bands and panels (the sticky sign bar, the arrival screen, the terminus), never as a full dark theme. The only motion is travel: the train glides along the line with a long ease-out, and the line scrolls the selected station into view on phones. Nothing else animates.\n\nType is one family doing all the work. Archivo stretched to 112% width and set heavy reads as station-name signage; the same family at normal width carries body copy. Korean falls back to Gothic A1 Heavy for display and the platform Korean sans for body, with `word-break: keep-all`, so the trilingual sign stacking (Latin name over Hangul name) holds in EN, ES and KO.",
+    "northStar": "The Alley After Last Train",
+    "overview": "**Creative North Star: \"The Alley After Last Train\"**\n\nThe whole page is one Seoul block at 1 a.m. in the rain, seen through one camera. The first viewport is the street: violet skyline, four towers with neon roof names (APPLIED AI, PRODUCT, PLAYGROUND, EXPERIENCE), vertical hangul signs hanging beside the floors they name, orange pojangmacha tents with walkers and steam, an OPEN sign with a dead N, a rippled reflection on the asphalt, diagonal rain and lightning on demand. Scrolling does not leave that street; it moves the camera into it. Each tower is a line of work and each floor a project, read through its window (screenshot, or the name lettered in neon) while a glass elevator rides the facade. The stack lights up as signs on masts over the roofs, then the camera goes down a lit stairwell to a cut-away subway platform where the last train brakes in, opens its doors, and the contact panel waits.\n\nEvery stop of the ride carries exactly one bracketed panel of near-black ink beside the subject, so the neon stays the only light and the light source is always the line's own colour. Display type is condensed uppercase Archivo at 62% width; on white type it carries a magenta/cyan chromatic split, on line-coloured type it glows as a tube. System chrome is ui-monospace in small tracked caps between corner brackets: the HUD, the elevator readout, codes, floors. Corners on the interface are square. Depth comes from glow, the reflection and the camera's own zoom, never from lifted cards.\n\nMotion is the world's weather and machinery, not decoration: neon fails like old glass, rain falls on one diagonal, the camera eases between stops, the elevator follows the scroll, the train brakes in and its doors open. Panels themselves scroll in plain page flow and only power on. Every one of those motions has an implemented reduced-motion fallback.",
     "keyCharacteristics": [
-      "Line colour is a code with meaning, never decoration.",
-      "Roundels, line strokes and transfer rings are the recurring structural marks.",
-      "Flat enamel and navy surfaces; depth comes from tonal panels, not shadow.",
-      "One stretched heavy sans for display, same family for body.",
-      "Motion is linear travel along the line only."
+      "Ink-black ground (#05010f) with four towers: magenta applied AI, cyan product, acid playground, lilac experience; acid also lights the station.",
+      "Scroll is the camera: street → lobby → floors → roof → station → platform, one canvas behind a column of panels.",
+      "Condensed uppercase Archivo with chromatic aberration on white type; Gothic A1 Heavy for hangul sign lettering.",
+      "Monospace HUD voice in tracked caps framed by 10px corner brackets; the elevator readout (L / nF / R / B1 / B2) is the page's position.",
+      "Square interface geometry; light, not shadow, carries depth.",
+      "A single rain diagonal (dx = 0.27 · dy) everywhere it falls."
     ],
     "rules": [
       {
-        "name": "The Line Code Rule",
-        "body": "Green means product/career, orange means applied AI or \"now\", violet means playground. A line colour appears only where it states that membership; never pick one for looks.",
+        "name": "The Tower Owns Its Light Rule",
+        "body": "Each tower has exactly one colour (AI magenta, product cyan, playground acid, experience lilac). Every surface that belongs to a tower (roof name, lobby glow, floor window outline, hangul sign, panel top edge, title tube, floor number, stack ticks, link underline, readout glow) takes that colour and nothing else. The one override is hot: the current role is lit magenta.",
         "section": "colors"
       },
       {
-        "name": "The Hard Stop Rule",
-        "body": "Where lines meet, colours change at a hard stop (stripe segments, per-station track segments). Lines are never blended into gradients.",
+        "name": "The Only Light Rule",
+        "body": "Grounds are ink; colour appears only as emitted light (glow, tube text, hairline, pip). No neon-tinted panel fills except the three solid-fill devices: the solid tube button, the NOW badge, the NEWSWIRE label.",
         "section": "colors"
       },
       {
-        "name": "The Text-Safe Orange Rule",
-        "body": "Orange as text on enamel uses Line 3 Ink; bright Line 3 Orange is for strokes, fills, underlines, and text set on navy or with ink on top of it.",
+        "name": "The World Lights Stay In The World Rule",
+        "body": "Tent orange and LED amber belong to the canvas. They never become a tower colour or a UI accent.",
         "section": "colors"
       },
       {
-        "name": "The Station Sign Rule",
-        "body": "Anything that names a place (person, project, line, company) is set in the stretched 112% width; anything that explains it is set at normal width.",
+        "name": "The Two Voices Rule",
+        "body": "Condensed caps for anything that is a sign; tracked monospace caps for anything that is instrumentation. Body Archivo carries reading only. No third display voice.",
         "section": "typography"
       },
       {
-        "name": "The Trilingual Stack Rule",
-        "body": "Names stack Latin over Hangul at reduced weight in steel; Korean text always uses `word-break: keep-all`.",
+        "name": "The Chroma Is For White Type Rule",
+        "body": "The magenta/cyan split (±0.045em) sits on white display and headline type; the ±1.5px cut only on the JG mark. Tower-coloured titles glow as tubes instead and never get chroma.",
         "section": "typography"
       },
       {
-        "name": "The 10px Line Rule",
-        "body": "Every line stroke (featured track, stems, experience line, terminus stripe) is 10px thick with rounded or hard ends; the sign bar stripe is the one thinner (6px) echo.",
+        "name": "The Names Keep Their Case Rule",
+        "body": "Brand words with a lowercase tail after two or more capitals (OPIc) keep their casing inside uppercase styles and in canvas lettering.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Panel Per Stop Rule",
+        "body": "Every stop of the ride carries exactly one panel beside the subject the camera is framing. Lists inside a panel are hairline rows or the wire-gridded floor directory; never card grids.",
         "section": "layout"
       },
       {
-        "name": "The One Lit Screen Rule",
-        "body": "Only the arrival screen casts a shadow. Everything else sits flat on the platform.",
+        "name": "The Camera Not The Content Rule",
+        "body": "Movement between stops belongs to the canvas camera. The panels scroll at page speed and never slide, fade or parallax on their own.",
+        "section": "layout"
+      },
+      {
+        "name": "The Emitted Not Cast Rule",
+        "body": "Every shadow is light leaving a tube in its own colour. A dark offset shadow has no source on this street.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** encode meaning with line colour: green (#00a84d) product/career, orange (#ef7c1c) applied AI / now, violet (#996cac) playground.",
-      "**Do** draw lines as 10px strokes with hard colour stops where lines change.",
-      "**Do** mark stations with roundels (white disc, line-colour ring, code inside) and transfers with the double ring.",
-      "**Do** set names in Archivo at 112% width, weight 700–800; explanations at normal width.",
-      "**Do** use Line 3 Ink (#a94f00) for orange text on enamel.",
-      "**Do** keep every string available in EN, ES and KO, with Korean `word-break: keep-all`.",
-      "**Do** show a station plate when a project has no real screenshot."
+      "Do give every surface of a tower its single colour: magenta AI, cyan product, acid playground, lilac experience; light the current role magenta.",
+      "Do put new content on the ride as a stop: a camera key on the canvas plus one panel beside it.",
+      "Do set signs, names and titles in condensed uppercase Archivo (62% width, 800, 0.88 line-height), and hangul sign lettering in Gothic A1 Heavy.",
+      "Do put all instrumentation in the 0.6875rem monospace label voice with 0.14em tracking and tabular numerals.",
+      "Do draw interface frames with 1px inset rings, 10px corner brackets and wire hairlines; keep every interface corner square.",
+      "Do express depth as emitted glow in the element's own colour, on ink grounds.",
+      "Do keep the rain on the 0.27 diagonal everywhere it appears.",
+      "Do ship a reduced-motion branch for every new moving thing, and pause the canvas off screen and in hidden tabs."
     ],
     "donts": [
-      "**Don't** turn the site into a dark neon dev theme; navy is for sign bands and panels on an enamel platform.",
-      "**Don't** use line colours decoratively or blend them into gradients.",
-      "**Don't** add shadows beyond the arrival screen glow; depth is tonal.",
-      "**Don't** animate anything except travel along the line, and honour reduced motion.",
-      "**Don't** use Line 1 blue (#0052a4) or exit yellow (#ffd200) outside the focus ring and exit/headlight roles.",
-      "**Don't** fabricate screenshots, metrics or logos; use the station plate."
+      "Don't add rounded corners, opaque filled cards or card grids, or dark offset drop shadows to the interface; panels are translucent ink with drawn frames.",
+      "Don't use tent orange, LED amber or any fifth accent on UI chrome or text.",
+      "Don't put chroma on tower-coloured tube titles or on body text.",
+      "Don't animate panels on their own (no slides, fades or content parallax); the camera moves, panels only power on.",
+      "Don't let HUD and panels collide: anything that stays on screen during the ride sits in the HUD layer above the band.",
+      "Don't set hangul in the condensed Latin cut without its Korean tracking and line-height overrides."
     ]
   }
 }

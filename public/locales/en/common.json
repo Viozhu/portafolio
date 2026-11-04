@@ -3,7 +3,6 @@
   "meta_description": "Full Stack developer with 5+ years shipping web and mobile products in React, Next.js, Flutter and Node, now building with applied AI. Based in Seoul, working remotely worldwide.",
   "skip": "Skip to content",
   "nav_work": "Work",
-  "nav_route": "Route map",
   "nav_experience": "Experience",
   "nav_contact": "Contact",
   "language": "Language",
@@ -12,24 +11,14 @@
   "intro": "5+ years shipping web and mobile products in React, Next.js, Flutter and Node for healthcare, logistics, edtech and finance. Mentor to 20+ developers. Based in Seoul, working remotely for teams anywhere.",
   "cta_write": "Write to me",
   "cta_cv": "Open CV",
-  "line_label": "Featured work, oldest to newest",
-  "line_hint": "Choose a station",
   "now": "Now",
-  "terminus": "Latest",
   "view_live": "Visit site",
   "view_repo": "Source code",
   "private_repo": "Private repository",
   "company_work": "Company work, not public",
-  "route_title": "Route map",
-  "route_intro": "Every project, grouped by line. Each station is a thing I built.",
-  "stations": "stations",
   "experience_title": "Experience",
-  "experience_intro": "Stops on the route so far. Current roles are marked in orange.",
   "present": "Present",
   "education": "Education",
-  "transfers_title": "Transfers",
-  "transfers_intro": "The stack I change lines on.",
-  "contact_title": "End of the line. Let's talk.",
   "contact_intro": "Open to remote full-time roles and freelance projects, from web apps to Flutter apps to AI features inside real products.",
   "contact_email": "Email",
   "contact_whatsapp": "WhatsApp",
@@ -38,5 +27,76 @@
   "contact_cv": "CV (PDF)",
   "copy": "Copy",
   "copied": "Copied",
-  "footer": "Designed and built by Jorge Ignacio Garay in Seoul."
+  "nav_stack": "Stack",
+  "scene_label": "A live drawing of a Seoul alley at night in the rain. Each neon sign is one of my featured projects.",
+  "signs_label": "Featured work, one neon sign each",
+  "signs_hint": "Tap a building or a sign to go inside. Tap the sky for lightning.",
+  "hud_location": "Seoul",
+  "hud_status": "Open to work",
+  "hud_signal": "Signal",
+  "rain": "Rain",
+  "rain_levels": [
+    "Drizzle",
+    "Downpour",
+    "Monsoon"
+  ],
+  "sound": "Sound",
+  "sound_on": "Sound on",
+  "sound_off": "Sound off",
+  "strike": "Strike",
+  "strike_label": "Call a lightning strike",
+  "ticker_label": "Newswire",
+  "ticker": [
+    "Accounting pipeline reconciles statements from 12 banks against SAT e-invoices, every month, for a firm in Mexico",
+    "OPIc Simulator: Whisper transcribes the answers, Claude grades them, and the report shows the arithmetic",
+    "MeetingNotes transcribes on the Mac with whisper.cpp and labels who said what",
+    "LendLoop: n8n sends the overdue reminders and the admin panel shows every failed run",
+    "Numen Academy: a student platform for 400+ students, and 20+ junior developers mentored",
+    "The sign on the corner still reads OPE_. Jorge, however, is OPEN: remote roles and freelance",
+    "Tonight in this alley: steady rain, lightning on tap"
+  ],
+  "work_title": "The city after dark",
+  "work_intro": "Each building is a line of work and each floor is something I built. Scroll to ride the elevator, or pick a building.",
+  "experience_intro": "The tower I've been building since 2021: the oldest role on the ground floor, current work lit magenta at the top.",
+  "stack_title": "Wiring",
+  "stack_intro": "What the signs run on.",
+  "contact_title": "Last train's boarding. Let's talk.",
+  "footer": "Designed and built by Jorge Ignacio Garay in Seoul. The street, the rain and the signs are drawn live in canvas.",
+  "board_title": "Last train",
+  "board_rows": [
+    [
+      "Line",
+      "Remote · Freelance"
+    ],
+    [
+      "Destination",
+      "Your team"
+    ],
+    [
+      "Departs",
+      "When you write"
+    ],
+    [
+      "Status",
+      "Boarding"
+    ]
+  ],
+  "city_label": "The city: every project is a floor",
+  "city_roof": [
+    "APPLIED AI",
+    "PRODUCT",
+    "PLAYGROUND",
+    "EXPERIENCE"
+  ],
+  "station_sign": "막차 LAST TRAIN",
+  "floor_directory": "Floor directory",
+  "floor_of": "Floor {{floor}}",
+  "enter_city": "Enter the city",
+  "directory": "Building directory",
+  "platform_board": [
+    "막차 LAST TRAIN",
+    "→ YOUR TEAM · REMOTE / FREELANCE",
+    "ARRIVING",
+    "BOARDING"
+  ]
 }

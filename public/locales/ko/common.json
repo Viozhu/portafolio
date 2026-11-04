@@ -3,7 +3,6 @@
   "meta_description": "React, Next.js, Flutter, Node로 5년 이상 웹·모바일 제품을 만들어 온 풀스택 개발자. 지금은 응용 AI로 제품을 만듭니다. 서울 거주, 전 세계 원격 근무.",
   "skip": "본문으로 건너뛰기",
   "nav_work": "작업",
-  "nav_route": "노선도",
   "nav_experience": "경력",
   "nav_contact": "연락",
   "language": "언어",
@@ -12,24 +11,14 @@
   "intro": "헬스케어·물류·에듀테크·금융 분야에서 React, Next.js, Flutter, Node로 5년 이상 웹·모바일 제품을 출시했습니다. 개발자 20명 이상을 멘토링했습니다. 서울에 살며 어디에 있는 팀과도 원격으로 일합니다.",
   "cta_write": "연락하기",
   "cta_cv": "이력서 보기",
-  "line_label": "대표 작업, 오래된 순",
-  "line_hint": "역을 선택하세요",
   "now": "현재",
-  "terminus": "최신",
   "view_live": "사이트 보기",
   "view_repo": "소스 코드",
   "private_repo": "비공개 저장소",
   "company_work": "회사 업무, 비공개",
-  "route_title": "노선도",
-  "route_intro": "모든 프로젝트를 노선별로 모았습니다. 역 하나하나가 제가 만든 것입니다.",
-  "stations": "개 역",
   "experience_title": "경력",
-  "experience_intro": "지금까지 지나온 역. 현재 역할은 주황색으로 표시했습니다.",
   "present": "현재",
   "education": "학력",
-  "transfers_title": "환승 안내",
-  "transfers_intro": "노선을 갈아탈 때 쓰는 기술 스택.",
-  "contact_title": "종착역입니다. 이야기 나눠요.",
   "contact_intro": "원격 정규직과 프리랜스 프로젝트 모두 환영합니다. 웹앱, Flutter 앱, 실제 제품 속 AI 기능까지.",
   "contact_email": "이메일",
   "contact_whatsapp": "WhatsApp",
@@ -38,5 +27,76 @@
   "contact_cv": "이력서 (PDF)",
   "copy": "복사",
   "copied": "복사됨",
-  "footer": "서울에서 호르헤 이그나시오 가라이가 디자인하고 만들었습니다."
+  "nav_stack": "기술",
+  "scene_label": "비 내리는 서울 밤 골목을 실시간으로 그린 장면. 네온 간판 하나하나가 대표 프로젝트입니다.",
+  "signs_label": "대표 작업, 프로젝트마다 네온 간판 하나",
+  "signs_hint": "건물이나 간판을 누르면 안으로 들어갑니다. 하늘을 누르면 번개가 칩니다.",
+  "hud_location": "서울",
+  "hud_status": "구직 중",
+  "hud_signal": "신호",
+  "rain": "비",
+  "rain_levels": [
+    "이슬비",
+    "소나기",
+    "장마"
+  ],
+  "sound": "소리",
+  "sound_on": "소리 켜짐",
+  "sound_off": "소리 꺼짐",
+  "strike": "번개",
+  "strike_label": "번개 치기",
+  "ticker_label": "뉴스 속보",
+  "ticker": [
+    "회계 파이프라인, 멕시코 회계 법인을 위해 매달 12개 은행 내역을 SAT 전자세금계산서와 대사",
+    "OPIc 시뮬레이터: Whisper가 답변을 전사하고 Claude가 채점, 리포트에 산출 과정까지",
+    "MeetingNotes, 맥에서 whisper.cpp로 전사하고 화자를 구분",
+    "LendLoop: n8n이 연체 알림을 보내고, 실패한 자동화는 관리자 패널에 모두 표시",
+    "Numen Academy: 학생 400명 이상이 쓰는 플랫폼, 주니어 개발자 20명 이상 멘토링",
+    "모퉁이 간판은 여전히 OPE_. 하지만 호르헤는 OPEN: 원격 근무와 프리랜스 환영",
+    "오늘 밤 이 골목: 꾸준한 비, 번개는 원할 때마다"
+  ],
+  "work_title": "밤의 도시",
+  "work_intro": "건물 하나가 한 분야이고, 층마다 제가 만든 것이 있습니다. 스크롤하면 엘리베이터가 올라가고, 건물을 골라도 됩니다.",
+  "experience_intro": "2021년부터 쌓아 온 타워. 1층이 첫 역할이고, 꼭대기에서 마젠타로 빛나는 것이 지금 하는 일입니다.",
+  "stack_title": "배선",
+  "stack_intro": "간판을 움직이는 기술.",
+  "contact_title": "막차가 곧 출발해요. 이야기 나눠요.",
+  "footer": "서울에서 호르헤 이그나시오 가라이가 디자인하고 만들었습니다. 거리와 비, 간판은 캔버스로 실시간으로 그립니다.",
+  "board_title": "막차",
+  "board_rows": [
+    [
+      "노선",
+      "원격 · 프리랜스"
+    ],
+    [
+      "행선지",
+      "당신의 팀"
+    ],
+    [
+      "출발",
+      "연락 주실 때"
+    ],
+    [
+      "상태",
+      "탑승 중"
+    ]
+  ],
+  "city_label": "도시: 프로젝트 하나가 한 층",
+  "city_roof": [
+    "응용 AI",
+    "프로덕트",
+    "플레이그라운드",
+    "경력"
+  ],
+  "station_sign": "막차 LAST TRAIN",
+  "floor_directory": "층별 안내",
+  "floor_of": "{{floor}}층",
+  "enter_city": "도시로 들어가기",
+  "directory": "건물 안내",
+  "platform_board": [
+    "막차 LAST TRAIN",
+    "→ 당신의 팀 · 원격 / 프리랜스",
+    "도착 중",
+    "탑승 중"
+  ]
 }
