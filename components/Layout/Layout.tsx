@@ -1,88 +1,42 @@
 import * as React from "react";
 import Head from "next/head";
-import { Navbar } from "../NavBar/navbar";
-import Particles from "react-tsparticles";
+import { useRouter } from "next/router";
+import { SignBar } from "../metro/SignBar";
 
 interface Props {
-  children: any;
-  title: String;
+  children: React.ReactNode;
+  title: string;
+  description: string;
 }
 
-const Layout = ({ children, title = "" }: Props) => {
+const SITE = "https://jorgeignaciogaray.netlify.app";
+
+const Layout = ({ children, title, description }: Props) => {
+  const { locale, defaultLocale } = useRouter();
+  const path = locale && locale !== defaultLocale ? `/${locale}` : "";
   return (
-    <div className="bg-space-dark -m-2 overflow-x-hidden w-auto min-h-screen text-white">
+    <>
       <Head>
         <title>{title}</title>
-        <link
-          id="page_favicon"
-          href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACMlKf8jJSn/IyUp/yMlKf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIyUp/yMlKf+04N+NtODfjbTg34204N+NIyUp/yMlKf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIyUp/7Tg34204N+NtODfjbTg34204N+NtODfjbTg34204N+NIyUp/wAAAAAAAAAAAAAAAAAAAAAAAAAAIyUp/7Tg34204N+NtODfjbTg34204N+NtODfjSMlKf8jJSn/IyUp/7Tg340jJSn/AAAAAAAAAAAAAAAAAAAAACMlKf+04N+NtODfjbTg34204N+NIyUp/yMlKf8AAAAAAAAAAAAAAAAjJSn/IyUp/wAAAAAAAAAAAAAAACMlKf+04N+NtODfjbTg34204N+NIyUp/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACMlKf8AAAAAAAAAAAAAAAAjJSn/tODfjbTg34204N+NIyUp/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIyUp/7Tg34204N+NtODfjSMlKf8AAAAAAAAAAAAAAAAAAAAAIyUp/wAAAAAAAAAAAAAAAAAAAAAjJSn/AAAAACMlKf+04N+NtODfjSMlKf8AAAAAAAAAAAAAAAAAAAAAAAAAACMlKf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIyUp/7Tg340jJSn/AAAAAAAAAAAAAAAAIyUp/yMlKf8AAAAAIyUp/yMlKf8AAAAAAAAAAAAAAAAAAAAAAAAAACMlKf+04N+NIyUp/wAAAAAAAAAAAAAAAAAAAAAAAAAAIyUp/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIyUp/7Tg340jJSn/AAAAAAAAAAAAAAAAAAAAACMlKf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjJSn/IyUp/yMlKf8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIyUp/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACMlKf8AAAAAAAAAAAAAAAAAAAAAIyUp/wAAAAAjJSn/AAAAAAAAAAAjJSn/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjJSn/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+H8AAOAfAADADwAAgAcAAIDnAAAD9wAAB/8AAAe9AAAPvwAAjk8AAI+/AADHvwAA4/sAAP71AAC/+wAA//8AAA=="
-          rel="icon"
-          type="image/x-icon"
-        />
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1b2333" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="canonical" href={`${SITE}${path}`} />
+        {["en", "es", "ko"].map((l) => (
+          <link key={l} rel="alternate" hrefLang={l} href={`${SITE}${l === "en" ? "" : `/${l}`}`} />
+        ))}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={`${SITE}${path}`} />
+        <meta property="og:image" content={`${SITE}/work/jorge.webp`} />
+        <meta name="twitter:card" content="summary" />
       </Head>
-      <div className="w-auto h-full z-50 sticky top-0 bg-space-dark/80 backdrop-blur-sm">
-        <Navbar />
-      </div>
-      <div className="relative z-10">
-        {children}
-      </div>
-      <Particles
-        className="z-0 w-full h-full absolute top-0 left-0"
-        params={{
-          particles: {
-            number: {
-              value: 100,
-              density: {
-                enable: true,
-                value_area: 800,
-              },
-            },
-            color: {
-              value: "#ffffff",
-            },
-            shape: {
-              type: "circle",
-            },
-            opacity: {
-              value: 0.5,
-              random: true,
-            },
-            size: {
-              value: 2,
-              random: true,
-            },
-            move: {
-              enable: true,
-              speed: 0.5,
-              direction: "none",
-              random: true,
-              straight: false,
-              out_mode: "out",
-            },
-          },
-          interactivity: {
-            detect_on: "window",
-            events: {
-              onhover: {
-                enable: true,
-                mode: "bubble",
-              },
-            },
-            modes: {
-              bubble: {
-                distance: 200,
-                size: 4,
-                duration: 2,
-                opacity: 0.8,
-              },
-            },
-          },
-          retina_detect: true,
-        }}
-      />
-    </div>
+      <SignBar />
+      <main id="main">{children}</main>
+    </>
   );
 };
 

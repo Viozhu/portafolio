@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T00:46:31.600631+00:00",
+  "title": "Design System: Jorge Ignacio Garay",
+  "extensions": {
+    "colorMeta": {
+      "enamel": {
+        "role": "neutral",
+        "displayName": "Station Enamel",
+        "canonical": "oklch(96.6% 0.004 106.5)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424241",
+          "#616160",
+          "#828281",
+          "#a5a5a3",
+          "#c9c9c7",
+          "#efefec"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Platform White",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#a5a5a5",
+          "#c9c9c9",
+          "#eeeeee"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Rail Ink",
+        "canonical": "oklch(20.0% 0.019 266.0)",
+        "tonalRamp": [
+          "#080b13",
+          "#21252e",
+          "#3e424a",
+          "#5e6169",
+          "#7f8289",
+          "#a2a5aa",
+          "#c7c9cd",
+          "#edeef1"
+        ]
+      },
+      "steel": {
+        "role": "neutral",
+        "displayName": "Steel",
+        "canonical": "oklch(43.6% 0.031 268.4)",
+        "tonalRamp": [
+          "#080b14",
+          "#202532",
+          "#3b4252",
+          "#5a6172",
+          "#7c8292",
+          "#9fa5b3",
+          "#c4c9d5",
+          "#eaeef8"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Tile Rule",
+        "canonical": "oklch(87.4% 0.009 106.6)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#252523",
+          "#424240",
+          "#61615e",
+          "#83837e",
+          "#a5a5a0",
+          "#cacac3",
+          "#efefe8"
+        ]
+      },
+      "sign": {
+        "role": "neutral",
+        "displayName": "Signage Navy",
+        "canonical": "oklch(25.6% 0.033 263.7)",
+        "tonalRamp": [
+          "#060b17",
+          "#1d2535",
+          "#3a4251",
+          "#5a616f",
+          "#7c838f",
+          "#a0a5af",
+          "#c5c9d1",
+          "#eceef4"
+        ]
+      },
+      "sign-deep": {
+        "role": "neutral",
+        "displayName": "Signage Navy Deep",
+        "canonical": "oklch(21.0% 0.029 266.1)",
+        "tonalRamp": [
+          "#060b17",
+          "#1f2533",
+          "#3c424f",
+          "#5c616d",
+          "#7e828d",
+          "#a1a5ad",
+          "#c6c9cf",
+          "#edeef2"
+        ]
+      },
+      "sign-line": {
+        "role": "neutral",
+        "displayName": "Signage Line",
+        "canonical": "oklch(32.9% 0.036 264.8)",
+        "tonalRamp": [
+          "#060b17",
+          "#1d2536",
+          "#394255",
+          "#596173",
+          "#7b8292",
+          "#9fa5b2",
+          "#c4c9d4",
+          "#ebeff6"
+        ]
+      },
+      "sign-text": {
+        "role": "neutral",
+        "displayName": "Signage Text",
+        "canonical": "oklch(84.7% 0.018 264.5)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#232528",
+          "#404247",
+          "#5e6168",
+          "#7e828b",
+          "#a0a5af",
+          "#c3c9d5",
+          "#e9effa"
+        ]
+      },
+      "line2": {
+        "role": "secondary",
+        "displayName": "Line 2 Green",
+        "canonical": "oklch(63.9% 0.176 150.0)",
+        "tonalRamp": [
+          "#001002",
+          "#002e10",
+          "#015022",
+          "#007534",
+          "#069c48",
+          "#4ac06d",
+          "#82e299",
+          "#c8ffd2"
+        ]
+      },
+      "line3": {
+        "role": "primary",
+        "displayName": "Line 3 Orange",
+        "canonical": "oklch(70.4% 0.170 53.0)",
+        "tonalRamp": [
+          "#190500",
+          "#3e1a00",
+          "#683000",
+          "#964901",
+          "#c66307",
+          "#f4822a",
+          "#ffb689",
+          "#ffeadd"
+        ]
+      },
+      "line3-ink": {
+        "role": "primary",
+        "displayName": "Line 3 Ink",
+        "canonical": "oklch(53.2% 0.139 50.8)",
+        "tonalRamp": [
+          "#1a0500",
+          "#3f1800",
+          "#6a2f00",
+          "#984600",
+          "#bd6932",
+          "#dc9063",
+          "#fbb892",
+          "#feeadf"
+        ]
+      },
+      "line5": {
+        "role": "tertiary",
+        "displayName": "Line 5 Violet",
+        "canonical": "oklch(60.1% 0.107 315.5)",
+        "tonalRamp": [
+          "#13041a",
+          "#31193b",
+          "#52335f",
+          "#765085",
+          "#9b6eae",
+          "#bc93cd",
+          "#ddbaed",
+          "#f7e8fe"
+        ]
+      },
+      "line1": {
+        "role": "accent",
+        "displayName": "Line 1 Blue (focus)",
+        "canonical": "oklch(44.7% 0.149 255.4)",
+        "tonalRamp": [
+          "#000a24",
+          "#002450",
+          "#004083",
+          "#1e60af",
+          "#4d84ca",
+          "#78a8e5",
+          "#a6ccfe",
+          "#e5f0fe"
+        ]
+      },
+      "exit-yellow": {
+        "role": "accent",
+        "displayName": "Exit Yellow",
+        "canonical": "oklch(87.7% 0.180 93.1)",
+        "tonalRamp": [
+          "#100a00",
+          "#2e2400",
+          "#504001",
+          "#755f03",
+          "#9c7f00",
+          "#c5a205",
+          "#efc50d",
+          "#ffeeb8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Name sign in the hero and the terminus headline."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles."
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Role line under the name."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Line, company and project names."
+      },
+      "station-name": {
+        "displayName": "Station name",
+        "purpose": "Labels under roundels on the featured line."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 58-68ch."
+      },
+      "body-small": {
+        "displayName": "Body small",
+        "purpose": "Panel summaries, nav links, link rows."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Stack chips."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Station codes and periods, tabular."
+      }
+    },
+    "shadows": [
+      {
+        "name": "arrival-screen",
+        "value": "0 24px 48px -24px rgba(18,22,31,0.55)",
+        "purpose": "The hero arrival screen only."
+      },
+      {
+        "name": "transfer-ring",
+        "value": "0 0 0 3px <ground>, 0 0 0 6px <line colour>",
+        "purpose": "Double ring for transfer/terminus stations and the current role."
+      }
+    ],
+    "motion": [
+      {
+        "name": "train-travel",
+        "value": "left 650ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Train marker gliding to the selected station; disabled under prefers-reduced-motion."
+      },
+      {
+        "name": "state-color",
+        "value": "150ms ease (Tailwind transition-colors)",
+        "purpose": "Hover colour changes on buttons, nav, exits, roundels."
+      },
+      {
+        "name": "line-scroll",
+        "value": "scrollTo behavior smooth",
+        "purpose": "Centers the selected station on phones; auto under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "focus": {
+      "onLight": "3px solid #0052a4, offset 3px",
+      "onSign": "3px solid #ffb36b, offset 3px"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main contact action: navy pill with an orange station dot and a nudging arrow.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><span class=\"ds-btn-dot\"></span>Write to me<svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-btn-arrow\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;border-radius:9999px;background:#1b2333;color:#fff;padding:12px 20px 12px 12px;font-family:\"Archivo\",sans-serif;font-weight:600;font-size:1.0625rem;text-decoration:none;transition:background-color 150ms}.ds-btn-primary:hover{background:#12161f}.ds-btn-primary:focus-visible{outline:3px solid #0052a4;outline-offset:3px}.ds-btn-dot{width:20px;height:20px;border-radius:9999px;border:5px solid #ef7c1c;background:#fff;box-sizing:border-box}.ds-btn-arrow{transition:transform 150ms}.ds-btn-primary:hover .ds-btn-arrow{transform:translateX(2px)}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action (Open CV): 2px ink pill that fills ink on hover.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Open CV<svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 11 11 5M6 5h5v5\"/></svg></a>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;gap:8px;border-radius:9999px;border:2px solid #12161f;color:#12161f;padding:10px 20px;font-family:\"Archivo\",sans-serif;font-weight:600;font-size:1.0625rem;text-decoration:none;transition:background-color 150ms,color 150ms}.ds-btn-outline:hover{background:#12161f;color:#fff}.ds-btn-outline:focus-visible{outline:3px solid #0052a4;outline-offset:3px}"
+    },
+    {
+      "name": "Sign Bar",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky navy sign band with JG mark, pill nav links, language switcher and the three-colour line stripe.",
+      "html": "<header class=\"ds-signbar\"><div class=\"ds-signbar-row\"><a class=\"ds-signbar-mark\" href=\"#\"><span class=\"ds-signbar-jg\">JG</span>Jorge Ignacio Garay</a><nav class=\"ds-signbar-nav\"><a href=\"#\">Work</a><a href=\"#\">Route map</a><a href=\"#\">Experience</a><a href=\"#\">Contact</a></nav><div class=\"ds-lang\"><a class=\"ds-lang-on\" href=\"#\">EN</a><a href=\"#\">ES</a><a href=\"#\" lang=\"ko\">한</a></div></div><div class=\"ds-stripe\"><i style=\"flex:3;background:#00a84d\"></i><i style=\"flex:2;background:#ef7c1c\"></i><i style=\"flex:1;background:#996cac\"></i></div></header>",
+      "css": ".ds-signbar{background:#1b2333;color:#fff;font-family:\"Archivo\",sans-serif}.ds-signbar-row{display:flex;align-items:center;gap:24px;height:64px;padding:0 32px}.ds-signbar-mark{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;font-stretch:112%}.ds-signbar-jg{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9999px;border:3px solid #00a84d;background:#fff;color:#12161f;font-size:.75rem;font-weight:800;box-sizing:border-box}.ds-signbar-nav{margin-left:auto;display:flex;gap:4px}.ds-signbar-nav a{border-radius:9999px;padding:8px 12px;font-size:.9375rem;font-weight:500;color:#c7cdd9;text-decoration:none;transition:background-color 150ms,color 150ms}.ds-signbar-nav a:hover{background:#2c3548;color:#fff}.ds-signbar a:focus-visible{outline:3px solid #ffb36b;outline-offset:3px}.ds-lang{display:flex;border-radius:9999px;background:#121826;padding:4px}.ds-lang a{min-width:40px;text-align:center;border-radius:9999px;padding:4px 10px;font-size:.875rem;font-weight:600;color:#c7cdd9;text-decoration:none}.ds-lang a:hover{color:#fff}.ds-lang a.ds-lang-on{background:#fff;color:#12161f}.ds-stripe{display:flex;height:6px}"
+    },
+    {
+      "name": "Stack Chip",
+      "kind": "chip",
+      "refersTo": "stack-chip",
+      "description": "Technology chip; rule-bordered pill on light grounds, sign-line on navy.",
+      "html": "<ul class=\"ds-chips\"><li class=\"ds-chip\">Next.js</li><li class=\"ds-chip\">TypeScript</li><li class=\"ds-chip ds-chip-dark\">Whisper</li></ul>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0;font-family:\"Archivo\",sans-serif}.ds-chip{border:1px solid #d6d6cf;color:#4a5163;border-radius:9999px;padding:2px 10px;font-size:.8125rem;font-weight:500}.ds-chip-dark{background:#1b2333;border-color:#2c3548;color:#c7cdd9}"
+    },
+    {
+      "name": "Roundel",
+      "kind": "custom",
+      "refersTo": "roundel-md",
+      "description": "Station number mark: white disc, line-coloured ring, code inside; transfer variant adds an outer ring.",
+      "html": "<div class=\"ds-roundels\"><span class=\"ds-roundel\" style=\"border-color:#00a84d\">P04</span><span class=\"ds-roundel\" style=\"border-color:#ef7c1c\">A03</span><span class=\"ds-roundel ds-roundel-transfer\">JG</span></div>",
+      "css": ".ds-roundels{display:flex;gap:24px;align-items:center;padding:12px;background:#f4f4f1}.ds-roundel{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:9999px;border:4px solid;background:#fff;color:#12161f;font-family:\"Archivo\",sans-serif;font-stretch:112%;font-weight:700;font-size:.875rem;line-height:1;box-sizing:border-box}.ds-roundel-transfer{width:64px;height:64px;border:5px solid #ef7c1c;box-shadow:0 0 0 3px #fff,0 0 0 6px #ef7c1c;font-size:1rem}"
+    },
+    {
+      "name": "Featured Line",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Signature hero line: 10px track segments coloured by the line they enter, roundel stations, the selected one filled, the train above it.",
+      "html": "<div class=\"ds-line\"><div class=\"ds-track\"><i style=\"background:#00a84d\"></i><i style=\"background:#ef7c1c\"></i></div><div class=\"ds-train\"><b></b><b></b><s></s><b></b></div><div class=\"ds-stations\"><button class=\"ds-st\" style=\"--c:#00a84d\"><span class=\"ds-dot\"></span><small>P04</small>Utomata app</button><button class=\"ds-st\" style=\"--c:#ef7c1c\"><span class=\"ds-dot\"></span><small>A02</small>MeetingNotes</button><button class=\"ds-st ds-st-on\" style=\"--c:#ef7c1c\" aria-checked=\"true\"><span class=\"ds-dot\"></span><small>A03</small>LendLoop</button></div></div>",
+      "css": ".ds-line{position:relative;padding:40px 64px 8px;background:#f4f4f1;font-family:\"Archivo\",sans-serif}.ds-track{position:absolute;left:64px;right:64px;top:53px;height:10px;display:flex}.ds-track i{flex:1}.ds-stations{position:relative;display:flex;justify-content:space-between}.ds-st{margin:0 -64px;width:128px;display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:0;cursor:pointer;font-stretch:112%;font-weight:700;font-size:.95rem;color:#4a5163;border-radius:8px}.ds-st:hover{color:#12161f}.ds-st:focus-visible{outline:3px solid #0052a4;outline-offset:3px}.ds-st small{font-stretch:100%;font-size:.75rem;color:#4a5163;margin-top:8px}.ds-dot{width:36px;height:36px;border-radius:9999px;border:5px solid var(--c);background:#fff;box-sizing:border-box;transition:background-color 150ms}.ds-st-on{color:#12161f}.ds-st-on .ds-dot{background:var(--c)}.ds-train{position:absolute;right:32px;top:4px;display:flex;align-items:center;gap:4px;height:28px;width:64px;padding:0 12px 0 6px;box-sizing:border-box;background:#1b2333;border-radius:6px 14px 14px 6px;transition:left 650ms cubic-bezier(0.16,1,0.3,1)}.ds-train b{width:10px;height:12px;border-radius:2px;background:#c7cdd9}.ds-train s{width:6px;height:16px;background:#ef7c1c}"
+    },
+    {
+      "name": "Arrival Screen",
+      "kind": "card",
+      "refersTo": "station-screen",
+      "description": "Navy panel for the selected station; the only element with a shadow.",
+      "html": "<article class=\"ds-screen\"><header><span class=\"ds-badge\">A</span>Applied AI &amp; automation<span class=\"ds-period\">2026</span></header><div class=\"ds-screen-body\"><p class=\"ds-code\">A03</p><h3>LendLoop</h3><p class=\"ds-sum\">A neighborhood tool-lending board with n8n notification pipelines.</p><a href=\"#\">Source code</a></div></article>",
+      "css": ".ds-screen{max-width:420px;border-radius:16px;overflow:hidden;background:#1b2333;color:#fff;font-family:\"Archivo\",sans-serif;box-shadow:0 24px 48px -24px rgba(18,22,31,.55)}.ds-screen header{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid #2c3548;font-size:.875rem;font-weight:500;color:#c7cdd9}.ds-badge{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:9999px;background:#ef7c1c;color:#12161f;font-size:.75rem;font-weight:800}.ds-period{margin-left:auto}.ds-screen-body{padding:20px}.ds-code{margin:0;font-size:.875rem;font-weight:600;color:#c7cdd9}.ds-screen h3{margin:0;font-size:1.5rem;font-weight:700;font-stretch:112%;line-height:1.25}.ds-sum{font-size:.9375rem;line-height:1.625;color:#c7cdd9}.ds-screen a{color:#fff;font-weight:600;font-size:.9375rem;text-decoration:underline;text-decoration-color:#ef7c1c;text-decoration-thickness:2px;text-underline-offset:.2em}.ds-screen a:hover{text-decoration-color:#fff}.ds-screen a:focus-visible{outline:3px solid #ffb36b;outline-offset:3px}"
+    },
+    {
+      "name": "Exit Link",
+      "kind": "custom",
+      "refersTo": "exit-link",
+      "description": "Terminus contact tile with a yellow metro exit number.",
+      "html": "<div class=\"ds-exits\"><a class=\"ds-exit\" href=\"#\"><span class=\"ds-exit-n\">1</span>WhatsApp<svg viewBox=\"0 0 16 16\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"ds-exit-arrow\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a></div>",
+      "css": ".ds-exits{background:#1b2333;padding:16px}.ds-exit{display:flex;align-items:center;gap:12px;border-radius:12px;background:#121826;padding:16px;color:#fff;font-family:\"Archivo\",sans-serif;font-weight:600;text-decoration:none;transition:background-color 150ms}.ds-exit:hover{background:#2c3548}.ds-exit:focus-visible{outline:3px solid #ffb36b;outline-offset:3px}.ds-exit-n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:#ffd200;color:#12161f;font-size:.875rem;font-weight:800}.ds-exit-arrow{margin-left:auto;color:#c7cdd9;transition:transform 150ms}.ds-exit:hover .ds-exit-arrow{transform:translateX(2px);color:#fff}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Seoul Metro Line",
+    "overview": "The whole site is a working wayfinding system. Station-enamel ground, signage-navy panels, and the real Seoul line colours used as a code: green is career and product work, orange is applied AI and \"now\", violet is the playground. Projects are stations with codes (A01, P04, X07), roles are stops on a single green line, and the contact section is the terminus. Every device is borrowed from the metro itself: circular roundels with a line-coloured ring, transfer double-rings, 10px line strokes, a three-colour stripe under the sign band, yellow exit-number squares, and a side-on train car that marks the selected station.\n\nDensity is that of a station platform sign: one huge name, short supporting text, generous section breathing room (128px vertical on desktop), and information grouped by line rather than by card grid. Light enamel carries most of the page; the navy sign colour appears as bands and panels (the sticky sign bar, the arrival screen, the terminus), never as a full dark theme. The only motion is travel: the train glides along the line with a long ease-out, and the line scrolls the selected station into view on phones. Nothing else animates.\n\nType is one family doing all the work. Archivo stretched to 112% width and set heavy reads as station-name signage; the same family at normal width carries body copy. Korean falls back to Gothic A1 Heavy for display and the platform Korean sans for body, with `word-break: keep-all`, so the trilingual sign stacking (Latin name over Hangul name) holds in EN, ES and KO.",
+    "keyCharacteristics": [
+      "Line colour is a code with meaning, never decoration.",
+      "Roundels, line strokes and transfer rings are the recurring structural marks.",
+      "Flat enamel and navy surfaces; depth comes from tonal panels, not shadow.",
+      "One stretched heavy sans for display, same family for body.",
+      "Motion is linear travel along the line only."
+    ],
+    "rules": [
+      {
+        "name": "The Line Code Rule",
+        "body": "Green means product/career, orange means applied AI or \"now\", violet means playground. A line colour appears only where it states that membership; never pick one for looks.",
+        "section": "colors"
+      },
+      {
+        "name": "The Hard Stop Rule",
+        "body": "Where lines meet, colours change at a hard stop (stripe segments, per-station track segments). Lines are never blended into gradients.",
+        "section": "colors"
+      },
+      {
+        "name": "The Text-Safe Orange Rule",
+        "body": "Orange as text on enamel uses Line 3 Ink; bright Line 3 Orange is for strokes, fills, underlines, and text set on navy or with ink on top of it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Station Sign Rule",
+        "body": "Anything that names a place (person, project, line, company) is set in the stretched 112% width; anything that explains it is set at normal width.",
+        "section": "typography"
+      },
+      {
+        "name": "The Trilingual Stack Rule",
+        "body": "Names stack Latin over Hangul at reduced weight in steel; Korean text always uses `word-break: keep-all`.",
+        "section": "typography"
+      },
+      {
+        "name": "The 10px Line Rule",
+        "body": "Every line stroke (featured track, stems, experience line, terminus stripe) is 10px thick with rounded or hard ends; the sign bar stripe is the one thinner (6px) echo.",
+        "section": "layout"
+      },
+      {
+        "name": "The One Lit Screen Rule",
+        "body": "Only the arrival screen casts a shadow. Everything else sits flat on the platform.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** encode meaning with line colour: green (#00a84d) product/career, orange (#ef7c1c) applied AI / now, violet (#996cac) playground.",
+      "**Do** draw lines as 10px strokes with hard colour stops where lines change.",
+      "**Do** mark stations with roundels (white disc, line-colour ring, code inside) and transfers with the double ring.",
+      "**Do** set names in Archivo at 112% width, weight 700–800; explanations at normal width.",
+      "**Do** use Line 3 Ink (#a94f00) for orange text on enamel.",
+      "**Do** keep every string available in EN, ES and KO, with Korean `word-break: keep-all`.",
+      "**Do** show a station plate when a project has no real screenshot."
+    ],
+    "donts": [
+      "**Don't** turn the site into a dark neon dev theme; navy is for sign bands and panels on an enamel platform.",
+      "**Don't** use line colours decoratively or blend them into gradients.",
+      "**Don't** add shadows beyond the arrival screen glow; depth is tonal.",
+      "**Don't** animate anything except travel along the line, and honour reduced motion.",
+      "**Don't** use Line 1 blue (#0052a4) or exit yellow (#ffd200) outside the focus ring and exit/headlight roles.",
+      "**Don't** fabricate screenshots, metrics or logos; use the station plate."
+    ]
+  }
+}

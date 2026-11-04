@@ -3,6 +3,7 @@ import { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
 import { useLanguageDetection } from '../utils/useLanguageDetection'
 
+import '../styles/gothic-a1.css'
 import '../styles/global.css'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
