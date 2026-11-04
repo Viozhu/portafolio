@@ -38,7 +38,7 @@ const StationScreen = ({ project }: { project: Project }) => {
             </a>
           )}
           {!project.live && !project.repo && (
-            <span className="font-medium text-sign-text">{project.line === "ai" ? t("private_repo") : t("company_work")}</span>
+            <span className="font-medium text-sign-text">{project.line === "ai" && !project.company ? t("private_repo") : t("company_work")}</span>
           )}
         </div>
       </div>
@@ -150,7 +150,7 @@ export const Hero = () => {
           <span className="hidden text-sm text-steel sm:inline">{t("line_hint")}</span>
         </div>
         <div ref={scroller} className="no-scrollbar -mx-5 overflow-x-auto px-5 sm:mx-0 sm:px-0">
-          <div className="relative min-w-[60rem] px-16 pb-2 pt-10 sm:min-w-[46rem]">
+          <div className="relative min-w-[68rem] px-16 pb-2 pt-10 sm:min-w-[46rem]">
             {/* track segments, coloured by the line each segment runs into */}
             <div aria-hidden="true" className="absolute inset-x-16 top-[3.3rem] h-2.5">
               {featured.slice(1).map((p, i) => (
