@@ -82,21 +82,8 @@
     ]
   ],
   "city_label": "La ciudad: cada proyecto es un piso",
-  "city_roof": [
-    "IA APLICADA",
-    "PRODUCTO",
-    "PLAYGROUND",
-    "EXPERIENCIA"
-  ],
-  "station_sign": "막차 ÚLTIMO TREN",
   "floor_directory": "Directorio de pisos",
   "floor_of": "Piso {{floor}}",
   "enter_city": "Entrar a la ciudad",
-  "directory": "Directorio de edificios",
-  "platform_board": [
-    "막차 ÚLTIMO TREN",
-    "→ TU EQUIPO · REMOTO / FREELANCE",
-    "LLEGANDO",
-    "EMBARCANDO"
-  ]
+  "directory": "Directorio de edificios"
 }

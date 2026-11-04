@@ -82,21 +82,8 @@
     ]
   ],
   "city_label": "도시: 프로젝트 하나가 한 층",
-  "city_roof": [
-    "응용 AI",
-    "프로덕트",
-    "플레이그라운드",
-    "경력"
-  ],
-  "station_sign": "막차 LAST TRAIN",
   "floor_directory": "층별 안내",
   "floor_of": "{{floor}}층",
   "enter_city": "도시로 들어가기",
-  "directory": "건물 안내",
-  "platform_board": [
-    "막차 LAST TRAIN",
-    "→ 당신의 팀 · 원격 / 프리랜스",
-    "도착 중",
-    "탑승 중"
-  ]
+  "directory": "건물 안내"
 }
