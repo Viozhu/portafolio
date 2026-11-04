@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
-import { LINES, PROJECTS, Project, ROLES, Role, lineOf } from "../../data/portfolio";
+import { LINES, Locale, PROJECTS, Project, ROLES, Role, lineOf } from "../../data/portfolio";
 import { ArrowUpRight, Pip, StackList, keepCase, tr, useLocale } from "./parts";
 
 export const tube = (c: string) => ({ "--tube": c } as React.CSSProperties);
@@ -9,6 +9,25 @@ export const EXP_COLOR = "#b9a9d6";
 export const SKILL_COLORS = ["#05d9e8", "#f9f002", "#b9a9d6", "#ff2a6d", "#05d9e8"];
 
 /** Oldest role on the ground floor, current work at the top. */
+/** Lettering painted into the canvas, keyed by the route's locale. */
+export const CANVAS_COPY: Record<Locale, { roof: string[]; station: string; board: string[] }> = {
+  en: {
+    roof: ["APPLIED AI", "PRODUCT", "PLAYGROUND", "EXPERIENCE"],
+    station: "막차 LAST TRAIN",
+    board: ["막차 LAST TRAIN", "→ YOUR TEAM · REMOTE / FREELANCE", "ARRIVING", "BOARDING"],
+  },
+  es: {
+    roof: ["IA APLICADA", "PRODUCTO", "PLAYGROUND", "EXPERIENCIA"],
+    station: "막차 ÚLTIMO TREN",
+    board: ["막차 ÚLTIMO TREN", "→ TU EQUIPO · REMOTO / FREELANCE", "LLEGANDO", "EMBARCANDO"],
+  },
+  ko: {
+    roof: ["응용 AI", "프로덕트", "플레이그라운드", "경력"],
+    station: "막차 LAST TRAIN",
+    board: ["막차 LAST TRAIN", "→ 당신의 팀 · 원격 / 프리랜스", "도착 중", "탑승 중"],
+  },
+};
+
 export const rolesUp = [...ROLES].reverse();
 export const linesWithProjects = LINES.map((line) => ({
   line,

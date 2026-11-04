@@ -5,6 +5,7 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Pip, TubeLink, tr, useLocale } fro
 import { ContactPanel } from "./Sections";
 import { keepCase, upperKeep } from "./parts";
 import {
+  CANVAS_COPY,
   Directory,
   EXP_COLOR,
   FloorProject,
@@ -62,12 +63,11 @@ export const Street = () => {
   const locale = useLocale();
   const clock = useSeoulTime();
   const steps = useMemo(buildSteps, []);
-  const roofRaw = t("city_roof", { returnObjects: true }) as unknown;
-  const roofNames = Array.isArray(roofRaw) ? (roofRaw as string[]) : ["APPLIED AI", "PRODUCT", "PLAYGROUND", "EXPERIENCE"];
+  const canvasCopy = CANVAS_COPY[locale];
+  const roofNames = canvasCopy.roof;
   const rainRaw = t("rain_levels", { returnObjects: true }) as unknown;
   const rainLevels = Array.isArray(rainRaw) ? (rainRaw as string[]) : ["Drizzle", "Downpour", "Monsoon"];
   const tickRaw = t("ticker", { returnObjects: true }) as unknown;
-  const boardRaw = t("platform_board", { returnObjects: true }) as unknown;
   const ticker = Array.isArray(tickRaw) ? (tickRaw as string[]) : [];
 
   const [active, setActive] = useState(START);
@@ -180,8 +180,8 @@ export const Street = () => {
         overlay: overlay.current,
         towers,
         roofSigns: SKILLS.map((g, i) => ({ text: tr(g.group, locale).toUpperCase(), color: SKILL_COLORS[i % SKILL_COLORS.length] })),
-        station: t("station_sign"),
-        board: Array.isArray(boardRaw) ? (boardRaw as string[]) : ["막차 LAST TRAIN", "→", "ARRIVING", "BOARDING"],
+        station: canvasCopy.station,
+        board: canvasCopy.board,
         steps: engineSteps,
         reduced,
         onLayout: (r) => setRects(r),
